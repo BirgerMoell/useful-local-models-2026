@@ -15,6 +15,8 @@ OUT = Path(__file__).resolve().parent / "resources"
 DOCS = {
     "student-project-brief": ROOT / "student-project-brief.md",
     "examples": ROOT / "examples" / "README.md",
+    "laptop-demos": ROOT / "demos" / "README.md",
+    "laptop-demo-results": ROOT / "demos" / "verified-results.md",
     "course-code": ROOT / "course-code" / "README.md",
     "local-deployment-guide": ROOT / "local-deployment-guide.md",
     "project-tracks": ROOT / "project-tracks.md",
@@ -491,6 +493,7 @@ def page(title: str, body: str) -> str:
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{html.escape(title)} - Useful Local Models</title>
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="resource.css">
   </head>
   <body>

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Laptop Training Demos - Useful Local Models</title>
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="resource.css">
+  </head>
+  <body>
+    <header>
+      <a href="../index.html">Useful Local Models</a>
+    </header>
+    <main>
+      <h1 id="laptop-training-demos">Laptop Training Demos</h1>
+<p>Laptop-scale runs for an Apple Silicon MacBook with 32 GB memory. Each run has a</p>
+<p>train/eval split, measurable before/after results, a checkpoint, and a</p>
+<p><code>summary.json</code> file.</p>
+<p>Run all quick checks:</p>
+<pre><code>
+python demos/run_all.py --quick
+</code></pre>
+<p>Run the fuller laptop demos:</p>
+<pre><code>
+python demos/run_all.py
+</code></pre>
+<p>Use a specific device when needed:</p>
+<pre><code>
+python demos/run_all.py --device cpu
+python demos/run_all.py --device mps
+</code></pre>
+<p>Verified local run:</p>
+<ul>
+<li>Date: 2026-05-26.</li>
+<li>Command: <code>python demos/run_all.py --device mps</code>.</li>
+<li>Result summary: <code>demos/verified-results.md</code>.</li>
+<li>Artifacts: <code>outputs/demos/*/summary.json</code> and <code>outputs/demos/*/checkpoint.pt</code>.</li>
+</ul>
+<h2 id="00-next-token-lm">00 Next-Token LM</h2>
+<p>Command:</p>
+<pre><code>
+python demos/00_next_token_lm/train_eval.py --steps 320
+</code></pre>
+<p>What it measures:</p>
+<ul>
+<li>initial held-out next-token loss;</li>
+<li>final train loss;</li>
+<li>final held-out next-token loss;</li>
+<li>held-out bits per token;</li>
+<li>a generated sample.</li>
+</ul>
+<p>Why it matters:</p>
+<p>Next-token training is the base objective behind decoder-only language models. A</p>
+<p>tiny course-themed corpus keeps the evaluation text separate and saves both a</p>
+<p>checkpoint and a readable summary.</p>
+<h2 id="01-tool-router">01 Tool Router</h2>
+<p>Command:</p>
+<pre><code>
+python demos/01_tool_router/train_eval.py --steps 260
+</code></pre>
+<p>What it measures:</p>
+<ul>
+<li>held-out routing accuracy before and after training;</li>
+<li>JSON-valid tool call rate;</li>
+<li>per-example predictions.</li>
+</ul>
+<p>Why it matters:</p>
+<p>Small local models are often useful when the output space is narrow. A local tool</p>
+<p>router can turn natural-language project commands into structured actions without</p>
+<p>calling an external model.</p>
+<h2 id="02-rag-reranker">02 RAG Reranker</h2>
+<p>Command:</p>
+<pre><code>
+python demos/02_rag_reranker/train_eval.py --steps 320
+</code></pre>
+<p>What it measures:</p>
+<ul>
+<li>held-out MRR;</li>
+<li>held-out top-1 accuracy;</li>
+<li>ranked documents before and after training.</li>
+</ul>
+<p>Why it matters:</p>
+<p>A useful local model does not have to generate text. A reranker can improve local</p>
+<p>search or RAG by scoring query-document pairs and leaving the final answer step</p>
+<p>to another component.</p>
+<h2 id="03-rlvr-arithmetic">03 RLVR Arithmetic</h2>
+<p>Command:</p>
+<pre><code>
+python demos/03_rlvr_arithmetic/train_eval.py --steps 360
+</code></pre>
+<p>What it measures:</p>
+<ul>
+<li>exact-match accuracy over all one-digit addition problems before and after</li>
+</ul>
+<p>training;</p>
+<ul>
+<li>sample prompts, predicted answers, and verifier rewards.</li>
+</ul>
+<p>Why it matters:</p>
+<p>Verifiable rewards are appropriate when correctness can be checked by a program.</p>
+<p>Training uses rewards computed by a deterministic verifier, not a stored</p>
+<p>completion dataset. By default the verifier selects the best candidate in the</p>
+<p>group for a stable laptop run; pass <code>--objective group-policy --sampled-group</code> to</p>
+<p>inspect the noisier policy-gradient variant.</p>
+<h2 id="outputs">Outputs</h2>
+<p>All demos write to:</p>
+<pre><code>
+outputs/demos/&lt;demo-name&gt;/
+  checkpoint.pt
+  summary.json
+</code></pre>
+<p>Use <code>summary.json</code> as the first artifact to inspect in seminars. It records the</p>
+<p>metric movement and enough examples to discuss whether training actually helped.</p>
+    </main>
+    <script src="resource.js"></script>
+  </body>
+</html>

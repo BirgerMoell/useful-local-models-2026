@@ -45,6 +45,7 @@ Use these files as a teacher-facing pack:
 - `course-code-plan.md`: code infrastructure needed for the course.
 - `project-ideas.md`: concrete project suggestions for topic selection.
 - `examples/`: tiny PyTorch hello-world training examples for course techniques.
+- `demos/`: laptop-runnable training demos with train/eval metrics.
 - `slides/` and `site/slides/`: presentation plan and web slide decks.
 - `assignment-pages/`: Studium-ready assignment text.
 - `templates/`: proposal, model card, dataset card, manifest, experiment log.

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Verified Laptop Results - Useful Local Models</title>
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="resource.css">
+  </head>
+  <body>
+    <header>
+      <a href="../index.html">Useful Local Models</a>
+    </header>
+    <main>
+      <h1 id="verified-laptop-results">Verified Laptop Results</h1>
+<p>Run date: 2026-05-26</p>
+<p>Command:</p>
+<pre><code>
+python demos/run_all.py --device mps
+</code></pre>
+<p>Environment:</p>
+<ul>
+<li>Apple Silicon laptop target, 32 GB memory class.</li>
+<li>PyTorch 2.8.0.</li>
+<li>MPS available and used.</li>
+<li>Checkpoints and raw summaries written under <code>outputs/demos/</code>.</li>
+</ul>
+<table>
+<tr><th>Demo</th><th>Metric</th><th>Before</th><th>After</th><th>Change</th></tr>
+<tr><td>Next-token LM</td><td>held-out loss</td><td>117.240</td><td>3.303</td><td>-113.937</td></tr>
+<tr><td>Next-token LM</td><td>held-out bits/token</td><td>169.141</td><td>4.765</td><td>-164.376</td></tr>
+<tr><td>Tool router</td><td>held-out accuracy</td><td>0.20</td><td>1.00</td><td>+0.80</td></tr>
+<tr><td>Tool router</td><td>JSON-valid tool calls</td><td>1.00</td><td>1.00</td><td>+0.00</td></tr>
+<tr><td>RAG reranker</td><td>MRR</td><td>0.611</td><td>1.000</td><td>+0.389</td></tr>
+<tr><td>RAG reranker</td><td>top-1 accuracy</td><td>0.333</td><td>1.000</td><td>+0.667</td></tr>
+<tr><td>RLVR arithmetic</td><td>exact accuracy</td><td>0.10</td><td>1.00</td><td>+0.90</td></tr>
+</table>
+<p>Interpretation:</p>
+<ul>
+<li>The language-model run shows that the training loop lowers held-out</li>
+</ul>
+<p>next-token loss, but the generated sample is still low quality because the</p>
+<p>corpus and model are intentionally tiny.</p>
+<ul>
+<li>The tool router learns all held-out routing labels and keeps JSON validity at</li>
+</ul>
+<p>100%.</p>
+<ul>
+<li>The reranker moves every held-out query&#x27;s relevant document to rank 1.</li>
+<li>The verifiable-reward arithmetic run moves from mostly wrong answers to exact</li>
+</ul>
+<p>answers on all one-digit addition pairs.</p>
+<p>The numbers are not intended as benchmark scores. They are smoke-test evidence</p>
+<p>that the training code updates parameters, evaluates held-out behavior, and</p>
+<p>writes inspectable artifacts on laptop hardware.</p>
+    </main>
+    <script src="resource.js"></script>
+  </body>
+</html>
