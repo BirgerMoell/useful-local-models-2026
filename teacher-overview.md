@@ -12,6 +12,16 @@ This theme is designed to fit the existing 5LN714 structure: literature seminars
 project proposal, progress seminars, first report, peer review, final workshop,
 and final report.
 
+## Official Course Anchor
+
+The public Uppsala University course page lists 5LN714 as a 15-credit master's
+level course. The current public syllabus and reading list are both marked as
+valid from Spring 2026:
+
+- Course page: <https://www.uu.se/en/study/course?query=5LN714>
+- Syllabus: <https://www.uu.se/en/study/syllabus?query=52189>
+- Reading list: <https://www.uu.se/en/study/reading-list?query=41226>
+
 ## Why This Theme
 
 The current LLM landscape makes it easy for students to build impressive demos

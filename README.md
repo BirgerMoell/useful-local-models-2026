@@ -5,6 +5,12 @@ Research and Development, intended for HT2026.
 
 Site: https://birgermoell.github.io/useful-local-models-2026/
 
+Official course anchors checked on 2026-05-26:
+
+- Course page: https://www.uu.se/en/study/course?query=5LN714
+- Syllabus valid from Spring 2026: https://www.uu.se/en/study/syllabus?query=52189
+- Reading list valid from Spring 2026: https://www.uu.se/en/study/reading-list?query=41226
+
 The theme is:
 
 **Local Runnable Language Models: training small, useful, auditable NLP systems**
@@ -60,6 +66,12 @@ Use these files as a teacher-facing pack:
 
 ## Main Sources
 
+- Uppsala University 5LN714 course page:
+  https://www.uu.se/en/study/course?query=5LN714
+- Uppsala University 5LN714 syllabus, valid from Spring 2026:
+  https://www.uu.se/en/study/syllabus?query=52189
+- Uppsala University 5LN714 reading list, valid from Spring 2026:
+  https://www.uu.se/en/study/reading-list?query=41226
 - Birger Moell, *The 2026 Fully Open LLM Training Guide*:
   https://birgermoell.github.io/openeurollm-open-llm-guide/docs/fully-open-llm-guide-2026.pdf
 - Hugging Face PEFT:
