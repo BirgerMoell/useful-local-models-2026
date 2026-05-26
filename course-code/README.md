@@ -2,9 +2,8 @@
 
 Small utilities for the Local Runnable Language Models project theme.
 
-The package is deliberately modest. It helps students start projects, keep
-experiment logs, and validate artifact manifests without forcing a specific
-training framework.
+The package is deliberately modest: project folders, experiment logs, and
+artifact manifest validation without a required training framework.
 
 ## Commands
 
@@ -19,7 +18,7 @@ python -m lmcourse.cli summarize-ledger my-project/logs/experiments.jsonl
 
 ## Intended Use
 
-Students can use this alongside:
+Works alongside:
 
 - nanochat;
 - autoresearch;
@@ -34,4 +33,3 @@ Students can use this alongside:
 - Agent prompts are versioned in `agents/program.md`.
 - Experiment logs are JSONL.
 - Artifact manifests are YAML-like enough to inspect by eye.
-

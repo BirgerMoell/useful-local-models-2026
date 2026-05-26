@@ -17,10 +17,10 @@ research question
   -> scientific report
 ```
 
-This is not meant as a strict chronological order. A student may begin with an
-evaluation task, a nanochat experiment, a local deployment target, or an
-agent-assisted search loop. The requirement is that by the end of the project,
-the evidence chain is complete and inspectable.
+The evidence chain is not a strict chronological order. A project may begin with
+an evaluation task, a nanochat experiment, a local deployment target, or an
+agent-assisted search loop. By the end, the evidence chain must be complete and
+inspectable.
 
 ## Required Project Shape
 
@@ -37,8 +37,8 @@ Every project must have:
 
 ## Shared Theme, Different Problems
 
-Students should not all train the same model on the same task. The shared theme
-is methodological: how to train and evaluate local models responsibly.
+Projects should not all train the same model on the same task. The shared method
+is responsible training and evaluation of local models.
 
 Good variation dimensions:
 
@@ -52,7 +52,7 @@ Good variation dimensions:
 
 ## Standard Project
 
-This is the recommended format for most students.
+Recommended format for most projects:
 
 ```text
 small open base model

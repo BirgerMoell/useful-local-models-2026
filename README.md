@@ -15,9 +15,9 @@ The theme is:
 
 **Local Runnable Language Models: training small, useful, auditable NLP systems**
 
-The core idea is that students should not only prompt or evaluate existing large
-models. They should train or adapt a model, evaluate it carefully, and release a
-small artifact that can run locally without an external API.
+The core idea is model ownership rather than API-only experimentation: train or
+adapt a model, evaluate it carefully, and release a small artifact that can run
+locally without an external API.
 
 The guiding question is:
 
@@ -43,24 +43,24 @@ Use these files as a teacher-facing pack:
 - `advanced-techniques-guide.md`: context extension, DPO, GRPO/RLVR, and agents.
 - `nanochat-autoresearch-integration.md`: worked systems from nanochat and autoresearch.
 - `course-code-plan.md`: code infrastructure needed for the course.
-- `project-ideas.md`: concrete project suggestions students can choose from.
+- `project-ideas.md`: concrete project suggestions for topic selection.
 - `examples/`: tiny PyTorch hello-world training examples for course techniques.
 - `slides/` and `site/slides/`: presentation plan and web slide decks.
 - `assignment-pages/`: Studium-ready assignment text.
 - `templates/`: proposal, model card, dataset card, manifest, experiment log.
-- `starter-repo/`: a lightweight repository skeleton students can copy.
+- `starter-repo/`: a lightweight repository skeleton for project setup.
 - `course-code/`: optional utility code for project scaffolds and experiment ledgers.
 
 ## Design Principles
 
 1. Every claim maps to an artifact: data manifest, config, checkpoint, adapter,
    evaluation output, log, or model card.
-2. Local runnable beats impressive but opaque. A useful 0.6B-3B model with honest
+2. Local runnable beats impressive but opaque. A useful 0.6B-4B model with honest
    evaluation is preferred over an API demo.
-3. Students do not have to complete the pipeline in order. They choose a research
-   slice, but every slice still needs a baseline, evidence, and a local artifact.
-4. Evaluation matters as much as training. Students must compare against a baseline
-   and analyze errors.
+3. The pipeline does not have to be completed in order. Each research slice still
+   needs a baseline, evidence, and a local artifact.
+4. Evaluation matters as much as training. Each project compares against a
+   baseline and analyzes errors.
 5. The final artifact should be usable by another student on ordinary hardware,
    or the student must explain why a stronger machine is required.
 
@@ -83,6 +83,11 @@ Use these files as a teacher-facing pack:
 - Qwen3-0.6B and GGUF local deployment:
   https://huggingface.co/Qwen/Qwen3-0.6B
   https://huggingface.co/Qwen/Qwen3-0.6B-GGUF
+- Gemma 4:
+  https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/
+  https://huggingface.co/blog/gemma4
+- Qwen3.5-0.8B:
+  https://huggingface.co/Qwen/Qwen3.5-0.8B
 - nanochat:
   https://github.com/karpathy/nanochat
 - autoresearch:

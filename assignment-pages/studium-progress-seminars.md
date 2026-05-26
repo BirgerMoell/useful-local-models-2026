@@ -1,7 +1,6 @@
 # Studium Page: Progress Seminars
 
-Progress seminars are used to make sure each project is scientifically feasible
-and technically auditable.
+Progress seminars check scientific feasibility and technical auditability.
 
 ## Progress Seminar 1: Data And Baseline
 
@@ -41,4 +40,3 @@ Prepare:
 - local demo status;
 - final report outline;
 - remaining risks before first submission.
-

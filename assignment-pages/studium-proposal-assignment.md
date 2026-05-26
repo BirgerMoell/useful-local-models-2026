@@ -2,8 +2,8 @@
 
 Submit your scientific project proposal as a PDF.
 
-Your proposal should follow the normal course instructions for project proposals,
-but for this theme it must also include the following sections.
+Your proposal should follow the normal course instructions for project proposals
+and include the following local-model sections.
 
 ## Required Theme-Specific Content
 
@@ -55,4 +55,3 @@ Specify:
 
 Discuss relevant risks such as privacy, copyright, bias, environmental cost,
 misuse, and overclaiming.
-

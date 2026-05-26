@@ -1,16 +1,16 @@
 # Tiny Training Examples
 
-These examples are the code spine for the course theme:
+This directory is the code spine for the main question:
 
 **Can we make small local models genuinely useful?**
 
-Each example is a small, readable Python script that demonstrates one modern
-training idea with a tiny local model. The examples use synthetic data and a
+Each directory contains a readable Python implementation of one modern
+training idea with a tiny local model. The code uses synthetic data and a
 character-level transformer so they can be inspected, modified, and run without
 external APIs.
 
-They are teaching examples, not production recipes. Their job is to make the
-training loop visible.
+The code favors visibility over performance: the training loop should be easy to
+read, change, and test.
 
 ## Setup
 
@@ -55,9 +55,9 @@ python 07_reranker/train.py --steps 120
 
 The scripts write small outputs under `outputs/`.
 
-## How Students Should Use These
+## How To Use These
 
-Students should start by running one example unchanged, then change one thing:
+Start by running one example unchanged, then change one thing:
 
 - the data;
 - the task;
@@ -67,7 +67,7 @@ Students should start by running one example unchanged, then change one thing:
 - the evaluation metric;
 - the local runtime.
 
-Each project should keep the same evidence discipline:
+Each run should keep the same evidence discipline:
 
 ```text
 use case -> baseline -> training -> held-out evaluation -> local artifact
@@ -75,10 +75,8 @@ use case -> baseline -> training -> held-out evaluation -> local artifact
 
 ## Relationship To Nanochat And Autoresearch
 
-These examples are smaller than `nanochat` and easier to modify in a lab session.
-`nanochat` remains useful when students want to inspect a complete local LLM
-stack. `autoresearch` remains useful when students want to study agent-assisted
-experimentation.
+These runs are smaller than `nanochat` and easier to modify in a lab session.
+`nanochat` remains useful for inspecting a complete local LLM stack.
+`autoresearch` remains useful for studying agent-assisted experimentation.
 
-The course examples give everyone a common starting point before they branch out.
-
+They give a common starting point before larger experiments branch out.

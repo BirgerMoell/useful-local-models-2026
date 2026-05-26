@@ -1,13 +1,13 @@
 # Modern Tooling Map
 
-The course should expose students to the current tooling ecosystem without making
-any single tool mandatory. The guiding question stays:
+The theme should expose the current tooling ecosystem without making any single
+tool mandatory. The guiding question stays:
 
 **Can we make small local models genuinely useful?**
 
 ## Training And Adaptation
 
-Use when students need to update parameters.
+Use when the project needs to update parameters.
 
 - Hugging Face Transformers: model loading, training, inference.
 - PEFT: LoRA and adapter-based fine-tuning.
@@ -18,7 +18,7 @@ Use when students need to update parameters.
 
 ## Local Runtime
 
-Use when students need a final artifact that runs without an external API.
+Use when the final artifact needs to run without an external API.
 
 - Transformers + PEFT adapter loading.
 - llama.cpp and GGUF for CPU/laptop inference.
@@ -28,7 +28,7 @@ Use when students need a final artifact that runs without an external API.
 
 ## Evaluation
 
-Use when students need to prove usefulness.
+Use when a usefulness claim needs evidence.
 
 - Task-specific held-out test sets.
 - Hugging Face Evaluate for standard metrics.
@@ -39,7 +39,7 @@ Use when students need to prove usefulness.
 
 ## Agent-Assisted Research
 
-Use when students want AI help with experimentation.
+Use when AI assistance can improve experimentation without hiding provenance.
 
 - Codex, Claude Code, or similar coding agents for implementation and review.
 - autoresearch for constrained agent experiment loops.
@@ -48,7 +48,7 @@ Use when students want AI help with experimentation.
 
 ## Data And Documentation
 
-Use when students need auditable artifacts.
+Use when the result needs auditable artifacts.
 
 - Source registry CSV.
 - Dataset cards.
@@ -59,6 +59,6 @@ Use when students need auditable artifacts.
 
 ## Course Rule Of Thumb
 
-The best tool is the one that makes the student's claim more testable. A tool
-that produces impressive output but weakens provenance, evaluation, or local
-runnability is the wrong tool for this course.
+The best tool is the one that makes the claim more testable. A tool that
+produces impressive output but weakens provenance, evaluation, or local
+runnability is the wrong tool for the project.

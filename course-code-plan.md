@@ -1,8 +1,7 @@
 # Course Code Plan
 
-This document describes the code the course needs around the teaching materials.
-The goal is not to create a heavy framework. The primary course code should be a
-set of small, inspectable training examples that students can read, run, and
+The code around the project materials stays small and inspectable. The primary
+asset is a set of readable training runs that are easy to execute, inspect, and
 modify.
 
 ## Code Layers
@@ -18,7 +17,7 @@ examples/
 Purpose:
 
 - show hello-world versions of modern training techniques;
-- provide concrete Python files students can modify;
+- provide concrete Python files that can be modified;
 - keep examples small enough for a lab session;
 - separate technique examples by folder.
 
@@ -49,12 +48,12 @@ Purpose:
 - append experiment logs;
 - summarize experiment ledgers.
 
-This is implemented as a small Python package with no required third-party
-dependencies.
+The optional utility code stays as a small Python package with no required
+third-party dependencies.
 
 ### 3. Starter Project Structure
 
-Every initialized project should have:
+Every initialized project has:
 
 ```text
 agents/
@@ -79,9 +78,9 @@ README.md
 
 ### 4. Agent Program Templates
 
-The course should teach agent prompts as versioned research artifacts.
+Agent prompts are versioned research artifacts.
 
-Templates should include:
+Templates include:
 
 - standard supervised training assistant;
 - nanochat-style experiment assistant;
@@ -91,13 +90,13 @@ Templates should include:
 
 ### 5. Experiment Ledger
 
-Students should log each run as JSONL:
+Each run is logged as JSONL:
 
 ```json
 {"run_id":"2026-09-21-001","hypothesis":"lower lr improves validation bpb","metric":"val_bpb","value":0.751,"decision":"keep"}
 ```
 
-The ledger should capture:
+The ledger captures:
 
 - hypothesis;
 - code/config change;
@@ -109,8 +108,7 @@ The ledger should capture:
 
 ### 6. Nanochat Examples
 
-The course should include lightweight examples that point to `nanochat` rather
-than vendoring it:
+Lightweight examples point to `nanochat` rather than vendoring it:
 
 - a reading guide for the repo structure;
 - a small `depth` run recipe;

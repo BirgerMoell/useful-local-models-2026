@@ -17,7 +17,7 @@
 <p>Students train or adapt open models for concrete NLP problems. The final result</p>
 <p>must be a locally runnable artifact: an adapter, full fine-tune, classifier,</p>
 <p>reranker, distilled model, GGUF export, or reproducible local inference script.</p>
-<p>This theme is designed to fit the existing 5LN714 structure: literature seminars,</p>
+<p>The project structure fits the existing 5LN714 rhythm: literature seminars,</p>
 <p>project proposal, progress seminars, first report, peer review, final workshop,</p>
 <p>and final report.</p>
 <h2 id="official-course-anchor">Official Course Anchor</h2>
@@ -37,10 +37,10 @@
 <p>The guiding question is:</p>
 <p>**Can we make small local models genuinely useful?**</p>
 <p>The 2026 update adds an explicit second question:</p>
-<p>**How should students use AI agents as research collaborators while keeping the</p>
-<p>work auditable?**</p>
+<p>**How can AI agents support research collaboration while keeping the work</p>
+<p>auditable?**</p>
 <h2 id="course-level-learning-outcomes">Course-Level Learning Outcomes</h2>
-<p>By the end of the project, students should be able to:</p>
+<p>By the end of the project, each participant can:</p>
 <ul>
 <li>formulate a research question involving model training or adaptation;</li>
 <li>choose a feasible local model and justify its constraints;</li>
@@ -52,8 +52,8 @@
 <li>package the model so another person can run it locally.</li>
 </ul>
 <h2 id="scope-constraint">Scope Constraint</h2>
-<p>The course should not ask students to train a foundation model from scratch.</p>
-<p>Instead, students should work with one of these feasible scopes:</p>
+<p>Foundation-model training from scratch is out of scope. Feasible project scopes</p>
+<p>include:</p>
 <ul>
 <li>fine-tune a small causal LM with LoRA/QLoRA;</li>
 <li>train a small encoder model, classifier, reranker, or embedding model;</li>
@@ -69,12 +69,14 @@
 <h2 id="recommended-model-scale">Recommended Model Scale</h2>
 <p>Default:</p>
 <ul>
-<li>0.5B-3B parameter causal LMs for instruction tuning and local inference.</li>
+<li>0.5B-4B parameter causal LMs for instruction tuning and local inference.</li>
+<li>Gemma 4 E2B/E4B and Qwen3.5 0.8B/2B/4B as named small-model targets.</li>
+<li>Qwen3-0.6B as the fastest fallback for smoke tests and constrained hardware.</li>
 <li>Smaller encoder models for classification, NER, retrieval, and reranking.</li>
 </ul>
 <p>Upper bound:</p>
 <ul>
-<li>4B parameters without special approval.</li>
+<li>4B dense/effective parameters without special approval.</li>
 <li>Larger models only if the student has a strong reason and a feasible compute</li>
 </ul>
 <p>plan.</p>
@@ -100,10 +102,10 @@
 <p>11. Compute and energy estimate.</p>
 <p>12. Ethical considerations.</p>
 <h2 id="suggested-instructor-policy">Suggested Instructor Policy</h2>
-<p>Students may use AI tools for coding assistance unless the course policy says</p>
-<p>otherwise, but they must not submit AI-written prose as their own analysis. They</p>
-<p>must document any AI assistance that materially affected code, data generation,</p>
-<p>annotation, or analysis.</p>
+<p>AI tools may be used for coding assistance unless the course policy says</p>
+<p>otherwise, but AI-written prose cannot stand in for the student&#x27;s own analysis.</p>
+<p>Any AI assistance that materially affects code, data generation, annotation, or</p>
+<p>analysis must be documented.</p>
 <p>Peer-review papers should not be uploaded to external AI services unless</p>
 <p>explicitly permitted by the course.</p>
 <h2 id="advanced-method-policy">Advanced Method Policy</h2>
@@ -114,9 +116,10 @@
 <p>3. SFT or supervised training.</p>
 <p>4. Local deployment.</p>
 <p>5. Optional advanced method.</p>
-<p>These gates do not have to be completed in this order. Students can begin with a</p>
+<p>These gates do not have to be completed in this order. A project can begin with a</p>
 <p>local deployment target, an evaluation task, or an agent experiment, but advanced</p>
 <p>claims are not accepted without the relevant baseline and evaluation evidence.</p>
     </main>
+    <script src="resource.js"></script>
   </body>
 </html>

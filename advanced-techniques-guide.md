@@ -71,7 +71,7 @@ Avoid:
 
 Use when:
 
-- students have preference pairs;
+- preference pairs are available;
 - the desired behavior is comparative rather than exactly verifiable;
 - SFT already works.
 
@@ -159,4 +159,3 @@ Avoid:
 - live destructive tools;
 - browser or shell agents without sandboxing;
 - relying on chat helpfulness as evidence of agent ability.
-

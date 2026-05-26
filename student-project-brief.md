@@ -4,12 +4,12 @@
 
 **Local Runnable Language Models**
 
-In this theme, you will build a small but serious language technology system by
-training or adapting a model that can run locally. Your project may focus on
-different tasks, languages, domains, or tooling. You may also use AI agents to
-help with coding and experimentation. Every project has the same research
-discipline: careful data, explicit training, reproducible evaluation, and an
-artifact that another person can run.
+Build a small but serious language technology system by training or adapting a
+model that can run locally. Your project may focus on different tasks,
+languages, domains, or tooling. AI agents may help with coding and
+experimentation. Every project follows the same research discipline: careful
+data, explicit training, reproducible evaluation, and an artifact that another
+person can run.
 
 ## Central Question
 
@@ -38,7 +38,18 @@ At least one part of your project must update model parameters. This may be:
 - GRPO/RLVR with verifiable rewards;
 - classifier, reranker, embedding, or sequence-labeling model training.
 
-Prompt engineering alone is not enough for this theme.
+Prompt engineering alone is not enough.
+
+## Suggested Small Models
+
+Good default targets for generative projects:
+
+- Gemma 4 E2B or E4B;
+- Qwen3.5-0.8B, Qwen3.5-2B, or Qwen3.5-4B;
+- Qwen3-0.6B for the fastest smoke tests and smallest hardware budgets.
+
+The exact checkpoint must be justified by task, language coverage, license,
+hardware, and local deployment format.
 
 ## Local Runnable Requirement
 

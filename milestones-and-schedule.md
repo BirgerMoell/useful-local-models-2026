@@ -1,7 +1,7 @@
 # Milestones And Schedule
 
-This schedule is designed to fit the normal 5LN714 rhythm. Replace dates with
-the final HT2026 course dates when they are known.
+The schedule fits the normal 5LN714 rhythm. Replace dates with the final HT2026
+course dates when they are known.
 
 ## Before Project Choice
 
@@ -207,4 +207,3 @@ Final report must include:
 - final model/dataset documentation;
 - final artifact manifest;
 - local run instructions.
-

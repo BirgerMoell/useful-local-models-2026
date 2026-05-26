@@ -8,7 +8,7 @@ Students train or adapt open models for concrete NLP problems. The final result
 must be a locally runnable artifact: an adapter, full fine-tune, classifier,
 reranker, distilled model, GGUF export, or reproducible local inference script.
 
-This theme is designed to fit the existing 5LN714 structure: literature seminars,
+The project structure fits the existing 5LN714 rhythm: literature seminars,
 project proposal, progress seminars, first report, peer review, final workshop,
 and final report.
 
@@ -35,12 +35,12 @@ The guiding question is:
 
 The 2026 update adds an explicit second question:
 
-**How should students use AI agents as research collaborators while keeping the
-work auditable?**
+**How can AI agents support research collaboration while keeping the work
+auditable?**
 
 ## Course-Level Learning Outcomes
 
-By the end of the project, students should be able to:
+By the end of the project, each participant can:
 
 - formulate a research question involving model training or adaptation;
 - choose a feasible local model and justify its constraints;
@@ -53,8 +53,8 @@ By the end of the project, students should be able to:
 
 ## Scope Constraint
 
-The course should not ask students to train a foundation model from scratch.
-Instead, students should work with one of these feasible scopes:
+Foundation-model training from scratch is out of scope. Feasible project scopes
+include:
 
 - fine-tune a small causal LM with LoRA/QLoRA;
 - train a small encoder model, classifier, reranker, or embedding model;
@@ -71,12 +71,14 @@ Instead, students should work with one of these feasible scopes:
 
 Default:
 
-- 0.5B-3B parameter causal LMs for instruction tuning and local inference.
+- 0.5B-4B parameter causal LMs for instruction tuning and local inference.
+- Gemma 4 E2B/E4B and Qwen3.5 0.8B/2B/4B as named small-model targets.
+- Qwen3-0.6B as the fastest fallback for smoke tests and constrained hardware.
 - Smaller encoder models for classification, NER, retrieval, and reranking.
 
 Upper bound:
 
-- 4B parameters without special approval.
+- 4B dense/effective parameters without special approval.
 - Larger models only if the student has a strong reason and a feasible compute
   plan.
 
@@ -106,10 +108,10 @@ Every student must submit or link:
 
 ## Suggested Instructor Policy
 
-Students may use AI tools for coding assistance unless the course policy says
-otherwise, but they must not submit AI-written prose as their own analysis. They
-must document any AI assistance that materially affected code, data generation,
-annotation, or analysis.
+AI tools may be used for coding assistance unless the course policy says
+otherwise, but AI-written prose cannot stand in for the student's own analysis.
+Any AI assistance that materially affects code, data generation, annotation, or
+analysis must be documented.
 
 Peer-review papers should not be uploaded to external AI services unless
 explicitly permitted by the course.
@@ -126,6 +128,6 @@ Recommended evidence gates:
 4. Local deployment.
 5. Optional advanced method.
 
-These gates do not have to be completed in this order. Students can begin with a
+These gates do not have to be completed in this order. A project can begin with a
 local deployment target, an evaluation task, or an agent experiment, but advanced
 claims are not accepted without the relevant baseline and evaluation evidence.

@@ -47,8 +47,8 @@ Require revision if:
 
 ## Suggested Grouping
 
-Students can work on different problems while sharing seminar infrastructure.
-Group them by method during progress seminars:
+Projects can target different problems while sharing seminar infrastructure.
+Group projects by method during progress seminars:
 
 - SFT/local adaptation;
 - retrieval/reranking/classification;
@@ -65,4 +65,3 @@ Useful recurring prompts:
 - What is the baseline that would embarrass your model if it loses?
 - What exactly can another student run locally?
 - Which claim in your paper is least supported by evidence?
-

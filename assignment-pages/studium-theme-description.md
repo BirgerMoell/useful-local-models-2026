@@ -2,10 +2,9 @@
 
 ## Local Runnable Language Models
 
-In this theme, we will study how to train small, useful, locally runnable language
-models. The focus is not on using the largest available API model, but on the
-research craft behind model development: data, adaptation, evaluation,
-documentation, and release.
+Small, useful, locally runnable language models are the focus. The emphasis is
+not the largest available API model, but the research craft behind model
+development: data, adaptation, evaluation, documentation, and release.
 
 The guiding question is:
 

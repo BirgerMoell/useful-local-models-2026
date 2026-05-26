@@ -69,7 +69,7 @@ def main() -> None:
         "short_loss": short_loss,
         "long_loss_unscaled_rope": long_loss_unscaled,
         "long_loss_scaled_rope": long_loss_scaled,
-        "note": "This demonstrates a cheap context-extension experiment, not a capability claim.",
+        "note": "Cheap context-extension evidence is only a measurement, not a capability claim.",
     }
     out = ensure_dir(args.out)
     torch.save({"model": model.state_dict(), "vocab": tokenizer.itos, "config": config, "summary": summary}, out / "checkpoint.pt")
@@ -79,4 +79,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

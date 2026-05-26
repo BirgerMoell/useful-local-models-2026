@@ -2,9 +2,9 @@
 
 Submit your final report as a PDF.
 
-Your report should follow the normal course paper format. In addition, projects
-in this theme must include an artifact availability statement and enough detail
-for the model training and local execution to be audited.
+Your report should follow the normal course paper format and include an artifact
+availability statement with enough detail for model training and local execution
+to be audited.
 
 ## Required Sections
 
@@ -37,4 +37,3 @@ Submit or link:
 
 Do not include private data, copyrighted material that cannot be redistributed,
 or secrets/tokens in the supplement.
-

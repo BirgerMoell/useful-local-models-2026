@@ -14,8 +14,8 @@
       <h1 id="worked-systems-nanochat-and-autoresearch">Worked Systems: Nanochat And Autoresearch</h1>
 <p>The guiding question is:</p>
 <p>**Can we make small local models genuinely useful?**</p>
-<p><code>nanochat</code> and <code>autoresearch</code> give students two concrete systems to inspect: a</p>
-<p>readable end-to-end local LLM stack and an agent-assisted experiment loop.</p>
+<p><code>nanochat</code> and <code>autoresearch</code> give two concrete systems to inspect: a readable</p>
+<p>end-to-end local LLM stack and an agent-assisted experiment loop.</p>
 <h2 id="what-nanochat-contributes">What Nanochat Contributes</h2>
 <p><code>karpathy/nanochat</code> is useful because it shows an entire LLM lifecycle in one</p>
 <p>hackable codebase:</p>
@@ -29,26 +29,25 @@
 <li>chat CLI;</li>
 <li>web UI.</li>
 </ul>
-<p>It is not the only code students should use, but it is the cleanest reference</p>
-<p>example for the course philosophy: small enough to inspect, complete enough to</p>
-<p>teach the real pipeline.</p>
-<p>Use it as:</p>
+<p>It is not a required base, but it is a useful reference implementation: compact</p>
+<p>enough to inspect, complete enough to show the real pipeline.</p>
+<p>Useful roles:</p>
 <ul>
-<li>show it in the first project meeting as the canonical &quot;full stack&quot; example;</li>
-<li>assign file-structure reading before the first technical lab;</li>
+<li>first-pass map of a full local training stack;</li>
+<li>file-structure reading before the first technical lab;</li>
 <li>use <code>runs/runcpu.sh</code> or a small depth run as the accessible demo path;</li>
 <li>use <code>runs/speedrun.sh</code> as the ambitious full-stack reference, not as a</li>
 </ul>
 <p>requirement;</p>
 <ul>
-<li>use the <code>tasks/</code> structure as inspiration for student eval tasks;</li>
+<li>use the <code>tasks/</code> structure as inspiration for evaluation tasks;</li>
 <li>use <code>scripts/chat_sft.py</code>, <code>scripts/chat_eval.py</code>, and <code>scripts/chat_rl.py</code> as</li>
 </ul>
 <p>examples of staged post-training.</p>
 <h2 id="what-autoresearch-contributes">What Autoresearch Contributes</h2>
 <p><code>karpathy/autoresearch</code> is useful because it makes AI agents part of the research</p>
 <p>workflow instead of a hidden shortcut.</p>
-<p>Its core pattern is course-friendly:</p>
+<p>Its core pattern is auditable:</p>
 <pre><code>
 fixed training setup
   -&gt; agent edits one constrained file
@@ -57,22 +56,21 @@ fixed training setup
   -&gt; experiment is logged
   -&gt; human reviews the diff and the evidence
 </code></pre>
-<p>Use it as:</p>
+<p>Useful roles:</p>
 <ul>
-<li>teach <code>program.md</code> as an explicit agent instruction artifact;</li>
-<li>require students to disclose agent-generated code and analysis;</li>
-<li>require experiment logs rather than accepting &quot;the agent improved it&quot;;</li>
+<li>treat <code>program.md</code> as an explicit agent instruction artifact;</li>
+<li>disclose agent-generated code and analysis;</li>
+<li>keep experiment logs rather than accepting &quot;the agent improved it&quot;;</li>
 <li>keep agent write scopes small;</li>
 <li>compare agent suggestions against baselines and ablations;</li>
-<li>encourage students to ask agents for hypotheses, tests, and code review, not</li>
+<li>ask agents for hypotheses, tests, and code review, not only implementation.</li>
 </ul>
-<p>only implementation.</p>
-<h2 id="the-course-adaptation">The Course Adaptation</h2>
-<p>Students do not have to complete the whole LLM pipeline in order. Instead, each</p>
-<p>project chooses a **research slice** and makes it auditable.</p>
+<h2 id="project-adaptation">Project Adaptation</h2>
+<p>The whole LLM pipeline does not have to be completed in order. A good project</p>
+<p>chooses a **research slice** and makes it auditable.</p>
 <p>Possible slices:</p>
 <ul>
-<li>train a toy model from scratch using a nanochat-style setup;</li>
+<li>train a small model from scratch using a nanochat-style setup;</li>
 <li>adapt a pretrained model with LoRA/QLoRA;</li>
 <li>add a new eval task inspired by nanochat <code>tasks/</code>;</li>
 <li>build an agent loop inspired by autoresearch;</li>
@@ -81,7 +79,7 @@ fixed training setup
 <li>package the final model for local use.</li>
 </ul>
 <h2 id="required-agent-use-discipline">Required Agent-Use Discipline</h2>
-<p>If students use AI agents, they must submit:</p>
+<p>When AI agents materially affect the work, the artifact set should include:</p>
 <ul>
 <li><code>agents/program.md</code> or equivalent agent instructions;</li>
 <li><code>logs/experiments.jsonl</code>;</li>
@@ -89,14 +87,15 @@ fixed training setup
 <li>the human-reviewed final diff or artifact;</li>
 <li>a note on failed or rejected agent experiments.</li>
 </ul>
-<h2 id="example-course-agent-policy">Example Course Agent Policy</h2>
-<p>Students may use AI agents for coding, debugging, experiment design, and</p>
-<p>documentation scaffolding. They remain responsible for all submitted work. The</p>
-<p>paper must be written in their own words. Any substantial agent contribution to</p>
-<p>code, data generation, annotation, evaluation, or analysis must be disclosed in</p>
-<p>the artifact manifest and final report.</p>
-<p>Peer-review papers and confidential student work must not be uploaded to external</p>
-<p>AI services.</p>
+<h2 id="agent-use-policy">Agent-Use Policy</h2>
+<p>AI agents may be used for coding, debugging, experiment design, and</p>
+<p>documentation scaffolding. The submitted analysis remains the author&#x27;s</p>
+<p>responsibility. Any substantial agent contribution to code, data generation,</p>
+<p>annotation, evaluation, or analysis should be disclosed in the artifact manifest</p>
+<p>and final report.</p>
+<p>Peer-review papers and confidential work must not be uploaded to external AI</p>
+<p>services.</p>
     </main>
+    <script src="resource.js"></script>
   </body>
 </html>

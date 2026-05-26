@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Model Menu And Compute Guidance - Useful Local Models</title>
+    <link rel="stylesheet" href="resource.css">
+  </head>
+  <body>
+    <header>
+      <a href="../index.html">Useful Local Models</a>
+    </header>
+    <main>
+      <h1 id="model-menu-and-compute-guidance">Model Menu And Compute Guidance</h1>
+<p>Re-verify model availability, licenses, and tooling shortly before the course</p>
+<p>starts.</p>
+<h2 id="default-recommendation">Default Recommendation</h2>
+<p>For most generative projects, start with a small open model in the 0.5B-4B range</p>
+<p>and train an adapter rather than a full model. The default named targets for</p>
+<p>HT2026 should be Gemma 4 E2B/E4B and Qwen3.5 0.8B/2B/4B, with Qwen3-0.6B kept</p>
+<p>as the fastest fallback.</p>
+<p>Recommended default pattern:</p>
+<pre><code>
+base model -&gt; baseline prompting -&gt; SFT with LoRA/QLoRA -&gt; evaluation -&gt; local export
+</code></pre>
+<p>Deviations from this pattern need a clear compute and evaluation reason.</p>
+<h2 id="candidate-model-families">Candidate Model Families</h2>
+<h3 id="gemma-4-edge-models">Gemma 4 Edge Models</h3>
+<p>Good for:</p>
+<ul>
+<li>local instruction tuning and adapter experiments;</li>
+<li>multimodal local tasks where images or audio are part of the research question;</li>
+<li>long-context experiments with a current open Google model;</li>
+<li>local deployment with Transformers, llama.cpp, MLX, Ollama, or related tools.</li>
+</ul>
+<p>Known useful entry points:</p>
+<ul>
+<li><code>google/gemma-4-E2B-it</code></li>
+<li><code>google/gemma-4-E4B-it</code></li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>Gemma 4 E2B and E4B are the named small-model targets for projects that need a</li>
+</ul>
+<p>modern Google model family.</p>
+<ul>
+<li>E2B is the standard starting point; E4B is stronger but needs more careful</li>
+</ul>
+<p>compute planning.</p>
+<ul>
+<li>Gemma access, license terms, gated downloads, and derivative release rules</li>
+</ul>
+<p>must be checked before public adapter release.</p>
+<h3 id="qwen3-5-small-models">Qwen3.5 Small Models</h3>
+<p>Good for:</p>
+<ul>
+<li>tiny-to-small local instruction tuning;</li>
+<li>multilingual and multimodal experiments;</li>
+<li>long-context and tool-call experiments;</li>
+<li>WebGPU, llama.cpp, Ollama, vLLM, SGLang, and Transformers deployment checks.</li>
+</ul>
+<p>Known useful entry points:</p>
+<ul>
+<li><code>Qwen/Qwen3.5-0.8B</code></li>
+<li><code>Qwen/Qwen3.5-2B</code></li>
+<li><code>Qwen/Qwen3.5-4B</code></li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>Qwen3.5-0.8B is the fastest named target for local experiments.</li>
+<li>Qwen3.5-2B is the likely default when quality matters but laptop feasibility</li>
+</ul>
+<p>still matters.</p>
+<ul>
+<li>Qwen3.5-4B is a strong upper-end course target; training requires a realistic</li>
+</ul>
+<p>GPU plan.</p>
+<ul>
+<li>Larger Qwen3.5 variants can be used for comparison or distillation, but not as</li>
+</ul>
+<p>the default training target.</p>
+<h3 id="qwen3-small-models">Qwen3 Small Models</h3>
+<p>Good for:</p>
+<ul>
+<li>instruction tuning;</li>
+<li>reasoning/no-reasoning comparisons;</li>
+<li>multilingual experiments;</li>
+<li>local GGUF/Ollama/llama.cpp deployment.</li>
+</ul>
+<p>Known useful entry point:</p>
+<ul>
+<li><code>Qwen/Qwen3-0.6B</code></li>
+<li><code>Qwen/Qwen3-0.6B-GGUF</code></li>
+<li><code>Qwen/Qwen3-4B</code></li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>Qwen3-0.6B remains useful for fast experiments and laptop inference.</li>
+<li>Qwen3-4B is a stronger upper-end option but should be treated as advanced for</li>
+</ul>
+<p>training.</p>
+<ul>
+<li>Verify license and exact model variant before assigning.</li>
+</ul>
+<h3 id="smollm3">SmolLM3</h3>
+<p>Good for:</p>
+<ul>
+<li>small-model reasoning;</li>
+<li>local deployment;</li>
+<li>projects where Apache-2.0 licensing is important;</li>
+<li>comparing long-context claims against actual performance.</li>
+</ul>
+<p>Known useful entry point:</p>
+<ul>
+<li><code>HuggingFaceTB/SmolLM3-3B</code></li>
+<li>GGUF variants are available through the Hugging Face ecosystem.</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>Strong candidate for course use because it is explicitly positioned as a small,</li>
+</ul>
+<p>open local model.</p>
+<ul>
+<li>Students should still test whether the language/task coverage fits their</li>
+</ul>
+<p>project.</p>
+<h3 id="gemma-3-small-models">Gemma 3 Small Models</h3>
+<p>Good for:</p>
+<ul>
+<li>lightweight local inference;</li>
+<li>multilingual text generation;</li>
+<li>comparison experiments.</li>
+</ul>
+<p>Known useful entry point:</p>
+<ul>
+<li><code>google/gemma-3-1b-it</code></li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>Gemma 3 is a fallback when Gemma 4 access or tooling is inconvenient.</li>
+<li>Access may require accepting Google&#x27;s terms.</li>
+<li>License and derivative-use restrictions must be checked carefully before a</li>
+</ul>
+<p>release is built around it.</p>
+<ul>
+<li>Prefer models with simpler open licenses for public adapter releases.</li>
+</ul>
+<h3 id="encoder-models">Encoder Models</h3>
+<p>Good for:</p>
+<ul>
+<li>classification;</li>
+<li>NER;</li>
+<li>reranking;</li>
+<li>embedding;</li>
+<li>retrieval;</li>
+<li>hallucination detection.</li>
+</ul>
+<p>Students do not need a causal LM if an encoder model is a better research fit.</p>
+<p>Small encoder projects are often stronger scientifically because evaluation is</p>
+<p>cleaner.</p>
+<h2 id="training-budget-tiers">Training Budget Tiers</h2>
+<h3 id="tier-a-laptop-cpu-friendly">Tier A: Laptop / CPU-Friendly</h3>
+<p>Suitable for:</p>
+<ul>
+<li>classical baselines;</li>
+<li>small classifiers;</li>
+<li>evaluation;</li>
+<li>GGUF inference;</li>
+<li>very small fine-tunes.</li>
+</ul>
+<p>Expected final artifact:</p>
+<ul>
+<li>local script or quantized model.</li>
+</ul>
+<h3 id="tier-b-consumer-gpu-apple-silicon">Tier B: Consumer GPU / Apple Silicon</h3>
+<p>Suitable for:</p>
+<ul>
+<li>LoRA on 0.5B-4B models;</li>
+<li>small encoder fine-tuning;</li>
+<li>reranker training;</li>
+<li>short SFT runs.</li>
+</ul>
+<p>Expected final artifact:</p>
+<ul>
+<li>PEFT adapter, MLX model, or GGUF export.</li>
+</ul>
+<h3 id="tier-c-uppmax-gpu">Tier C: UPPMAX GPU</h3>
+<p>Suitable for:</p>
+<ul>
+<li>longer SFT runs;</li>
+<li>QLoRA on larger models;</li>
+<li>continued pretraining;</li>
+<li>DPO;</li>
+<li>small GRPO/RLVR experiments.</li>
+</ul>
+<p>Expected final artifact:</p>
+<ul>
+<li>still locally inspectable, even if training required cluster compute.</li>
+</ul>
+<h2 id="method-feasibility">Method Feasibility</h2>
+<table>
+<tr><th>Method</th><th>Course Feasibility</th><th>Notes</th></tr>
+<tr><td>Baseline prompting</td><td>Required for generative tasks</td><td>Cheap and necessary</td></tr>
+<tr><td>LoRA SFT</td><td>Default</td><td>Best balance of learning value and feasibility on Gemma 4/Qwen3.5-class models</td></tr>
+<tr><td>QLoRA SFT</td><td>Default for larger local models</td><td>Requires GPU/tooling care</td></tr>
+<tr><td>Full fine-tuning</td><td>Only for very small models</td><td>Higher risk of compute and instability</td></tr>
+<tr><td>Continued pretraining</td><td>Advanced</td><td>Needs careful evaluation to prove usefulness</td></tr>
+<tr><td>DPO</td><td>Advanced</td><td>Needs preference pairs and SFT baseline</td></tr>
+<tr><td>Context extension</td><td>Advanced</td><td>Must evaluate actual long-context behavior</td></tr>
+<tr><td>GRPO/RLVR</td><td>Advanced</td><td>Only with verifiable rewards</td></tr>
+<tr><td>Agent training</td><td>Advanced</td><td>Use sandboxed tasks only</td></tr>
+</table>
+<h2 id="hard-constraints-for-students">Hard Constraints For Students</h2>
+<ul>
+<li>No commercial API as the final model.</li>
+<li>No private tokens, secrets, or copyrighted data in repositories.</li>
+<li>No live destructive tools in agent projects.</li>
+<li>No advanced method without a baseline and evaluation harness.</li>
+<li>No unsupported claims such as &quot;works in Swedish&quot; without Swedish evaluation.</li>
+</ul>
+    </main>
+    <script src="resource.js"></script>
+  </body>
+</html>

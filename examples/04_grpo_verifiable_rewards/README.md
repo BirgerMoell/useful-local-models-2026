@@ -8,13 +8,11 @@ Run:
 python 04_grpo_verifiable_rewards/train.py --steps 40
 ```
 
-Teaches:
+Key mechanics:
 
 - sampling multiple completions per prompt;
 - reward functions that can be inspected;
 - group-normalized advantages;
 - invalid-output penalties.
 
-This is a teaching approximation of the GRPO/RLVR idea, not a production RL
-trainer.
-
+A compact approximation of the GRPO/RLVR idea, not a production RL trainer.

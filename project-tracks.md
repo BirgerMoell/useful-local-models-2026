@@ -3,6 +3,10 @@
 Students may choose one primary track. Tracks can be combined, but only if the
 basic supervised pipeline is working early.
 
+Default generative targets are Gemma 4 E2B/E4B and Qwen3.5 0.8B/2B/4B. Smaller
+or older checkpoints are acceptable when the project needs faster iteration,
+simpler licensing, or a clearer evaluation setup.
+
 ## Track A: Local Instruction Tuning
 
 **Difficulty:** standard
@@ -178,4 +182,3 @@ Required method:
 - tool-call validity metric;
 - task completion metric;
 - permission/safety analysis.
-

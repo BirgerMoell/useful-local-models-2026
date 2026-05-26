@@ -1,7 +1,8 @@
 # Reading And Seminar Plan
 
-The reading plan uses three seminars. Each seminar can support 8-12 students by
-assigning one paper or section per student.
+Three reading seminars cover open training pipelines, fine-tuning, and advanced
+local model methods. Each seminar can support 8-12 participants by assigning one
+paper or section per person.
 
 ## Seminar 1: Open Training Pipelines And Artifacts
 

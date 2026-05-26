@@ -2,7 +2,7 @@ from __future__ import annotations
 
 
 class CharTokenizer:
-    """A tiny character tokenizer for teaching examples."""
+    """A tiny character tokenizer for readable local runs."""
 
     pad_token = "<pad>"
     bos_token = "<bos>"
@@ -52,4 +52,3 @@ class CharTokenizer:
                 break
             chars.append(self.itos[idx] if 0 <= idx < len(self.itos) else "?")
         return "".join(chars)
-

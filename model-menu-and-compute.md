@@ -1,12 +1,14 @@
 # Model Menu And Compute Guidance
 
-This menu should be verified shortly before the course starts. Model availability,
-licenses, and tooling change quickly.
+Re-verify model availability, licenses, and tooling shortly before the course
+starts.
 
 ## Default Recommendation
 
-For most generative projects, start with a small open model in the 0.5B-3B range
-and train an adapter rather than a full model.
+For most generative projects, start with a small open model in the 0.5B-4B range
+and train an adapter rather than a full model. The default named targets for
+HT2026 should be Gemma 4 E2B/E4B and Qwen3.5 0.8B/2B/4B, with Qwen3-0.6B kept
+as the fastest fallback.
 
 Recommended default pattern:
 
@@ -14,9 +16,57 @@ Recommended default pattern:
 base model -> baseline prompting -> SFT with LoRA/QLoRA -> evaluation -> local export
 ```
 
-Students should justify deviations from this pattern.
+Deviations from this pattern need a clear compute and evaluation reason.
 
 ## Candidate Model Families
+
+### Gemma 4 Edge Models
+
+Good for:
+
+- local instruction tuning and adapter experiments;
+- multimodal local tasks where images or audio are part of the research question;
+- long-context experiments with a current open Google model;
+- local deployment with Transformers, llama.cpp, MLX, Ollama, or related tools.
+
+Known useful entry points:
+
+- `google/gemma-4-E2B-it`
+- `google/gemma-4-E4B-it`
+
+Notes:
+
+- Gemma 4 E2B and E4B are the named small-model targets for projects that need a
+  modern Google model family.
+- E2B is the standard starting point; E4B is stronger but needs more careful
+  compute planning.
+- Gemma access, license terms, gated downloads, and derivative release rules
+  must be checked before public adapter release.
+
+### Qwen3.5 Small Models
+
+Good for:
+
+- tiny-to-small local instruction tuning;
+- multilingual and multimodal experiments;
+- long-context and tool-call experiments;
+- WebGPU, llama.cpp, Ollama, vLLM, SGLang, and Transformers deployment checks.
+
+Known useful entry points:
+
+- `Qwen/Qwen3.5-0.8B`
+- `Qwen/Qwen3.5-2B`
+- `Qwen/Qwen3.5-4B`
+
+Notes:
+
+- Qwen3.5-0.8B is the fastest named target for local experiments.
+- Qwen3.5-2B is the likely default when quality matters but laptop feasibility
+  still matters.
+- Qwen3.5-4B is a strong upper-end course target; training requires a realistic
+  GPU plan.
+- Larger Qwen3.5 variants can be used for comparison or distillation, but not as
+  the default training target.
 
 ### Qwen3 Small Models
 
@@ -35,7 +85,7 @@ Known useful entry point:
 
 Notes:
 
-- Qwen3-0.6B is especially useful for fast experiments and laptop inference.
+- Qwen3-0.6B remains useful for fast experiments and laptop inference.
 - Qwen3-4B is a stronger upper-end option but should be treated as advanced for
   training.
 - Verify license and exact model variant before assigning.
@@ -75,10 +125,11 @@ Known useful entry point:
 
 Notes:
 
+- Gemma 3 is a fallback when Gemma 4 access or tooling is inconvenient.
 - Access may require accepting Google's terms.
 - License and derivative-use restrictions must be checked carefully before a
-  student builds a release around it.
-- Prefer models with simpler open licenses if students will publish adapters.
+  release is built around it.
+- Prefer models with simpler open licenses for public adapter releases.
 
 ### Encoder Models
 
@@ -115,7 +166,7 @@ Expected final artifact:
 
 Suitable for:
 
-- LoRA on 0.5B-3B models;
+- LoRA on 0.5B-4B models;
 - small encoder fine-tuning;
 - reranker training;
 - short SFT runs.
@@ -143,7 +194,7 @@ Expected final artifact:
 | Method | Course Feasibility | Notes |
 |---|---|---|
 | Baseline prompting | Required for generative tasks | Cheap and necessary |
-| LoRA SFT | Default | Best balance of learning value and feasibility |
+| LoRA SFT | Default | Best balance of learning value and feasibility on Gemma 4/Qwen3.5-class models |
 | QLoRA SFT | Default for larger local models | Requires GPU/tooling care |
 | Full fine-tuning | Only for very small models | Higher risk of compute and instability |
 | Continued pretraining | Advanced | Needs careful evaluation to prove usefulness |
@@ -159,4 +210,3 @@ Expected final artifact:
 - No live destructive tools in agent projects.
 - No advanced method without a baseline and evaluation harness.
 - No unsupported claims such as "works in Swedish" without Swedish evaluation.
-
