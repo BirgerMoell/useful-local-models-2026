@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Training Pipeline Specification - Useful Local Models</title>
+    <link rel="stylesheet" href="resource.css">
+  </head>
+  <body>
+    <header>
+      <a href="../index.html">Useful Local Models</a>
+    </header>
+    <main>
+      <h1 id="training-pipeline-specification">Training Pipeline Specification</h1>
+<p>Every project must produce an auditable training pipeline. This does not require</p>
+<p>large-scale infrastructure, but it does require careful records.</p>
+<h2 id="required-stages">Required Stages</h2>
+<h3 id="1-project-charter">1. Project Charter</h3>
+<p>Record:</p>
+<ul>
+<li>research question;</li>
+<li>task;</li>
+<li>language(s);</li>
+<li>intended local use;</li>
+<li>target hardware;</li>
+<li>model family;</li>
+<li>expected output artifact.</li>
+</ul>
+<h3 id="2-data-source-registry">2. Data Source Registry</h3>
+<p>For every data source, record:</p>
+<ul>
+<li>source name;</li>
+<li>URL or storage path;</li>
+<li>snapshot date;</li>
+<li>acquisition method;</li>
+<li>license or terms;</li>
+<li>language/domain;</li>
+<li>approximate size;</li>
+<li>known risks;</li>
+<li>redistribution status;</li>
+<li>preprocessing performed.</li>
+</ul>
+<h3 id="3-splits">3. Splits</h3>
+<p>Every empirical project must define train/dev/test splits.</p>
+<p>Requirements:</p>
+<ul>
+<li>fixed random seed or deterministic split rule;</li>
+<li>no duplicated examples across splits;</li>
+<li>no exact benchmark examples in training data where benchmark evaluation is used;</li>
+<li>explanation of any manual filtering.</li>
+</ul>
+<h3 id="4-baseline">4. Baseline</h3>
+<p>The baseline should be meaningful and cheap.</p>
+<p>Examples:</p>
+<ul>
+<li>majority class;</li>
+<li>logistic regression;</li>
+<li>BM25;</li>
+<li>frozen embeddings;</li>
+<li>base model prompting;</li>
+<li>zero-shot or few-shot model response;</li>
+<li>previous small model without adaptation.</li>
+</ul>
+<h3 id="5-training">5. Training</h3>
+<p>Training record must include:</p>
+<ul>
+<li>base model and revision;</li>
+<li>tokenizer;</li>
+<li>training method;</li>
+<li>optimizer;</li>
+<li>learning rate;</li>
+<li>batch size and gradient accumulation;</li>
+<li>max sequence length;</li>
+<li>epochs or steps;</li>
+<li>LoRA/QLoRA parameters if used;</li>
+<li>random seed;</li>
+<li>hardware;</li>
+<li>wall-clock time;</li>
+<li>checkpoint path;</li>
+<li>failure or restart notes.</li>
+</ul>
+<h3 id="6-evaluation">6. Evaluation</h3>
+<p>Evaluation must include:</p>
+<ul>
+<li>metric definitions;</li>
+<li>held-out data;</li>
+<li>baseline comparison;</li>
+<li>parse failure rate for generated outputs;</li>
+<li>error analysis;</li>
+<li>significance testing where appropriate;</li>
+<li>cost or latency where relevant;</li>
+<li>local inference setting.</li>
+</ul>
+<h3 id="7-local-release">7. Local Release</h3>
+<p>The final artifact package should include:</p>
+<ul>
+<li>model or adapter;</li>
+<li>local inference command;</li>
+<li>model card;</li>
+<li>dataset card or data statement;</li>
+<li>artifact manifest;</li>
+<li>evaluation outputs;</li>
+<li>known limitations.</li>
+</ul>
+<h2 id="recommended-file-structure">Recommended File Structure</h2>
+<pre><code>
+project/
+  README.md
+  configs/
+    project.yaml
+    train.yaml
+    eval.yaml
+  data/
+    README.md
+    source_registry.csv
+    splits/
+  src/
+    prepare_data.py
+    train.py
+    evaluate.py
+    export_local.py
+  outputs/
+    checkpoints/
+    eval/
+    logs/
+  cards/
+    model_card.md
+    dataset_card.md
+  artifact_manifest.yaml
+</code></pre>
+<h2 id="minimum-training-config-fields">Minimum Training Config Fields</h2>
+<pre><code>
+base_model: Qwen/Qwen3-0.6B
+base_model_revision: main
+training_method: qlora_sft
+task: instruction_following
+language: sv
+max_seq_length: 2048
+learning_rate: 0.0002
+batch_size_per_device: 2
+gradient_accumulation_steps: 8
+epochs: 3
+seed: 13
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules: [&quot;q_proj&quot;, &quot;k_proj&quot;, &quot;v_proj&quot;, &quot;o_proj&quot;]
+quantization:
+  load_in_4bit: true
+  quant_type: nf4
+evaluation:
+  primary_metric: exact_match
+  baseline: base_model_prompting
+local_release:
+  format: peft_adapter
+  target_runtime: transformers
+</code></pre>
+<p>Students should adapt this. They should not copy it blindly.</p>
+    </main>
+    <script src="resource.js"></script>
+  </body>
+</html>

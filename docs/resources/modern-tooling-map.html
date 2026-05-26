@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Modern Tooling Map - Useful Local Models</title>
+    <link rel="stylesheet" href="resource.css">
+  </head>
+  <body>
+    <header>
+      <a href="../index.html">Useful Local Models</a>
+    </header>
+    <main>
+      <h1 id="modern-tooling-map">Modern Tooling Map</h1>
+<p>The theme should expose the current tooling ecosystem without making any single</p>
+<p>tool mandatory. The guiding question stays:</p>
+<p>**Can we make small local models genuinely useful?**</p>
+<h2 id="training-and-adaptation">Training And Adaptation</h2>
+<p>Use when the project needs to update parameters.</p>
+<ul>
+<li>Hugging Face Transformers: model loading, training, inference.</li>
+<li>PEFT: LoRA and adapter-based fine-tuning.</li>
+<li>TRL: SFT, DPO, and reinforcement-learning-oriented post-training.</li>
+<li>PyTorch: custom models, classifiers, rerankers, and research code.</li>
+<li>nanochat: readable full-stack system for tokenization, pretraining, SFT,</li>
+</ul>
+<p>eval, inference, RL, and chat.</p>
+<h2 id="local-runtime">Local Runtime</h2>
+<p>Use when the final artifact needs to run without an external API.</p>
+<ul>
+<li>Transformers + PEFT adapter loading.</li>
+<li>llama.cpp and GGUF for CPU/laptop inference.</li>
+<li>Ollama for simple local serving.</li>
+<li>MLX for Apple Silicon.</li>
+<li>ONNX or plain PyTorch for classifiers and small task models.</li>
+</ul>
+<h2 id="evaluation">Evaluation</h2>
+<p>Use when a usefulness claim needs evidence.</p>
+<ul>
+<li>Task-specific held-out test sets.</li>
+<li>Hugging Face Evaluate for standard metrics.</li>
+<li>lm-evaluation-harness for language-model evals when appropriate.</li>
+<li>Custom JSONL evaluators for structured output, extraction, retrieval, or tool</li>
+</ul>
+<p>calls.</p>
+<ul>
+<li>Verifiers and unit tests for RLVR/GRPO-style projects.</li>
+</ul>
+<h2 id="agent-assisted-research">Agent-Assisted Research</h2>
+<p>Use when AI assistance can improve experimentation without hiding provenance.</p>
+<ul>
+<li>Codex, Claude Code, or similar coding agents for implementation and review.</li>
+<li>autoresearch for constrained agent experiment loops.</li>
+<li><code>program.md</code> or equivalent files as versioned agent instructions.</li>
+<li>Experiment ledgers to record hypotheses, commands, metrics, and decisions.</li>
+</ul>
+<h2 id="data-and-documentation">Data And Documentation</h2>
+<p>Use when the result needs auditable artifacts.</p>
+<ul>
+<li>Source registry CSV.</li>
+<li>Dataset cards.</li>
+<li>Model cards.</li>
+<li>Artifact manifests.</li>
+<li>Training configs and experiment logs.</li>
+<li>Local run instructions.</li>
+</ul>
+<h2 id="course-rule-of-thumb">Course Rule Of Thumb</h2>
+<p>The best tool is the one that makes the claim more testable. A tool that</p>
+<p>produces impressive output but weakens provenance, evaluation, or local</p>
+<p>runnability is the wrong tool for the project.</p>
+    </main>
+    <script src="resource.js"></script>
+  </body>
+</html>

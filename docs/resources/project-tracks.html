@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project Tracks - Useful Local Models</title>
+    <link rel="stylesheet" href="resource.css">
+  </head>
+  <body>
+    <header>
+      <a href="../index.html">Useful Local Models</a>
+    </header>
+    <main>
+      <h1 id="project-tracks">Project Tracks</h1>
+<p>Students may choose one primary track. Tracks can be combined, but only if the</p>
+<p>basic supervised pipeline is working early.</p>
+<p>Default generative targets are Gemma 4 E2B/E4B and Qwen3.5 0.8B/2B/4B. Smaller</p>
+<p>or older checkpoints are acceptable when the project needs faster iteration,</p>
+<p>simpler licensing, or a clearer evaluation setup.</p>
+<h2 id="track-a-local-instruction-tuning">Track A: Local Instruction Tuning</h2>
+<p>**Difficulty:** standard</p>
+<p>Train a small model to follow instructions in a specific task, language, or</p>
+<p>domain.</p>
+<p>Good for:</p>
+<ul>
+<li>Swedish administrative text;</li>
+<li>grammar feedback;</li>
+<li>OCR correction;</li>
+<li>information extraction;</li>
+<li>short summarization;</li>
+<li>domain-specific question answering;</li>
+<li>controlled style transfer.</li>
+</ul>
+<p>Required method:</p>
+<ul>
+<li>baseline prompting or classical baseline;</li>
+<li>SFT with LoRA/QLoRA or full fine-tuning of a small model;</li>
+<li>local inference demo.</li>
+</ul>
+<h2 id="track-b-low-resource-or-multilingual-adaptation">Track B: Low-Resource or Multilingual Adaptation</h2>
+<p>**Difficulty:** standard to advanced</p>
+<p>Adapt a multilingual model for a language or language pair with limited training</p>
+<p>data.</p>
+<p>Good for:</p>
+<ul>
+<li>NER;</li>
+<li>classification;</li>
+<li>parsing-related tasks;</li>
+<li>translation evaluation;</li>
+<li>cross-lingual transfer;</li>
+<li>language-specific instruction following.</li>
+</ul>
+<p>Required method:</p>
+<ul>
+<li>report language coverage and tokenizer fertility where relevant;</li>
+<li>compare zero-shot/few-shot baseline to trained adaptation;</li>
+<li>evaluate by language, not only aggregate score.</li>
+</ul>
+<h2 id="track-c-retrieval-reranking-and-local-rag-components">Track C: Retrieval, Reranking, and Local RAG Components</h2>
+<p>**Difficulty:** standard</p>
+<p>Train a local component that improves retrieval or answer grounding.</p>
+<p>Good for:</p>
+<ul>
+<li>reranking search results;</li>
+<li>training a domain embedding model;</li>
+<li>citation selection;</li>
+<li>hallucination detection;</li>
+<li>local document QA.</li>
+</ul>
+<p>Required method:</p>
+<ul>
+<li>BM25 or embedding baseline;</li>
+<li>trained reranker/classifier/embedding model;</li>
+<li>evaluation with retrieval metrics and error analysis.</li>
+</ul>
+<h2 id="track-d-continued-pretraining-or-mid-training">Track D: Continued Pretraining or Mid-Training</h2>
+<p>**Difficulty:** advanced</p>
+<p>Continue next-token training on a small domain corpus, then test whether it helps</p>
+<p>downstream performance.</p>
+<p>Good for:</p>
+<ul>
+<li>public-sector language;</li>
+<li>historical text;</li>
+<li>course-specific technical text;</li>
+<li>domain terminology;</li>
+<li>long-form document style.</li>
+</ul>
+<p>Required method:</p>
+<ul>
+<li>domain corpus documentation;</li>
+<li>validation loss by domain;</li>
+<li>downstream evaluation before and after continued pretraining;</li>
+<li>check for regressions on a general task.</li>
+</ul>
+<h2 id="track-e-preference-tuning">Track E: Preference Tuning</h2>
+<p>**Difficulty:** advanced</p>
+<p>After SFT, use preference pairs to train a model with DPO or a related method.</p>
+<p>Good for:</p>
+<ul>
+<li>concise vs verbose answers;</li>
+<li>citation-grounded answers;</li>
+<li>safer completions;</li>
+<li>better structured outputs;</li>
+<li>style preference in Swedish or multilingual tasks.</li>
+</ul>
+<p>Required method:</p>
+<ul>
+<li>SFT model or strong baseline;</li>
+<li>preference dataset with documented source;</li>
+<li>DPO or related preference method;</li>
+<li>evaluation that is not only a model-judge score.</li>
+</ul>
+<h2 id="track-f-verifiable-rewards-and-grpo-rlvr">Track F: Verifiable Rewards and GRPO/RLVR</h2>
+<p>**Difficulty:** advanced, approval recommended</p>
+<p>Train with rewards that can be automatically verified.</p>
+<p>Good for:</p>
+<ul>
+<li>math with exact answers;</li>
+<li>code with unit tests;</li>
+<li>structured extraction with exact fields;</li>
+<li>database/query tasks;</li>
+<li>simple logic games;</li>
+<li>tool-use tasks with clear success/failure.</li>
+</ul>
+<p>Required method:</p>
+<ul>
+<li>transparent reward function;</li>
+<li>sandboxed execution if code/tools are used;</li>
+<li>invalid-output and reward-hacking analysis;</li>
+<li>comparison against the SFT model.</li>
+</ul>
+<h2 id="track-g-context-extension-and-long-context-evaluation">Track G: Context Extension and Long-Context Evaluation</h2>
+<p>**Difficulty:** advanced</p>
+<p>Study whether a model can actually use longer context, not only accept a longer</p>
+<p>token window.</p>
+<p>Good for:</p>
+<ul>
+<li>long-document QA;</li>
+<li>multi-document synthesis;</li>
+<li>needle retrieval;</li>
+<li>lost-in-the-middle analysis;</li>
+<li>cross-lingual long context.</li>
+</ul>
+<p>Required method:</p>
+<ul>
+<li>baseline at original context length;</li>
+<li>explicit context-extension or long-context adaptation method, if used;</li>
+<li>evaluation by context length and evidence position;</li>
+<li>short-context regression test.</li>
+</ul>
+<h2 id="track-h-agentic-local-models">Track H: Agentic Local Models</h2>
+<p>**Difficulty:** advanced, approval recommended</p>
+<p>Train or adapt a model for tool use in a sandboxed environment.</p>
+<p>Good for:</p>
+<ul>
+<li>command selection;</li>
+<li>JSON tool-call formatting;</li>
+<li>simple coding repair;</li>
+<li>citation search;</li>
+<li>file transformation;</li>
+<li>spreadsheet/document microtasks.</li>
+</ul>
+<p>Required method:</p>
+<ul>
+<li>tool schema;</li>
+<li>demonstration trajectories;</li>
+<li>sandbox or simulated tool environment;</li>
+<li>tool-call validity metric;</li>
+<li>task completion metric;</li>
+<li>permission/safety analysis.</li>
+</ul>
+    </main>
+    <script src="resource.js"></script>
+  </body>
+</html>

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Teacher Overview - Useful Local Models</title>
+    <link rel="stylesheet" href="resource.css">
+  </head>
+  <body>
+    <header>
+      <a href="../index.html">Useful Local Models</a>
+    </header>
+    <main>
+      <h1 id="teacher-overview">Teacher Overview</h1>
+<h2 id="theme">Theme</h2>
+<p>**Local Runnable Language Models: training small, useful, auditable NLP systems**</p>
+<p>Students train or adapt open models for concrete NLP problems. The final result</p>
+<p>must be a locally runnable artifact: an adapter, full fine-tune, classifier,</p>
+<p>reranker, distilled model, GGUF export, or reproducible local inference script.</p>
+<p>The project structure fits the existing 5LN714 rhythm: literature seminars,</p>
+<p>project proposal, progress seminars, first report, peer review, final workshop,</p>
+<p>and final report.</p>
+<h2 id="official-course-anchor">Official Course Anchor</h2>
+<p>The public Uppsala University course page lists 5LN714 as a 15-credit master&#x27;s</p>
+<p>level course. The current public syllabus and reading list are both marked as</p>
+<p>valid from Spring 2026:</p>
+<ul>
+<li>Course page: &lt;https://www.uu.se/en/study/course?query=5LN714&gt;</li>
+<li>Syllabus: &lt;https://www.uu.se/en/study/syllabus?query=52189&gt;</li>
+<li>Reading list: &lt;https://www.uu.se/en/study/reading-list?query=41226&gt;</li>
+</ul>
+<h2 id="why-this-theme">Why This Theme</h2>
+<p>The current LLM landscape makes it easy for students to build impressive demos</p>
+<p>with external APIs, but hard to learn the research craft behind models. This</p>
+<p>theme shifts the center of gravity back to data, training, evaluation, and</p>
+<p>release engineering.</p>
+<p>The guiding question is:</p>
+<p>**Can we make small local models genuinely useful?**</p>
+<p>The 2026 update adds an explicit second question:</p>
+<p>**How can AI agents support research collaboration while keeping the work</p>
+<p>auditable?**</p>
+<h2 id="course-level-learning-outcomes">Course-Level Learning Outcomes</h2>
+<p>By the end of the project, each participant can:</p>
+<ul>
+<li>formulate a research question involving model training or adaptation;</li>
+<li>choose a feasible local model and justify its constraints;</li>
+<li>build a documented dataset or adaptation corpus;</li>
+<li>train a model or adapter using a reproducible recipe;</li>
+<li>compare against a meaningful baseline;</li>
+<li>evaluate with held-out data and appropriate metrics;</li>
+<li>document limitations, ethical risks, licenses, and compute cost;</li>
+<li>package the model so another person can run it locally.</li>
+</ul>
+<h2 id="scope-constraint">Scope Constraint</h2>
+<p>Foundation-model training from scratch is out of scope. Feasible project scopes</p>
+<p>include:</p>
+<ul>
+<li>fine-tune a small causal LM with LoRA/QLoRA;</li>
+<li>train a small encoder model, classifier, reranker, or embedding model;</li>
+<li>continue-pretrain a small model on a limited corpus, then evaluate downstream;</li>
+<li>instruction-tune a small model for a focused task;</li>
+<li>apply DPO or another preference method after SFT;</li>
+<li>run a small GRPO/RLVR experiment with verifiable rewards;</li>
+<li>train a tool-use or agentic behavior on sandboxed tasks;</li>
+<li>compare quantized local deployment variants.</li>
+<li>run a nanochat-style fixed-budget experiment;</li>
+<li>use an autoresearch-style agent loop with a constrained write scope.</li>
+</ul>
+<h2 id="recommended-model-scale">Recommended Model Scale</h2>
+<p>Default:</p>
+<ul>
+<li>0.5B-4B parameter causal LMs for instruction tuning and local inference.</li>
+<li>Gemma 4 E2B/E4B and Qwen3.5 0.8B/2B/4B as named small-model targets.</li>
+<li>Qwen3-0.6B as the fastest fallback for smoke tests and constrained hardware.</li>
+<li>Smaller encoder models for classification, NER, retrieval, and reranking.</li>
+</ul>
+<p>Upper bound:</p>
+<ul>
+<li>4B dense/effective parameters without special approval.</li>
+<li>Larger models only if the student has a strong reason and a feasible compute</li>
+</ul>
+<p>plan.</p>
+<p>The final local artifact should ideally run on:</p>
+<ul>
+<li>a modern laptop CPU in quantized form;</li>
+<li>Apple Silicon with MLX or llama.cpp;</li>
+<li>a consumer GPU with 8-16 GB VRAM;</li>
+<li>UPPMAX for training, but not as the only way to inspect the final model.</li>
+</ul>
+<h2 id="required-project-artifact-set">Required Project Artifact Set</h2>
+<p>Every student must submit or link:</p>
+<p>1. Data source registry.</p>
+<p>2. Train/dev/test split description.</p>
+<p>3. Training configuration.</p>
+<p>4. Baseline result.</p>
+<p>5. Trained artifact.</p>
+<p>6. Evaluation script or notebook.</p>
+<p>7. Raw or summarized evaluation outputs.</p>
+<p>8. Local run instructions.</p>
+<p>9. Model card.</p>
+<p>10. Dataset card or data statement.</p>
+<p>11. Compute and energy estimate.</p>
+<p>12. Ethical considerations.</p>
+<h2 id="suggested-instructor-policy">Suggested Instructor Policy</h2>
+<p>AI tools may be used for coding assistance unless the course policy says</p>
+<p>otherwise, but AI-written prose cannot stand in for the student&#x27;s own analysis.</p>
+<p>Any AI assistance that materially affects code, data generation, annotation, or</p>
+<p>analysis must be documented.</p>
+<p>Peer-review papers should not be uploaded to external AI services unless</p>
+<p>explicitly permitted by the course.</p>
+<h2 id="advanced-method-policy">Advanced Method Policy</h2>
+<p>Advanced techniques are encouraged only when the base training pipeline is stable.</p>
+<p>Recommended evidence gates:</p>
+<p>1. Baseline.</p>
+<p>2. Data preparation and evaluation harness.</p>
+<p>3. SFT or supervised training.</p>
+<p>4. Local deployment.</p>
+<p>5. Optional advanced method.</p>
+<p>These gates do not have to be completed in this order. A project can begin with a</p>
+<p>local deployment target, an evaluation task, or an agent experiment, but advanced</p>
+<p>claims are not accepted without the relevant baseline and evaluation evidence.</p>
+    </main>
+    <script src="resource.js"></script>
+  </body>
+</html>

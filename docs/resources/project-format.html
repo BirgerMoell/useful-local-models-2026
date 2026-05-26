@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project Format - Useful Local Models</title>
+    <link rel="stylesheet" href="resource.css">
+  </head>
+  <body>
+    <header>
+      <a href="../index.html">Useful Local Models</a>
+    </header>
+    <main>
+      <h1 id="project-format">Project Format</h1>
+<h2 id="basic-format">Basic Format</h2>
+<p>Projects are individual research projects with shared infrastructure.</p>
+<p>Each student chooses a different task, language, dataset, or method, but every</p>
+<p>project follows the same evidence format:</p>
+<pre><code>
+research question
+  -&gt; data source registry
+  -&gt; baseline
+  -&gt; trained/adapted model
+  -&gt; evaluation
+  -&gt; local runnable artifact
+  -&gt; scientific report
+</code></pre>
+<p>The evidence chain is not a strict chronological order. A project may begin with</p>
+<p>an evaluation task, a nanochat experiment, a local deployment target, or an</p>
+<p>agent-assisted search loop. By the end, the evidence chain must be complete and</p>
+<p>inspectable.</p>
+<h2 id="required-project-shape">Required Project Shape</h2>
+<p>Every project must have:</p>
+<p>1. A narrow use case where local execution matters.</p>
+<p>2. A documented dataset or corpus.</p>
+<p>3. A simple baseline.</p>
+<p>4. A training or adaptation step that updates parameters.</p>
+<p>5. A held-out evaluation.</p>
+<p>6. A locally runnable final artifact.</p>
+<p>7. A model card and dataset card.</p>
+<p>8. A final paper.</p>
+<h2 id="shared-theme-different-problems">Shared Theme, Different Problems</h2>
+<p>Projects should not all train the same model on the same task. The shared method</p>
+<p>is responsible training and evaluation of local models.</p>
+<p>Good variation dimensions:</p>
+<ul>
+<li>language;</li>
+<li>domain;</li>
+<li>task;</li>
+<li>training method;</li>
+<li>evaluation design;</li>
+<li>deployment format;</li>
+<li>advanced technique.</li>
+</ul>
+<h2 id="standard-project">Standard Project</h2>
+<p>Recommended format for most projects:</p>
+<pre><code>
+small open base model
+  -&gt; baseline prompting or classical baseline
+  -&gt; LoRA/QLoRA SFT or supervised model training
+  -&gt; held-out evaluation
+  -&gt; local inference script or adapter release
+</code></pre>
+<h2 id="nanochat-style-project">Nanochat-Style Project</h2>
+<p>This format is useful when the student wants to understand the whole LLM stack at</p>
+<p>small scale.</p>
+<pre><code>
+nanochat or nanochat-inspired code
+  -&gt; small depth run
+  -&gt; one controlled change
+  -&gt; fixed-budget comparison
+  -&gt; eval/task report
+</code></pre>
+<p>The contribution can be an evaluation task, a data mixture change, a small SFT</p>
+<p>ability, a local deployment recipe, or an analysis of a scaling/run result. The</p>
+<p>student does not need to beat a leaderboard.</p>
+<h2 id="autoresearch-style-project">Autoresearch-Style Project</h2>
+<p>This format is useful when the student wants to study agent-assisted research.</p>
+<pre><code>
+agent program.md
+  -&gt; constrained write scope
+  -&gt; fixed-budget experiments
+  -&gt; experiment ledger
+  -&gt; human-reviewed conclusion
+</code></pre>
+<p>The scientific claim is not &quot;the agent did research.&quot; The claim must be about</p>
+<p>what changed, what metric moved, and whether the evidence supports keeping the</p>
+<p>change.</p>
+<p>Example:</p>
+<pre><code>
+Qwen3-0.6B
+  -&gt; prompt baseline for Swedish form explanation
+  -&gt; LoRA SFT on curated examples
+  -&gt; evaluate factuality, readability, and format
+  -&gt; release PEFT adapter plus local run instructions
+</code></pre>
+<h2 id="advanced-project">Advanced Project</h2>
+<p>Advanced projects add one extra research component after the standard pipeline is</p>
+<p>working.</p>
+<p>Allowed advanced additions:</p>
+<ul>
+<li>continued pretraining;</li>
+<li>context extension;</li>
+<li>DPO or another preference method;</li>
+<li>GRPO/RLVR with verifiable rewards;</li>
+<li>sandboxed tool-use or agent training;</li>
+<li>quantization and deployment comparison;</li>
+<li>distillation into a smaller local model.</li>
+</ul>
+<p>Advanced methods should answer a research question. They should not be included</p>
+<p>only because they sound current.</p>
+<h2 id="group-infrastructure">Group Infrastructure</h2>
+<p>The teacher can provide shared:</p>
+<ul>
+<li>model menu;</li>
+<li>starter repository;</li>
+<li>data/source registry template;</li>
+<li>evaluation checklist;</li>
+<li>local deployment guide;</li>
+<li>progress seminar structure.</li>
+</ul>
+<p>Students still write individual proposals, train their own model or component,</p>
+<p>and submit individual reports.</p>
+<h2 id="recommended-limits">Recommended Limits</h2>
+<ul>
+<li>Default model size: 0.5B-3B for causal LMs.</li>
+<li>Larger than 4B requires explicit approval.</li>
+<li>Advanced methods require a baseline and evaluation harness first.</li>
+<li>Final artifact must not depend on a commercial API.</li>
+<li>The project must be possible to explain in a 4-8 page paper.</li>
+</ul>
+    </main>
+    <script src="resource.js"></script>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rubric - Useful Local Models</title>
+    <link rel="stylesheet" href="resource.css">
+  </head>
+  <body>
+    <header>
+      <a href="../index.html">Useful Local Models</a>
+    </header>
+    <main>
+      <h1 id="rubric">Rubric</h1>
+<p>This rubric is intended for the project theme. It can be used inside the existing</p>
+<p>course assessment structure without changing the course-level assignment weights.</p>
+<h2 id="proposal-rubric">Proposal Rubric</h2>
+<table>
+<tr><th>Criterion</th><th>Pass</th><th>Strong/Distinction-Level</th></tr>
+<tr><td>Research question</td><td>Clear enough to guide a project</td><td>Precise, testable, and motivated by prior work</td></tr>
+<tr><td>Feasibility</td><td>Model, data, and compute are plausible</td><td>Includes fallback plan and scoped advanced option</td></tr>
+<tr><td>Data plan</td><td>Identifies sources and split strategy</td><td>Includes source registry, licensing, contamination risks</td></tr>
+<tr><td>Training plan</td><td>Includes parameter update</td><td>Justifies model, method, hyperparameters, and constraints</td></tr>
+<tr><td>Evaluation plan</td><td>Has baseline and held-out test</td><td>Metrics expose likely failure modes</td></tr>
+<tr><td>Local deployment</td><td>States how model will run locally</td><td>Includes target hardware and export format</td></tr>
+<tr><td>Ethics</td><td>Mentions relevant risks</td><td>Connects risks to concrete mitigations</td></tr>
+</table>
+<h2 id="final-paper-rubric">Final Paper Rubric</h2>
+<table>
+<tr><th>Criterion</th><th>Weight</th><th>Expectations</th></tr>
+<tr><td>Research framing</td><td>15</td><td>Clear question, motivation, and relation to prior work</td></tr>
+<tr><td>Data and governance</td><td>15</td><td>Source registry, splits, licensing, quality, leakage checks</td></tr>
+<tr><td>Training method</td><td>20</td><td>Reproducible config, justified model choice, clear training description</td></tr>
+<tr><td>Evaluation</td><td>20</td><td>Baseline, held-out results, metrics, significance testing where applicable</td></tr>
+<tr><td>Analysis</td><td>15</td><td>Error analysis, limitations, failed attempts, interpretation</td></tr>
+<tr><td>Local artifact and documentation</td><td>10</td><td>Model card, dataset card, manifest, local run instructions</td></tr>
+<tr><td>Writing and structure</td><td>5</td><td>Scientific clarity, citations, TACL-style organization</td></tr>
+</table>
+<h2 id="artifact-rubric">Artifact Rubric</h2>
+<table>
+<tr><th>Criterion</th><th>Pass</th><th>Strong/Distinction-Level</th></tr>
+<tr><td>Runs locally</td><td>Basic local run path documented</td><td>Another student can reproduce on stated hardware</td></tr>
+<tr><td>Reproducibility</td><td>Configs and commands included</td><td>Versioned data recipe, seeds, logs, and eval outputs included</td></tr>
+<tr><td>Model documentation</td><td>Model card present</td><td>Card separates verified claims from limitations and hypotheses</td></tr>
+<tr><td>Dataset documentation</td><td>Dataset card or data statement present</td><td>Includes license, source, filtering, splits, and known bias</td></tr>
+<tr><td>Evaluation package</td><td>Results reported</td><td>Scripts or notebooks allow rerunning evaluation</td></tr>
+<tr><td>Safety</td><td>Basic risk note</td><td>Concrete safety, privacy, and misuse analysis</td></tr>
+</table>
+<h2 id="presentation-rubric">Presentation Rubric</h2>
+<table>
+<tr><th>Criterion</th><th>Expectations</th></tr>
+<tr><td>Research story</td><td>The audience understands the problem and why training was needed</td></tr>
+<tr><td>Method</td><td>Model, data, and training are explained without unnecessary detail</td></tr>
+<tr><td>Evidence</td><td>Main result is clear and tied to the research question</td></tr>
+<tr><td>Local artifact</td><td>The local runnable nature of the model is demonstrated or documented</td></tr>
+<tr><td>Reflection</td><td>Limitations and next steps are honest</td></tr>
+</table>
+<h2 id="minimum-pass-conditions">Minimum Pass Conditions</h2>
+<p>A project should normally not pass if:</p>
+<ul>
+<li>no model parameters were trained or adapted;</li>
+<li>there is no meaningful baseline;</li>
+<li>evaluation is only anecdotal;</li>
+<li>the final artifact cannot be inspected or run in any documented way;</li>
+<li>data provenance is unclear;</li>
+<li>the report makes model capability claims unsupported by evaluation.</li>
+</ul>
+    </main>
+    <script src="resource.js"></script>
+  </body>
+</html>
