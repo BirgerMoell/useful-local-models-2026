@@ -1,0 +1,52 @@
+project_name: ""
+student_name: ""
+date: ""
+
+research_question: ""
+task: ""
+languages: []
+
+base_model:
+  name: ""
+  revision: ""
+  license: ""
+
+trained_artifact:
+  type: ""  # peft_adapter, full_model, gguf, mlx, onnx, sklearn, other
+  path_or_url: ""
+  size_mb: null
+  quantization: null
+
+data:
+  source_registry: "data/source_registry.csv"
+  train_split: ""
+  dev_split: ""
+  test_split: ""
+  redistribution_status: ""
+
+training:
+  config: "configs/train.yaml"
+  seed: null
+  hardware: ""
+  wall_clock_time: ""
+  checkpoint: ""
+
+evaluation:
+  config: "configs/eval.yaml"
+  baseline_results: ""
+  model_results: ""
+  primary_metric: ""
+  significance_test: ""
+
+local_run:
+  runtime: ""
+  target_hardware: ""
+  command: ""
+
+documentation:
+  model_card: "cards/model_card.md"
+  dataset_card: "cards/dataset_card.md"
+  paper: ""
+
+known_limitations: []
+

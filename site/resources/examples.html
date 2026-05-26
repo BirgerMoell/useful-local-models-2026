@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tiny Training Examples - Useful Local Models</title>
+    <link rel="stylesheet" href="resource.css">
+  </head>
+  <body>
+    <header>
+      <a href="../index.html">Useful Local Models</a>
+    </header>
+    <main>
+      <h1 id="tiny-training-examples">Tiny Training Examples</h1>
+<p>These examples are the code spine for the course theme:</p>
+<p>**Can we make small local models genuinely useful?**</p>
+<p>Each example is a small, readable Python script that demonstrates one modern</p>
+<p>training idea with a tiny local model. The examples use synthetic data and a</p>
+<p>character-level transformer so they can be inspected, modified, and run without</p>
+<p>external APIs.</p>
+<p>They are teaching examples, not production recipes. Their job is to make the</p>
+<p>training loop visible.</p>
+<h2 id="setup">Setup</h2>
+<pre><code>
+python -m venv .venv
+source .venv/bin/activate
+pip install torch
+</code></pre>
+<p>Optional:</p>
+<pre><code>
+pip install matplotlib
+</code></pre>
+<h2 id="examples">Examples</h2>
+<table>
+<tr><th>Directory</th><th>Technique</th><th>What it shows</th></tr>
+<tr><td><code>01_pretraining</code></td><td>next-token pretraining</td><td>base language-model training on tiny text</td></tr>
+<tr><td><code>02_instruction_tuning</code></td><td>SFT</td><td>prompt/answer training for task behavior</td></tr>
+<tr><td><code>03_preference_dpo</code></td><td>DPO</td><td>preference optimization after SFT-style behavior</td></tr>
+<tr><td><code>04_grpo_verifiable_rewards</code></td><td>GRPO/RLVR</td><td>group-relative updates with exact-match rewards</td></tr>
+<tr><td><code>05_context_extension</code></td><td>context extension</td><td>training short, adapting/evaluating longer context</td></tr>
+<tr><td><code>06_tool_use_sft</code></td><td>tool-use SFT</td><td>structured tool-call output training</td></tr>
+<tr><td><code>07_reranker</code></td><td>reranker training</td><td>local retrieval/reranking component</td></tr>
+<tr><td><code>08_local_inference</code></td><td>local run path</td><td>loading a tiny checkpoint and generating locally</td></tr>
+</table>
+<h2 id="quick-smoke-runs">Quick Smoke Runs</h2>
+<p>From this folder:</p>
+<pre><code>
+python 01_pretraining/train.py --steps 80
+python 02_instruction_tuning/train.py --steps 120
+python 03_preference_dpo/train.py --steps 80
+python 04_grpo_verifiable_rewards/train.py --steps 40
+python 05_context_extension/train.py --steps 120
+python 06_tool_use_sft/train.py --steps 120
+python 07_reranker/train.py --steps 120
+</code></pre>
+<p>The scripts write small outputs under <code>outputs/</code>.</p>
+<h2 id="how-students-should-use-these">How Students Should Use These</h2>
+<p>Students should start by running one example unchanged, then change one thing:</p>
+<ul>
+<li>the data;</li>
+<li>the task;</li>
+<li>the model size;</li>
+<li>the context length;</li>
+<li>the reward function;</li>
+<li>the evaluation metric;</li>
+<li>the local runtime.</li>
+</ul>
+<p>Each project should keep the same evidence discipline:</p>
+<pre><code>
+use case -&gt; baseline -&gt; training -&gt; held-out evaluation -&gt; local artifact
+</code></pre>
+<h2 id="relationship-to-nanochat-and-autoresearch">Relationship To Nanochat And Autoresearch</h2>
+<p>These examples are smaller than <code>nanochat</code> and easier to modify in a lab session.</p>
+<p><code>nanochat</code> remains useful when students want to inspect a complete local LLM</p>
+<p>stack. <code>autoresearch</code> remains useful when students want to study agent-assisted</p>
+<p>experimentation.</p>
+<p>The course examples give everyone a common starting point before they branch out.</p>
+    </main>
+  </body>
+</html>

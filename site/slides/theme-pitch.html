@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Theme Pitch - Useful Local Models</title>
+    <link rel="stylesheet" href="slides.css">
+  </head>
+  <body>
+    <main class="deck">
+      <section class="slide dark">
+        <p class="kicker">Theme Pitch · 5-8 minutes</p>
+        <h1>Useful Local Models</h1>
+        <p class="lede">Can we make small local models genuinely useful?</p>
+        <div class="footer">5LN714 Research and Development · HT2026</div>
+      </section>
+      <section class="slide">
+        <p class="kicker">The Point</p>
+        <h2 class="big-question">Small is not the goal. Useful is.</h2>
+        <p class="lede">A small model earns its place when it solves a constrained task, runs locally, and beats a simple baseline.</p>
+      </section>
+      <section class="slide split">
+        <div>
+          <p class="kicker">Why Local?</p>
+          <h2>Local models change the research question.</h2>
+        </div>
+        <ul>
+          <li>They can run without sending data to an external API.</li>
+          <li>They make latency, memory, and deployment part of the evidence.</li>
+          <li>They force clear task design instead of vague capability claims.</li>
+        </ul>
+      </section>
+      <section class="slide">
+        <p class="kicker">Project Shape</p>
+        <h2>Every project has an evidence chain.</h2>
+        <div class="score">
+          <div><span>Use case</span><strong>What local problem should this model solve?</strong></div>
+          <div><span>Baseline</span><strong>What simple system must it beat?</strong></div>
+          <div><span>Training</span><strong>What parameters or components change?</strong></div>
+          <div><span>Evaluation</span><strong>What held-out evidence supports the claim?</strong></div>
+          <div><span>Release</span><strong>Can someone inspect or run the artifact locally?</strong></div>
+        </div>
+      </section>
+      <section class="slide">
+        <p class="kicker">Possible Projects</p>
+        <div class="grid-3">
+          <div class="tile"><h3>Instruction tuning</h3><p>Teach a local model a narrow task or domain behavior.</p></div>
+          <div class="tile"><h3>Reranking</h3><p>Train a local search component for document retrieval.</p></div>
+          <div class="tile"><h3>Tool use</h3><p>Train structured tool-call behavior and measure validity.</p></div>
+          <div class="tile"><h3>GRPO/RLVR</h3><p>Use exact rewards for math, code, extraction, or verification.</p></div>
+          <div class="tile"><h3>Context</h3><p>Test whether longer context is actually useful.</p></div>
+          <div class="tile"><h3>Multilingual</h3><p>Adapt and evaluate local models by language, not only aggregate score.</p></div>
+        </div>
+      </section>
+      <section class="slide dark">
+        <p class="kicker">Invitation</p>
+        <h2>Pick a task small enough to finish, real enough to matter.</h2>
+        <p class="lede">The strongest projects will be modest, runnable, and honest.</p>
+      </section>
+    </main>
+    <nav class="nav"><a class="home" href="../index.html">⌂</a><button data-prev>‹</button><button data-next>›</button></nav>
+    <script src="slides.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Proposal Clinic - Useful Local Models</title>
+    <link rel="stylesheet" href="slides.css">
+  </head>
+  <body>
+    <main class="deck">
+      <section class="slide dark">
+        <p class="kicker">Proposal Clinic · 20-30 minutes</p>
+        <h1>Make The Project Smaller</h1>
+        <p class="lede">A good proposal makes the evaluation possible.</p>
+      </section>
+      <section class="slide">
+        <p class="kicker">Proposal Test</p>
+        <h2>Can the project be answered by one result table?</h2>
+        <p class="lede">If not, the research question is probably too large.</p>
+      </section>
+      <section class="slide">
+        <p class="kicker">Required Decisions</p>
+        <div class="score">
+          <div><span>Task</span><strong>What exact input becomes what exact output?</strong></div>
+          <div><span>Data</span><strong>Where do examples come from, and what is the split?</strong></div>
+          <div><span>Baseline</span><strong>What simple method would be embarrassing to lose to?</strong></div>
+          <div><span>Training</span><strong>What parameters change, and why?</strong></div>
+          <div><span>Metric</span><strong>What does useful mean numerically and qualitatively?</strong></div>
+        </div>
+      </section>
+      <section class="slide split">
+        <div>
+          <p class="kicker">Bad Scope</p>
+          <h2>Train a Swedish assistant.</h2>
+        </div>
+        <ul>
+          <li>Too broad.</li>
+          <li>No clear baseline.</li>
+          <li>No obvious held-out test.</li>
+        </ul>
+      </section>
+      <section class="slide split">
+        <div>
+          <p class="kicker">Better Scope</p>
+          <h2>Extract action items from Swedish support emails.</h2>
+        </div>
+        <ul>
+          <li>Specific input and output.</li>
+          <li>Rule-based baseline is feasible.</li>
+          <li>Held-out exact-match and error analysis are meaningful.</li>
+        </ul>
+      </section>
+      <section class="slide dark">
+        <p class="kicker">Fallback</p>
+        <h2>Every proposal needs a smaller version that still teaches something.</h2>
+      </section>
+    </main>
+    <nav class="nav"><a class="home" href="../index.html">⌂</a><button data-prev>‹</button><button data-next>›</button></nav>
+    <script src="slides.js"></script>
+  </body>
+</html>
+

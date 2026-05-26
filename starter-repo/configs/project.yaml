@@ -1,0 +1,19 @@
+project_name: ""
+task: ""
+languages: []
+target_hardware: "laptop_or_small_gpu"
+local_runtime: "transformers"
+
+paths:
+  raw_data: "data/raw"
+  processed_data: "data/processed"
+  splits: "data/splits"
+  outputs: "outputs"
+
+data_sources:
+  - name: ""
+    url_or_path: ""
+    license: ""
+    snapshot_date: ""
+    redistribution: ""
+

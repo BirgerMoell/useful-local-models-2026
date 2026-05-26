@@ -1,0 +1,34 @@
+base_model: ""
+base_model_revision: "main"
+training_method: ""  # sft_lora, qlora_sft, classifier, reranker, dpo, grpo, other
+seed: 13
+
+data:
+  train_file: "data/splits/train.jsonl"
+  dev_file: "data/splits/dev.jsonl"
+  text_field: "text"
+
+training:
+  max_seq_length: 2048
+  learning_rate: 0.0002
+  batch_size_per_device: 2
+  gradient_accumulation_steps: 8
+  epochs: 3
+  save_steps: 100
+  eval_steps: 100
+
+lora:
+  enabled: true
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules: []
+
+quantization:
+  load_in_4bit: false
+  quant_type: "nf4"
+
+output:
+  checkpoint_dir: "outputs/checkpoints"
+  log_dir: "outputs/logs"
+

@@ -1,0 +1,25 @@
+systems:
+  baseline:
+    type: ""
+    path_or_model: ""
+  trained:
+    type: ""
+    path_or_model: ""
+
+data:
+  test_file: "data/splits/test.jsonl"
+
+metrics:
+  primary: ""
+  secondary: []
+
+generation:
+  max_new_tokens: 256
+  temperature: 0.0
+  top_p: 1.0
+
+reporting:
+  output_file: "outputs/eval/results.json"
+  save_raw_outputs: true
+  compute_parse_failure_rate: true
+

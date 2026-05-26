@@ -1,0 +1,7 @@
+project_name: "{{PROJECT_NAME}}"
+track: "{{TRACK}}"
+task: ""
+languages: []
+target_hardware: ""
+local_runtime: ""
+

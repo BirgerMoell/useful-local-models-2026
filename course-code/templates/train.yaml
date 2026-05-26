@@ -1,0 +1,8 @@
+base_model: ""
+training_method: "{{TRACK}}"
+seed: 13
+max_seq_length: 2048
+learning_rate: 0.0002
+epochs: 3
+agent_allowed_files: []
+

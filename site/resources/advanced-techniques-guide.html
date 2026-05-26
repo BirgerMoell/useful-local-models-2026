@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Advanced Techniques Guide - Useful Local Models</title>
+    <link rel="stylesheet" href="resource.css">
+  </head>
+  <body>
+    <header>
+      <a href="../index.html">Useful Local Models</a>
+    </header>
+    <main>
+      <h1 id="advanced-techniques-guide">Advanced Techniques Guide</h1>
+<p>Advanced methods are welcome, but they should be framed as research questions,</p>
+<p>not decorations. Every advanced project still needs a baseline, supervised</p>
+<p>training or adaptation, evaluation, and local deployment.</p>
+<h2 id="instruction-tuning">Instruction Tuning</h2>
+<p>Instruction tuning is the default generative-model track.</p>
+<p>Use when:</p>
+<ul>
+<li>the task can be expressed as input-output examples;</li>
+<li>the output format matters;</li>
+<li>prompting the base model is not reliable enough.</li>
+</ul>
+<p>Minimum evidence:</p>
+<ul>
+<li>base model prompting baseline;</li>
+<li>SFT model result;</li>
+<li>held-out examples;</li>
+<li>error analysis.</li>
+</ul>
+<h2 id="continued-pretraining-mid-training">Continued Pretraining / Mid-Training</h2>
+<p>Use when:</p>
+<ul>
+<li>the goal is domain adaptation;</li>
+<li>the domain has terminology or style not well represented in the base model;</li>
+<li>downstream tasks may benefit from domain exposure.</li>
+</ul>
+<p>Minimum evidence:</p>
+<ul>
+<li>validation loss before and after;</li>
+<li>downstream task before and after;</li>
+<li>at least one general regression check.</li>
+</ul>
+<p>Avoid:</p>
+<ul>
+<li>training so long that the model overfits the corpus;</li>
+<li>claiming instruction-following improvement from next-token training alone.</li>
+</ul>
+<h2 id="context-extension">Context Extension</h2>
+<p>Use when:</p>
+<ul>
+<li>the task genuinely requires long input;</li>
+<li>evaluation can measure whether the model uses distant evidence.</li>
+</ul>
+<p>Minimum evidence:</p>
+<ul>
+<li>baseline at original context length;</li>
+<li>evaluation by context length;</li>
+<li>evidence-position analysis;</li>
+<li>short-context regression check.</li>
+</ul>
+<p>Course-scale options:</p>
+<ul>
+<li>long-context evaluation without training;</li>
+<li>light adaptation on long sequences;</li>
+<li>YaRN-style config experiment if supported by the model/tooling;</li>
+<li>retrieval-augmented alternative as a comparison.</li>
+</ul>
+<p>Avoid:</p>
+<ul>
+<li>claiming success from config changes alone;</li>
+<li>using only one needle retrieval example;</li>
+<li>ignoring memory and KV-cache cost.</li>
+</ul>
+<h2 id="preference-tuning-dpo-or-similar">Preference Tuning: DPO Or Similar</h2>
+<p>Use when:</p>
+<ul>
+<li>students have preference pairs;</li>
+<li>the desired behavior is comparative rather than exactly verifiable;</li>
+<li>SFT already works.</li>
+</ul>
+<p>Minimum evidence:</p>
+<ul>
+<li>SFT baseline;</li>
+<li>preference dataset documentation;</li>
+<li>automatic and/or human evaluation;</li>
+<li>examples showing changed behavior.</li>
+</ul>
+<p>Good preference dimensions:</p>
+<ul>
+<li>concise vs verbose;</li>
+<li>cites evidence vs unsupported answer;</li>
+<li>valid JSON vs malformed output;</li>
+<li>safe refusal vs unsafe compliance;</li>
+<li>domain-appropriate style.</li>
+</ul>
+<p>Avoid:</p>
+<ul>
+<li>using noisy preference data without inspection;</li>
+<li>evaluating only with a model judge;</li>
+<li>treating DPO as a fix for missing task data.</li>
+</ul>
+<h2 id="verifiable-rewards-grpo-rlvr">Verifiable Rewards: GRPO/RLVR</h2>
+<p>Use when:</p>
+<ul>
+<li>the reward can be checked automatically;</li>
+<li>the task has clear success/failure;</li>
+<li>the student can sandbox execution.</li>
+</ul>
+<p>Good reward tasks:</p>
+<ul>
+<li>code problems with unit tests;</li>
+<li>math with exact answers;</li>
+<li>structured extraction with gold fields;</li>
+<li>SQL/query tasks with expected result;</li>
+<li>finite-state tool tasks;</li>
+<li>small logic games.</li>
+</ul>
+<p>Minimum evidence:</p>
+<ul>
+<li>reward function code or pseudocode;</li>
+<li>reward distribution before training;</li>
+<li>comparison against SFT;</li>
+<li>invalid output rate;</li>
+<li>reward hacking analysis;</li>
+<li>pass@k where relevant.</li>
+</ul>
+<p>Avoid:</p>
+<ul>
+<li>free-form LLM-as-judge rewards as the only signal;</li>
+<li>unsandboxed code execution;</li>
+<li>high-stakes domains;</li>
+<li>unclear reward functions.</li>
+</ul>
+<h2 id="agentic-tasks">Agentic Tasks</h2>
+<p>Use when:</p>
+<ul>
+<li>the model must choose actions, call tools, or recover from tool errors;</li>
+<li>success can be checked in a sandbox.</li>
+</ul>
+<p>Course-scale agent tasks:</p>
+<ul>
+<li>generate valid tool-call JSON;</li>
+<li>choose the correct tool from a small set;</li>
+<li>repair a small failing program with tests;</li>
+<li>answer with citations from a local document set;</li>
+<li>transform files using a simulated API;</li>
+<li>follow permission rules in a toy environment.</li>
+</ul>
+<p>Minimum evidence:</p>
+<ul>
+<li>tool schema;</li>
+<li>trajectory format;</li>
+<li>tool-call validity;</li>
+<li>task completion;</li>
+<li>error recovery examples;</li>
+<li>safety and permission analysis.</li>
+</ul>
+<p>Avoid:</p>
+<ul>
+<li>live destructive tools;</li>
+<li>browser or shell agents without sandboxing;</li>
+<li>relying on chat helpfulness as evidence of agent ability.</li>
+</ul>
+    </main>
+  </body>
+</html>

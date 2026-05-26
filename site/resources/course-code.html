@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LM Course Code - Useful Local Models</title>
+    <link rel="stylesheet" href="resource.css">
+  </head>
+  <body>
+    <header>
+      <a href="../index.html">Useful Local Models</a>
+    </header>
+    <main>
+      <h1 id="lm-course-code">LM Course Code</h1>
+<p>Small utilities for the Local Runnable Language Models project theme.</p>
+<p>The package is deliberately modest. It helps students start projects, keep</p>
+<p>experiment logs, and validate artifact manifests without forcing a specific</p>
+<p>training framework.</p>
+<h2 id="commands">Commands</h2>
+<p>From this directory:</p>
+<pre><code>
+python -m lmcourse.cli init-project my-project --track sft
+python -m lmcourse.cli validate-manifest my-project/artifact_manifest.yaml
+python -m lmcourse.cli log-run my-project --metric val_bpb --value 0.782 --decision keep --note &quot;baseline run&quot;
+python -m lmcourse.cli summarize-ledger my-project/logs/experiments.jsonl
+</code></pre>
+<h2 id="intended-use">Intended Use</h2>
+<p>Students can use this alongside:</p>
+<ul>
+<li>nanochat;</li>
+<li>autoresearch;</li>
+<li>Hugging Face Transformers/PEFT;</li>
+<li>custom PyTorch scripts;</li>
+<li>local deployment tools such as llama.cpp, Ollama, MLX, or ONNX.</li>
+</ul>
+<h2 id="design">Design</h2>
+<ul>
+<li>No heavy dependencies.</li>
+<li>Plain files over hidden state.</li>
+<li>Agent prompts are versioned in <code>agents/program.md</code>.</li>
+<li>Experiment logs are JSONL.</li>
+<li>Artifact manifests are YAML-like enough to inspect by eye.</li>
+</ul>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+project_name: "{{PROJECT_NAME}}"
+research_question: ""
+task: ""
+languages: []
+
+base_model:
+  name: ""
+  revision: ""
+  license: ""
+
+trained_artifact:
+  type: ""
+  path_or_url: ""
+
+data:
+  source_registry: "data/source_registry.csv"
+  train_split: ""
+  dev_split: ""
+  test_split: ""
+
+training:
+  config: "configs/train.yaml"
+  seed: 13
+  hardware: ""
+
+evaluation:
+  config: "configs/eval.yaml"
+  baseline_results: ""
+  model_results: ""
+  primary_metric: ""
+
+local_run:
+  runtime: ""
+  target_hardware: ""
+  command: ""
+
+documentation:
+  model_card: "cards/model_card.md"
+  dataset_card: "cards/dataset_card.md"
+
+agent_use:
+  used: false
+  program: "agents/program.md"
+  ledger: "logs/experiments.jsonl"
+
