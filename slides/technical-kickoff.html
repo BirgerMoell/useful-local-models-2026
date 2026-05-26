@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Technical Kickoff - Useful Local Models</title>
+    <link rel="stylesheet" href="slides.css">
+  </head>
+  <body>
+    <main class="deck">
+      <section class="slide dark">
+        <p class="kicker">Technical Kickoff · 30-45 minutes</p>
+        <h1>From Idea To Local Artifact</h1>
+        <p class="lede">The code examples are tiny on purpose: they make the training loop visible.</p>
+      </section>
+      <section class="slide">
+        <p class="kicker">Mental Model</p>
+        <h2>Most projects are one of four moves.</h2>
+        <div class="grid-2">
+          <div class="tile"><h3>Adapt</h3><p>Update a small model or adapter for a specific task.</p></div>
+          <div class="tile"><h3>Rank</h3><p>Train a component that selects better evidence or results.</p></div>
+          <div class="tile"><h3>Verify</h3><p>Use exact checks, tests, or schemas as evaluation or reward.</p></div>
+          <div class="tile"><h3>Deploy</h3><p>Make the final system run locally and measure that runtime.</p></div>
+        </div>
+      </section>
+      <section class="slide">
+        <p class="kicker">Examples Folder</p>
+        <h2>Eight small scripts cover the core techniques.</h2>
+        <pre><code>examples/
+  01_pretraining/
+  02_instruction_tuning/
+  03_preference_dpo/
+  04_grpo_verifiable_rewards/
+  05_context_extension/
+  06_tool_use_sft/
+  07_reranker/
+  08_local_inference/</code></pre>
+      </section>
+      <section class="slide split">
+        <div>
+          <p class="kicker">Lab Demo</p>
+          <h2>Run one script. Change one thing.</h2>
+        </div>
+        <pre><code>cd examples
+python 02_instruction_tuning/train.py --steps 120
+python 08_local_inference/run.py</code></pre>
+      </section>
+      <section class="slide">
+        <p class="kicker">Tools</p>
+        <h2>Students can branch out after the tiny loop works.</h2>
+        <ul>
+          <li>Transformers, PEFT, TRL, PyTorch for training.</li>
+          <li>llama.cpp, Ollama, MLX, ONNX, or Transformers for local runtime.</li>
+          <li>AI agents for coding and debugging, with human-reviewed evidence.</li>
+        </ul>
+      </section>
+      <section class="slide dark">
+        <p class="kicker">Rule</p>
+        <h2>If the model is useful, the evaluation should be able to show it.</h2>
+      </section>
+    </main>
+    <nav class="nav"><a class="home" href="../index.html">⌂</a><button data-prev>‹</button><button data-next>›</button></nav>
+    <script src="slides.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Evaluation And Release - Useful Local Models</title>
+    <link rel="stylesheet" href="slides.css">
+  </head>
+  <body>
+    <main class="deck">
+      <section class="slide dark">
+        <p class="kicker">Evaluation And Release · 25-35 minutes</p>
+        <h1>Prove The Model Helps</h1>
+        <p class="lede">The final paper should separate useful behavior from attractive demos.</p>
+      </section>
+      <section class="slide">
+        <p class="kicker">Evaluation</p>
+        <h2>Report the thing users will actually care about.</h2>
+        <ul>
+          <li>Accuracy, F1, exact match, MRR, pass@k, schema validity, or task completion.</li>
+          <li>Parse failure rate for generated outputs.</li>
+          <li>Latency, memory, and local runtime for the released artifact.</li>
+        </ul>
+      </section>
+      <section class="slide">
+        <p class="kicker">Error Analysis</p>
+        <h2>A strong paper names the failures.</h2>
+        <div class="grid-3">
+          <div class="tile"><h3>Data</h3><p>Ambiguity, imbalance, leakage, annotation noise.</p></div>
+          <div class="tile"><h3>Model</h3><p>Hallucination, format errors, language gaps.</p></div>
+          <div class="tile"><h3>Runtime</h3><p>Too slow, too large, unstable under quantization.</p></div>
+        </div>
+      </section>
+      <section class="slide split">
+        <div>
+          <p class="kicker">Release Package</p>
+          <h2>Submit artifacts, not just claims.</h2>
+        </div>
+        <ul>
+          <li>Model or adapter checkpoint.</li>
+          <li>Model card and dataset card.</li>
+          <li>Training and evaluation config.</li>
+          <li>Local run command.</li>
+          <li>Known limitations.</li>
+        </ul>
+      </section>
+      <section class="slide">
+        <p class="kicker">Ethics</p>
+        <h2>Local does not automatically mean safe.</h2>
+        <ul>
+          <li>Document data rights and privacy risk.</li>
+          <li>Evaluate harms in the project language, not only English.</li>
+          <li>Do not overclaim general capability from a narrow test.</li>
+        </ul>
+      </section>
+      <section class="slide dark">
+        <p class="kicker">Final Check</p>
+        <h2>Could another student run it, inspect it, and understand its limits?</h2>
+      </section>
+    </main>
+    <nav class="nav"><a class="home" href="../index.html">⌂</a><button data-prev>‹</button><button data-next>›</button></nav>
+    <script src="slides.js"></script>
+  </body>
+</html>
+

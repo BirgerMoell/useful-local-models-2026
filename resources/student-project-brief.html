@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student Project Brief - Useful Local Models</title>
+    <link rel="stylesheet" href="resource.css">
+  </head>
+  <body>
+    <header>
+      <a href="../index.html">Useful Local Models</a>
+    </header>
+    <main>
+      <h1 id="student-project-brief">Student Project Brief</h1>
+<h2 id="theme">Theme</h2>
+<p>**Local Runnable Language Models**</p>
+<p>Build a small but serious language technology system by training or adapting a</p>
+<p>model that can run locally. Your project may focus on different tasks,</p>
+<p>languages, domains, or tooling. AI agents may help with coding and</p>
+<p>experimentation. Every project follows the same research discipline: careful</p>
+<p>data, explicit training, reproducible evaluation, and an artifact that another</p>
+<p>person can run.</p>
+<h2 id="central-question">Central Question</h2>
+<p>Can we make small local models genuinely useful?</p>
+<p>Examples:</p>
+<ul>
+<li>Can a small Swedish model follow domain-specific instructions after instruction</li>
+</ul>
+<p>tuning?</p>
+<ul>
+<li>Does LoRA improve performance over prompting for a low-resource task?</li>
+<li>Can a local reranker improve search results without external APIs?</li>
+<li>Can a small model learn tool-call formatting reliably?</li>
+<li>Does context extension improve long-document QA, or only nominal context length?</li>
+<li>Can verifiable rewards improve reasoning on a narrow class of tasks?</li>
+<li>Can an agent-assisted experiment loop improve a model under a fixed budget?</li>
+</ul>
+<h2 id="what-counts-as-training">What Counts As Training</h2>
+<p>At least one part of your project must update model parameters. This may be:</p>
+<ul>
+<li>LoRA or QLoRA adapter training;</li>
+<li>full fine-tuning of a small model;</li>
+<li>continued pretraining on a domain corpus;</li>
+<li>supervised instruction tuning;</li>
+<li>DPO or another preference-tuning method;</li>
+<li>GRPO/RLVR with verifiable rewards;</li>
+<li>classifier, reranker, embedding, or sequence-labeling model training.</li>
+</ul>
+<p>Prompt engineering alone is not enough.</p>
+<h2 id="suggested-small-models">Suggested Small Models</h2>
+<p>Good default targets for generative projects:</p>
+<ul>
+<li>Gemma 4 E2B or E4B;</li>
+<li>Qwen3.5-0.8B, Qwen3.5-2B, or Qwen3.5-4B;</li>
+<li>Qwen3-0.6B for the fastest smoke tests and smallest hardware budgets.</li>
+</ul>
+<p>The exact checkpoint must be justified by task, language coverage, license,</p>
+<p>hardware, and local deployment format.</p>
+<h2 id="local-runnable-requirement">Local Runnable Requirement</h2>
+<p>Your final system must run without calling a commercial API. Acceptable local</p>
+<p>formats include:</p>
+<ul>
+<li>Hugging Face Transformers model or adapter;</li>
+<li>PEFT adapter plus base model;</li>
+<li>GGUF export for llama.cpp or Ollama;</li>
+<li>MLX model for Apple Silicon;</li>
+<li>ONNX or other local inference format;</li>
+<li>small scikit-learn or PyTorch model for non-generative tasks.</li>
+</ul>
+<p>If the training itself requires UPPMAX, that is fine. The final artifact should</p>
+<p>still be inspectable and runnable locally, or you must clearly justify why not.</p>
+<h2 id="ai-agents">AI Agents</h2>
+<p>You may use AI agents for coding, debugging, experiment planning, and code</p>
+<p>review. Agent use must be documented. If an agent materially changes code, data,</p>
+<p>evaluation, or analysis, include the agent instructions and the experiment log in</p>
+<p>your artifact package.</p>
+<p>The final paper must be written in your own words.</p>
+<h2 id="minimum-deliverables">Minimum Deliverables</h2>
+<p>Your final project must include:</p>
+<ul>
+<li>a research question;</li>
+<li>related work;</li>
+<li>dataset description and source registry;</li>
+<li>baseline system;</li>
+<li>trained model or adapter;</li>
+<li>evaluation on held-out data;</li>
+<li>error analysis;</li>
+<li>significance testing where applicable;</li>
+<li>local run instructions;</li>
+<li>model card and dataset card;</li>
+<li>ethical considerations;</li>
+<li>final paper in the course format.</li>
+</ul>
+<h2 id="strong-projects">Strong Projects</h2>
+<p>A strong project is not necessarily the one with the largest model. A strong</p>
+<p>project has:</p>
+<ul>
+<li>a clear research question;</li>
+<li>a well-motivated task;</li>
+<li>documented data;</li>
+<li>a fair baseline;</li>
+<li>training decisions that are justified;</li>
+<li>evaluation that can reveal failures;</li>
+<li>honest discussion of limitations;</li>
+<li>a final artifact that actually runs.</li>
+</ul>
+    </main>
+    <script src="resource.js"></script>
+  </body>
+</html>

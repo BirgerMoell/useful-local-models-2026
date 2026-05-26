@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Local Deployment Guide - Useful Local Models</title>
+    <link rel="stylesheet" href="resource.css">
+  </head>
+  <body>
+    <header>
+      <a href="../index.html">Useful Local Models</a>
+    </header>
+    <main>
+      <h1 id="local-deployment-guide">Local Deployment Guide</h1>
+<p>The final project artifact must run locally without external API calls.</p>
+<h2 id="acceptable-local-runtime-options">Acceptable Local Runtime Options</h2>
+<h3 id="transformers-peft">Transformers + PEFT</h3>
+<p>Best for:</p>
+<ul>
+<li>adapters;</li>
+<li>research scripts;</li>
+<li>evaluation;</li>
+<li>students with Python/PyTorch familiarity.</li>
+</ul>
+<p>Expected artifact:</p>
+<ul>
+<li>base model name and revision;</li>
+<li>PEFT adapter files;</li>
+<li>inference script;</li>
+<li>requirements file or environment notes.</li>
+</ul>
+<h3 id="llama-cpp-gguf">llama.cpp / GGUF</h3>
+<p>Best for:</p>
+<ul>
+<li>CPU or laptop inference;</li>
+<li>simple command-line demos;</li>
+<li>models that fit quantized.</li>
+</ul>
+<p>Expected artifact:</p>
+<ul>
+<li>GGUF file or documented conversion path;</li>
+<li>quantization choice;</li>
+<li>llama-cli or llama-server command;</li>
+<li>sample prompt and output.</li>
+</ul>
+<h3 id="ollama">Ollama</h3>
+<p>Best for:</p>
+<ul>
+<li>simple local demos;</li>
+<li>students who want an easy local serving interface.</li>
+</ul>
+<p>Expected artifact:</p>
+<ul>
+<li>Modelfile or model reference;</li>
+<li>command to run;</li>
+<li>prompt template if needed.</li>
+</ul>
+<h3 id="mlx">MLX</h3>
+<p>Best for:</p>
+<ul>
+<li>Apple Silicon machines.</li>
+</ul>
+<p>Expected artifact:</p>
+<ul>
+<li>MLX-compatible model or conversion notes;</li>
+<li>command to run inference;</li>
+<li>memory estimate.</li>
+</ul>
+<h3 id="onnx-small-pytorch-scikit-learn">ONNX / Small PyTorch / scikit-learn</h3>
+<p>Best for:</p>
+<ul>
+<li>classifiers;</li>
+<li>sequence taggers;</li>
+<li>rerankers;</li>
+<li>non-generative models.</li>
+</ul>
+<p>Expected artifact:</p>
+<ul>
+<li>saved model;</li>
+<li>preprocessing pipeline;</li>
+<li>prediction script.</li>
+</ul>
+<h2 id="local-runnable-tiers">Local Runnable Tiers</h2>
+<h3 id="tier-1-inspectable">Tier 1: Inspectable</h3>
+<p>The artifact can be loaded by the teacher or another student with documented</p>
+<p>commands, but may require a GPU.</p>
+<h3 id="tier-2-laptop-runnable">Tier 2: Laptop Runnable</h3>
+<p>The artifact runs on a normal laptop CPU or Apple Silicon machine in quantized</p>
+<p>form.</p>
+<h3 id="tier-3-application-runnable">Tier 3: Application Runnable</h3>
+<p>The artifact runs behind a local CLI, web UI, or OpenAI-compatible local server.</p>
+<p>All projects must reach at least Tier 1. Strong projects reach Tier 2 or Tier 3.</p>
+<h2 id="reporting-local-performance">Reporting Local Performance</h2>
+<p>Students should report:</p>
+<ul>
+<li>runtime;</li>
+<li>model format;</li>
+<li>quantization;</li>
+<li>approximate disk size;</li>
+<li>memory used, if known;</li>
+<li>tokens per second or examples per second, if relevant;</li>
+<li>hardware used.</li>
+</ul>
+<p>Example:</p>
+<pre><code>
+Runtime: llama.cpp
+Format: GGUF Q4_K_M
+Model size: 1.2 GB
+Hardware: MacBook Air M2, 16 GB RAM
+Speed: 18 tokens/s, batch size 1
+</code></pre>
+<h2 id="local-deployment-warnings">Local Deployment Warnings</h2>
+<ul>
+<li>Do not evaluate only the unquantized training checkpoint if the release model is</li>
+</ul>
+<p>quantized.</p>
+<ul>
+<li>Do not claim long-context support only because the config accepts longer input.</li>
+<li>Do not rely on a commercial API for final outputs.</li>
+<li>Do not publish private, copyrighted, or sensitive training data by accident.</li>
+</ul>
+    </main>
+    <script src="resource.js"></script>
+  </body>
+</html>

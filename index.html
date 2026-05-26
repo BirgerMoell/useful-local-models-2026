@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Useful Local Models 2026</title>
+    <meta name="description" content="Course project hub for making small local language models genuinely useful with modern training, evaluation, deployment, and agent tooling.">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Useful Local Models 2026">
+        <span class="brand-mark"></span>
+        <span>Useful Local Models</span>
+      </a>
+      <nav>
+        <a href="#format">Format</a>
+        <a href="#stack">Stack</a>
+        <a href="#resources">Resources</a>
+        <a href="#slides">Slides</a>
+        <a href="#code">Code</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <canvas id="traceCanvas" aria-hidden="true"></canvas>
+        <div class="hero-shade"></div>
+        <div class="hero-copy">
+          <p class="eyebrow">5LN714 Research and Development - HT2026</p>
+          <h1 id="hero-title">Useful Local Models</h1>
+          <p class="hero-lede">
+            Can we make small local models genuinely useful? Students train,
+            evaluate, and release focused language systems using modern tooling
+            without hiding the research craft.
+          </p>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button primary" href="resources/student-project-brief.html">Student brief</a>
+            <a class="button secondary" href="resources/examples.html">Example code</a>
+          </div>
+        </div>
+        <div class="hero-status" aria-label="Course status summary">
+          <div>
+            <span class="status-label">Guiding question</span>
+            <strong>small, local, genuinely useful</strong>
+          </div>
+          <div>
+            <span class="status-label">Evidence pattern</span>
+            <strong>baseline -> training -> eval -> local artifact</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro section-grid" id="format" aria-labelledby="format-title">
+        <div>
+          <p class="section-kicker">Project Format</p>
+          <h2 id="format-title">A research slice, not a ritual sequence.</h2>
+        </div>
+        <div class="flow" aria-label="Project flow">
+          <div class="flow-step">
+            <span>01</span>
+            <h3>Question</h3>
+            <p>Pick a narrow task where local execution matters.</p>
+          </div>
+          <div class="flow-step">
+            <span>02</span>
+            <h3>Evidence</h3>
+            <p>Build data, baseline, evaluation, and an experiment ledger.</p>
+          </div>
+          <div class="flow-step">
+            <span>03</span>
+            <h3>Training</h3>
+            <p>Update model parameters with SFT, LoRA, RLVR, reranking, or a focused alternative.</p>
+          </div>
+          <div class="flow-step">
+            <span>04</span>
+            <h3>Release</h3>
+            <p>Ship a local artifact with cards, manifest, and run commands.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="lab-band" aria-labelledby="lab-title">
+        <div class="lab-copy">
+          <p class="section-kicker">Usefulness First</p>
+          <h2 id="lab-title">A small model is interesting only when it helps with a real task.</h2>
+          <p>
+            Each project starts from a concrete local use case, then asks what
+            training, data, evaluation, and deployment are needed to make the model
+            better than a simple baseline.
+          </p>
+        </div>
+        <div class="scorecard-visual" aria-label="Usefulness scorecard example">
+          <div class="scorecard-top">
+            <span>Usefulness scorecard</span>
+            <strong>local artifact required</strong>
+          </div>
+          <div class="score-row">
+            <span>Task</span>
+            <strong>extract Swedish support actions</strong>
+          </div>
+          <div class="score-row">
+            <span>Baseline</span>
+            <strong>rules + base model prompting</strong>
+          </div>
+          <div class="score-row">
+            <span>Training</span>
+            <strong>adapter, classifier, reranker, or RLVR</strong>
+          </div>
+          <div class="score-row">
+            <span>Evidence</span>
+            <strong>held-out test, errors, latency, limits</strong>
+          </div>
+          <div class="score-row">
+            <span>Runs on</span>
+            <strong>laptop, local GPU, MLX, Ollama, or llama.cpp</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="stack section-grid" id="stack" aria-labelledby="stack-title">
+        <div>
+          <p class="section-kicker">Tooling Map</p>
+          <h2 id="stack-title">Use the best 2026 tools, then make the evidence inspectable.</h2>
+        </div>
+        <div class="repo-pair">
+          <article class="repo-block">
+            <a class="repo-title" href="https://huggingface.co/docs/transformers/peft">Adapt</a>
+            <p>
+              Fine-tune and adapt models with Transformers, PEFT, TRL, LoRA,
+              QLoRA, rerankers, classifiers, and task-specific training loops.
+            </p>
+            <ul>
+              <li>Default path: small base model plus adapter.</li>
+              <li>Strong path: trained component beats a real baseline.</li>
+              <li>Advanced path: DPO, RLVR, or context work with clear metrics.</li>
+            </ul>
+          </article>
+          <article class="repo-block">
+            <a class="repo-title" href="https://github.com/karpathy/nanochat">Understand</a>
+            <p>
+              Use nanochat as a readable full-stack example of tokenization,
+              pretraining, fine-tuning, evaluation, inference, RL, and local chat.
+            </p>
+            <ul>
+              <li>Run tiny experiments to see the whole stack move.</li>
+              <li>Use task files to design evaluation exercises.</li>
+              <li>Borrow the lifecycle discipline for focused student projects.</li>
+            </ul>
+          </article>
+          <article class="repo-block">
+            <a class="repo-title" href="https://github.com/karpathy/autoresearch">Automate</a>
+            <p>
+              Use AI agents for hypotheses, code edits, eval tasks, debugging, and
+              reviews. Autoresearch is one example of a constrained experiment loop.
+            </p>
+            <ul>
+              <li>Agent prompts are versioned research artifacts.</li>
+              <li>Experiment ledgers record what changed and why.</li>
+              <li>Humans accept claims only after reviewing evidence.</li>
+            </ul>
+          </article>
+          <article class="repo-block">
+            <a class="repo-title" href="resources/local-deployment-guide.html">Run Locally</a>
+            <p>
+              Package artifacts for local inference with Transformers, llama.cpp,
+              Ollama, MLX, ONNX, or task-specific Python runtimes.
+            </p>
+            <ul>
+              <li>Report runtime, memory, latency, and quantization.</li>
+              <li>Evaluate the released artifact, not only the training checkpoint.</li>
+              <li>Make another student able to inspect or run it.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="model-band" aria-labelledby="models-title">
+        <div class="section-heading">
+          <p class="section-kicker">Model Targets</p>
+          <h2 id="models-title">Small enough to run locally, current enough to matter.</h2>
+        </div>
+        <div class="model-grid">
+          <article>
+            <span>Gemma 4</span>
+            <h3>E2B / E4B</h3>
+            <p>Named targets for Google-family local adaptation, multimodal tasks, and long-context experiments.</p>
+            <a href="resources/model-menu-and-compute.html">Model menu</a>
+          </article>
+          <article>
+            <span>Qwen3.5</span>
+            <h3>0.8B / 2B / 4B</h3>
+            <p>Default targets for fast local experiments, multilingual work, tool calls, and deployment checks.</p>
+            <a href="https://huggingface.co/Qwen/Qwen3.5-0.8B">Qwen3.5-0.8B</a>
+          </article>
+          <article>
+            <span>Fast Fallback</span>
+            <h3>Qwen3-0.6B</h3>
+            <p>Smoke tests, laptop-bound runs, and first-pass SFT before moving to a stronger checkpoint.</p>
+            <a href="https://huggingface.co/Qwen/Qwen3-0.6B-GGUF">GGUF variant</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="tracks" aria-labelledby="tracks-title">
+        <div class="section-heading">
+          <p class="section-kicker">Project Tracks</p>
+          <h2 id="tracks-title">Different problems, shared evidence discipline.</h2>
+        </div>
+        <div class="track-list">
+          <a href="resources/project-tracks.html#track-a-local-instruction-tuning">Instruction tuning</a>
+          <a href="resources/project-tracks.html#track-c-retrieval-reranking-and-local-rag-components">Local RAG components</a>
+          <a href="resources/project-tracks.html#track-d-continued-pretraining-or-mid-training">Mid-training</a>
+          <a href="resources/project-tracks.html#track-e-preference-tuning">DPO and preferences</a>
+          <a href="resources/project-tracks.html#track-f-verifiable-rewards-and-grporlvr">GRPO and RLVR</a>
+          <a href="resources/project-tracks.html#track-g-context-extension-and-long-context-evaluation">Context extension</a>
+          <a href="resources/project-tracks.html#track-h-agentic-local-models">Agentic local models</a>
+          <a href="resources/project-tracks.html#track-b-low-resource-or-multilingual-adaptation">Multilingual adaptation</a>
+        </div>
+      </section>
+
+      <section class="resources section-grid" id="resources" aria-labelledby="resources-title">
+        <div>
+          <p class="section-kicker">Resource Map</p>
+          <h2 id="resources-title">Everything needed to run the theme.</h2>
+        </div>
+        <div class="resource-columns">
+          <div>
+            <h3>Teaching</h3>
+            <a href="resources/teacher-overview.html">Teacher overview</a>
+            <a href="resources/teacher-start-checklist.html">Teacher start checklist</a>
+            <a href="resources/milestones-and-schedule.html">Milestones and schedule</a>
+            <a href="resources/rubric.html">Rubric</a>
+          </div>
+          <div>
+            <h3>Students</h3>
+            <a href="resources/student-project-brief.html">Student project brief</a>
+            <a href="resources/project-format.html">Project format</a>
+            <a href="resources/modern-tooling-map.html">Modern tooling map</a>
+            <a href="resources/model-menu-and-compute.html">Model menu and compute</a>
+            <a href="resources/project-ideas.html">Project ideas</a>
+            <a href="resources/project-intake-form.html">Project intake form</a>
+          </div>
+          <div>
+            <h3>Methods</h3>
+            <a href="resources/training-pipeline-spec.html">Training pipeline spec</a>
+            <a href="resources/local-deployment-guide.html">Local deployment guide</a>
+            <a href="resources/advanced-techniques-guide.html">Advanced techniques</a>
+            <a href="resources/examples.html">Tiny training examples</a>
+            <a href="resources/worked-systems.html">Worked systems</a>
+          </div>
+          <div>
+            <h3>Studium</h3>
+            <a href="resources/studium-theme-description.html">Theme page</a>
+            <a href="resources/studium-proposal-assignment.html">Proposal assignment</a>
+            <a href="resources/studium-progress-seminars.html">Progress seminars</a>
+            <a href="resources/studium-final-report.html">Final report</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="slides-band" id="slides" aria-labelledby="slides-title">
+        <div class="section-heading">
+          <p class="section-kicker">Slides</p>
+          <h2 id="slides-title">Four decks cover the teacher-owned moments.</h2>
+        </div>
+        <div class="slide-links">
+          <a href="slides/theme-pitch.html"><span>01</span><strong>Theme pitch</strong><small>5-8 min</small></a>
+          <a href="slides/technical-kickoff.html"><span>02</span><strong>Technical kickoff</strong><small>30-45 min</small></a>
+          <a href="slides/proposal-clinic.html"><span>03</span><strong>Proposal clinic</strong><small>20-30 min</small></a>
+          <a href="slides/evaluation-release.html"><span>04</span><strong>Evaluation and release</strong><small>25-35 min</small></a>
+          <a href="slides/final-workshop.html"><span>05</span><strong>Final workshop</strong><small>optional</small></a>
+        </div>
+      </section>
+
+      <section class="code-band" id="code" aria-labelledby="code-title">
+        <div>
+          <p class="section-kicker">Example Code</p>
+          <h2 id="code-title">Hello-world training runs for local model techniques.</h2>
+          <p>
+            The repo includes small Python examples for pretraining, instruction
+            tuning, DPO, GRPO with verifiable rewards, context extension, tool-use
+            SFT, reranking, and local inference. Each one is tiny enough to read
+            in a lab session.
+          </p>
+        </div>
+        <div class="command-stack" aria-label="example training commands">
+          <button class="copy-line" data-copy="cd examples">
+            cd examples
+          </button>
+          <button class="copy-line" data-copy="python 02_instruction_tuning/train.py --steps 120">
+            python 02_instruction_tuning/train.py --steps 120
+          </button>
+          <button class="copy-line" data-copy="python 04_grpo_verifiable_rewards/train.py --steps 40">
+            python 04_grpo_verifiable_rewards/train.py --steps 40
+          </button>
+          <button class="copy-line" data-copy="python 05_context_extension/train.py --steps 120">
+            python 05_context_extension/train.py --steps 120
+          </button>
+        </div>
+      </section>
+
+      <section class="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">External References</h2>
+        <div>
+          <a href="https://www.uu.se/en/study/course?query=5LN714">Uppsala 5LN714 course page</a>
+          <a href="https://www.uu.se/en/study/syllabus?query=52189">Spring 2026 syllabus</a>
+          <a href="https://www.uu.se/en/study/reading-list?query=41226">Spring 2026 reading list</a>
+          <a href="https://github.com/karpathy/nanochat">nanochat</a>
+          <a href="https://github.com/karpathy/autoresearch">autoresearch</a>
+          <a href="https://birgermoell.github.io/openeurollm-open-llm-guide/docs/fully-open-llm-guide-2026.pdf">Fully Open LLM Training Guide</a>
+          <a href="https://huggingface.co/docs/transformers/peft">Hugging Face PEFT</a>
+          <a href="https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/">Gemma 4</a>
+          <a href="https://huggingface.co/Qwen/Qwen3.5-0.8B">Qwen3.5-0.8B</a>
+          <a href="https://huggingface.co/Qwen/Qwen3-0.6B-GGUF">Qwen3-0.6B GGUF</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
