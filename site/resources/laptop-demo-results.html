@@ -13,7 +13,7 @@
     </header>
     <main>
       <h1 id="verified-laptop-results">Verified Laptop Results</h1>
-<p>Run date: 2026-05-26</p>
+<p>Run date: 2026-05-27</p>
 <p>Command:</p>
 <pre><code>
 python demos/run_all.py --device mps
@@ -34,6 +34,12 @@ python demos/run_all.py --device mps
 <tr><td>RAG reranker</td><td>MRR</td><td>0.611</td><td>1.000</td><td>+0.389</td></tr>
 <tr><td>RAG reranker</td><td>top-1 accuracy</td><td>0.333</td><td>1.000</td><td>+0.667</td></tr>
 <tr><td>RLVR arithmetic</td><td>exact accuracy</td><td>0.10</td><td>1.00</td><td>+0.90</td></tr>
+<tr><td>Course resource ranker</td><td>MRR</td><td>0.250</td><td>1.000</td><td>+0.750</td></tr>
+<tr><td>Course resource ranker</td><td>top-1 accuracy</td><td>0.000</td><td>1.000</td><td>+1.000</td></tr>
+<tr><td>Preference DPO</td><td>held-out preference accuracy</td><td>0.250</td><td>1.000</td><td>+0.750</td></tr>
+<tr><td>Tool-call SFT</td><td>held-out tool accuracy</td><td>0.200</td><td>1.000</td><td>+0.800</td></tr>
+<tr><td>Tool-call SFT</td><td>exact JSON-call accuracy</td><td>0.200</td><td>1.000</td><td>+0.800</td></tr>
+<tr><td>Context needle</td><td>exact accuracy</td><td>0.0875</td><td>1.000</td><td>+0.9125</td></tr>
 </table>
 <p>Interpretation:</p>
 <ul>
@@ -50,6 +56,22 @@ python demos/run_all.py --device mps
 <li>The verifiable-reward arithmetic run moves from mostly wrong answers to exact</li>
 </ul>
 <p>answers on all one-digit addition pairs.</p>
+<ul>
+<li>The course resource ranker trains on the repo&#x27;s Markdown course materials and</li>
+</ul>
+<p>learns to route held-out student questions to the right resource page.</p>
+<ul>
+<li>The DPO run changes held-out preference margins so chosen project-writing</li>
+</ul>
+<p>answers score above rejected overclaims.</p>
+<ul>
+<li>The tool-call SFT run learns the tool schema for local-agent commands and uses</li>
+</ul>
+<p>deterministic rendering to keep JSON valid.</p>
+<ul>
+<li>The context-needle run shows a tiny attention reader learning to select the</li>
+</ul>
+<p>right value from a longer key/value record.</p>
 <p>The numbers are not intended as benchmark scores. They are smoke-test evidence</p>
 <p>that the training code updates parameters, evaluates held-out behavior, and</p>
 <p>writes inspectable artifacts on laptop hardware.</p>

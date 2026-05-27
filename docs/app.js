@@ -30,6 +30,35 @@ function colorFor(index, alpha) {
 function draw(time) {
   ctx.clearRect(0, 0, width, height);
 
+  ctx.save();
+  ctx.globalCompositeOperation = "screen";
+  [
+    { y: 0.2, amp: 46, speed: 0.0015, color: [43, 179, 163], phase: 0 },
+    { y: 0.37, amp: 62, speed: 0.0011, color: [91, 92, 226], phase: 1.9 },
+    { y: 0.55, amp: 52, speed: 0.0018, color: [241, 109, 79], phase: 3.1 },
+  ].forEach((band) => {
+    const gradient = ctx.createLinearGradient(width * 0.3, 0, width, 0);
+    gradient.addColorStop(0, `rgba(${band.color[0]}, ${band.color[1]}, ${band.color[2]}, 0)`);
+    gradient.addColorStop(0.48, `rgba(${band.color[0]}, ${band.color[1]}, ${band.color[2]}, 0.22)`);
+    gradient.addColorStop(1, `rgba(${band.color[0]}, ${band.color[1]}, ${band.color[2]}, 0.02)`);
+    ctx.strokeStyle = gradient;
+    ctx.lineWidth = 16;
+    ctx.shadowBlur = 24;
+    ctx.shadowColor = `rgba(${band.color[0]}, ${band.color[1]}, ${band.color[2]}, 0.38)`;
+    ctx.beginPath();
+    for (let i = 0; i <= 150; i += 1) {
+      const t = i / 150;
+      const x = width * (0.28 + t * 0.86);
+      const wave = Math.sin(t * Math.PI * 3.1 + time * band.speed + band.phase);
+      const fine = Math.sin(t * Math.PI * 11 + time * band.speed * 2.2 + band.phase) * 0.32;
+      const y = height * band.y + (wave + fine) * band.amp;
+      if (i === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+  });
+  ctx.restore();
+
   const grid = 68;
   ctx.strokeStyle = "rgba(255, 253, 248, 0.055)";
   ctx.lineWidth = 1;
@@ -111,4 +140,3 @@ document.querySelectorAll(".copy-line").forEach((button) => {
     }
   });
 });
-

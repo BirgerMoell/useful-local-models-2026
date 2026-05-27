@@ -11,6 +11,10 @@ DEMOS = [
     ("01_tool_router", ["--steps", "160"]),
     ("02_rag_reranker", ["--steps", "180"]),
     ("03_rlvr_arithmetic", ["--steps", "360"]),
+    ("04_course_resource_ranker", ["--steps", "260"]),
+    ("05_preference_dpo", ["--steps", "120"]),
+    ("06_tool_call_sft", ["--steps", "220"]),
+    ("07_context_needle", ["--steps", "260"]),
 ]
 
 

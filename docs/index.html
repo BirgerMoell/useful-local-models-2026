@@ -17,6 +17,7 @@
       <nav>
         <a href="#format">Format</a>
         <a href="#stack">Stack</a>
+        <a href="#runs">Runs</a>
         <a href="#resources">Resources</a>
         <a href="#slides">Slides</a>
         <a href="#code">Code</a>
@@ -55,7 +56,7 @@
       <section class="intro section-grid" id="format" aria-labelledby="format-title">
         <div>
           <p class="section-kicker">Project Format</p>
-          <h2 id="format-title">A research slice, not a ritual sequence.</h2>
+          <h2 id="format-title">Start with a local use case, then prove what improves.</h2>
         </div>
         <div class="flow" aria-label="Project flow">
           <div class="flow-step">
@@ -220,6 +221,43 @@
         </div>
       </section>
 
+      <section class="demo-band" id="runs" aria-labelledby="runs-title">
+        <div class="section-heading">
+          <p class="section-kicker">Verified Runs</p>
+          <h2 id="runs-title">Real training runs students can inspect on a MacBook.</h2>
+        </div>
+        <div class="run-grid">
+          <article>
+            <span>Real corpus</span>
+            <h3>Course resource ranker</h3>
+            <p>Trains on the repo's Markdown course pages and routes held-out questions to the right resource.</p>
+            <strong>top-1 0.00 -> 1.00</strong>
+          </article>
+          <article>
+            <span>Preferences</span>
+            <h3>DPO project-writing choices</h3>
+            <p>Moves chosen local-model claims above rejected overclaims using chosen/rejected pairs.</p>
+            <strong>pref acc 0.25 -> 1.00</strong>
+          </article>
+          <article>
+            <span>Agentic tasks</span>
+            <h3>Tool-call schema selector</h3>
+            <p>Chooses search, train, evaluate, export, or inspect and renders valid JSON calls.</p>
+            <strong>exact call 0.20 -> 1.00</strong>
+          </article>
+          <article>
+            <span>Long context</span>
+            <h3>Needle reader</h3>
+            <p>Reads longer key/value records and learns which queried slot to select.</p>
+            <strong>exact 0.0875 -> 1.00</strong>
+          </article>
+        </div>
+        <div class="run-actions">
+          <a href="resources/laptop-demos.html">Demo explanations</a>
+          <a href="resources/laptop-demo-results.html">Verified results</a>
+        </div>
+      </section>
+
       <section class="resources section-grid" id="resources" aria-labelledby="resources-title">
         <div>
           <p class="section-kicker">Resource Map</p>
@@ -265,7 +303,7 @@
       <section class="slides-band" id="slides" aria-labelledby="slides-title">
         <div class="section-heading">
           <p class="section-kicker">Slides</p>
-          <h2 id="slides-title">Four decks cover the teacher-owned moments.</h2>
+          <h2 id="slides-title">Ready-to-use decks for lectures, clinics, and the workshop.</h2>
         </div>
         <div class="slide-links">
           <a href="slides/theme-pitch.html"><span>01</span><strong>Theme pitch</strong><small>5-8 min</small></a>
@@ -281,27 +319,27 @@
           <p class="section-kicker">Example Code</p>
           <h2 id="code-title">Hello-world training runs for local model techniques.</h2>
           <p>
-            The repo includes small Python examples for pretraining, instruction
-            tuning, DPO, GRPO with verifiable rewards, context extension, tool-use
-            SFT, reranking, and local inference. It also includes laptop demos
-            with train/eval splits and measurable before/after results.
+            The repo includes readable Python examples for pretraining,
+            instruction tuning, DPO, GRPO with verifiable rewards, context work,
+            tool calls, reranking, and local inference. The laptop demos run real
+            train/eval loops and write checkpoints plus summaries.
           </p>
         </div>
         <div class="command-stack" aria-label="example training commands">
           <button class="copy-line" data-copy="python demos/run_all.py --quick">
             python demos/run_all.py --quick
           </button>
-          <button class="copy-line" data-copy="cd examples">
-            cd examples
+          <button class="copy-line" data-copy="python demos/run_all.py --device mps">
+            python demos/run_all.py --device mps
           </button>
-          <button class="copy-line" data-copy="python 02_instruction_tuning/train.py --steps 120">
-            python 02_instruction_tuning/train.py --steps 120
+          <button class="copy-line" data-copy="python demos/04_course_resource_ranker/train_eval.py --device mps">
+            python demos/04_course_resource_ranker/train_eval.py --device mps
           </button>
-          <button class="copy-line" data-copy="python 04_grpo_verifiable_rewards/train.py --steps 40">
-            python 04_grpo_verifiable_rewards/train.py --steps 40
+          <button class="copy-line" data-copy="python demos/05_preference_dpo/train_eval.py --device mps">
+            python demos/05_preference_dpo/train_eval.py --device mps
           </button>
-          <button class="copy-line" data-copy="python 05_context_extension/train.py --steps 120">
-            python 05_context_extension/train.py --steps 120
+          <button class="copy-line" data-copy="python demos/07_context_needle/train_eval.py --device mps">
+            python demos/07_context_needle/train_eval.py --device mps
           </button>
         </div>
       </section>

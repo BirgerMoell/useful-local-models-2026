@@ -4,6 +4,14 @@ Laptop-scale runs for an Apple Silicon MacBook with 32 GB memory. Each run has a
 train/eval split, measurable before/after results, a checkpoint, and a
 `summary.json` file.
 
+The suite mixes one real corpus with controlled synthetic tasks:
+
+- Real corpus: course Markdown resources are used as a local document collection
+  for a trained resource reranker.
+- Synthetic task data: preference pairs, tool-call commands, arithmetic rewards,
+  and long-record key/value facts are generated so the expected answer is known
+  and the training signal is inspectable.
+
 Run all quick checks:
 
 ```bash
@@ -25,7 +33,7 @@ python demos/run_all.py --device mps
 
 Verified local run:
 
-- Date: 2026-05-26.
+- Date: 2026-05-27.
 - Command: `python demos/run_all.py --device mps`.
 - Result summary: `demos/verified-results.md`.
 - Artifacts: `outputs/demos/*/summary.json` and `outputs/demos/*/checkpoint.pt`.
@@ -113,6 +121,90 @@ Training uses rewards computed by a deterministic verifier, not a stored
 completion dataset. By default the verifier selects the best candidate in the
 group for a stable laptop run; pass `--objective group-policy --sampled-group` to
 inspect the noisier policy-gradient variant.
+
+## 04 Course Resource Ranker
+
+Command:
+
+```bash
+python demos/04_course_resource_ranker/train_eval.py --steps 260
+```
+
+What it measures:
+
+- held-out MRR and top-1 accuracy over course-resource search queries;
+- ranked resource pages before and after training;
+- whether the model can use the real Markdown corpus plus small query labels.
+
+Why it matters:
+
+This is the most course-like demo. The corpus is not invented text: it is the
+repository's own project brief, rubric, model menu, deployment guide, Studium
+assignment pages, and templates. Students can adapt the pattern to build a local
+course assistant, documentation search layer, or project-resource navigator.
+
+## 05 Preference DPO
+
+Command:
+
+```bash
+python demos/05_preference_dpo/train_eval.py --steps 120
+```
+
+What it measures:
+
+- held-out preference accuracy;
+- chosen-vs-rejected log-probability margins before and after DPO;
+- whether the policy assigns higher probability to safer, more specific project
+  writing than to overclaimed alternatives.
+
+Why it matters:
+
+DPO gives students a minimal preference-tuning loop. The demo keeps the data
+small enough to read by hand, while still saving a real checkpoint and showing
+how relative quality can be trained without a separate reward model.
+
+## 06 Tool-Call SFT
+
+Command:
+
+```bash
+python demos/06_tool_call_sft/train_eval.py --steps 220
+```
+
+What it measures:
+
+- held-out tool accuracy;
+- exact JSON-call accuracy;
+- JSON validity after deterministic rendering.
+
+Why it matters:
+
+Useful local models often sit inside a larger system. This demo trains a small
+schema selector for local-agent commands, then renders valid JSON calls for
+search, training, evaluation, export, and inspection. It is a practical starting
+point for narrow agentic tasks.
+
+## 07 Context Needle
+
+Command:
+
+```bash
+python demos/07_context_needle/train_eval.py --steps 260
+```
+
+What it measures:
+
+- exact answer accuracy on held-out long records;
+- examples where the model must return the value attached to the queried slot;
+- whether the trained attention reader learns which slot to select.
+
+Why it matters:
+
+Long-context claims need tasks where distant evidence matters. This demo parses a
+long key/value record into slot features, then trains a small attention reader to
+select the queried slot. It is intentionally tiny, but it shows the evaluation
+shape students need before claiming context extension helped.
 
 ## Outputs
 
