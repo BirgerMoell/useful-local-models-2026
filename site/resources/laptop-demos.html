@@ -13,19 +13,12 @@
     </header>
     <main>
       <h1 id="laptop-training-demos">Laptop Training Demos</h1>
-<p>Laptop-scale runs for an Apple Silicon MacBook with 32 GB memory. Each run has a</p>
-<p>train/eval split, measurable before/after results, a checkpoint, and a</p>
-<p><code>summary.json</code> file.</p>
+<p>Laptop-scale runs for an Apple Silicon MacBook with 32 GB memory. Each run has a train/eval split, measurable before/after results, a checkpoint, and a <code>summary.json</code> file.</p>
 <p>The suite mixes one real corpus with controlled synthetic tasks:</p>
 <ul>
-<li>Real corpus: course Markdown resources are used as a local document collection</li>
+<li>Real corpus: course Markdown resources are used as a local document collection for a trained resource reranker.</li>
+<li>Synthetic task data: preference pairs, tool-call commands, arithmetic rewards, and long-record key/value facts are generated so the expected answer is known and the training signal is inspectable.</li>
 </ul>
-<p>for a trained resource reranker.</p>
-<ul>
-<li>Synthetic task data: preference pairs, tool-call commands, arithmetic rewards,</li>
-</ul>
-<p>and long-record key/value facts are generated so the expected answer is known</p>
-<p>and the training signal is inspectable.</p>
 <p>Run all quick checks:</p>
 <pre><code>
 python demos/run_all.py --quick
@@ -44,7 +37,7 @@ python demos/run_all.py --device mps
 <li>Date: 2026-05-27.</li>
 <li>Command: <code>python demos/run_all.py --device mps</code>.</li>
 <li>Result summary: <code>demos/verified-results.md</code>.</li>
-<li>Artifacts: <code>outputs/demos/*/summary.json</code> and <code>outputs/demos/*/checkpoint.pt</code>.</li>
+<li>Artifacts: <code>outputs/demos/<em>/summary.json</code> and <code>outputs/demos/</em>/checkpoint.pt</code>.</li>
 </ul>
 <h2 id="00-next-token-lm">00 Next-Token LM</h2>
 <p>Command:</p>
@@ -60,9 +53,7 @@ python demos/00_next_token_lm/train_eval.py --steps 320
 <li>a generated sample.</li>
 </ul>
 <p>Why it matters:</p>
-<p>Next-token training is the base objective behind decoder-only language models. A</p>
-<p>tiny course-themed corpus keeps the evaluation text separate and saves both a</p>
-<p>checkpoint and a readable summary.</p>
+<p>Next-token training is the base objective behind decoder-only language models. A tiny course-themed corpus keeps the evaluation text separate and saves both a checkpoint and a readable summary.</p>
 <h2 id="01-tool-router">01 Tool Router</h2>
 <p>Command:</p>
 <pre><code>
@@ -75,9 +66,7 @@ python demos/01_tool_router/train_eval.py --steps 260
 <li>per-example predictions.</li>
 </ul>
 <p>Why it matters:</p>
-<p>Small local models are often useful when the output space is narrow. A local tool</p>
-<p>router can turn natural-language project commands into structured actions without</p>
-<p>calling an external model.</p>
+<p>Small local models are often useful when the output space is narrow. A local tool router can turn natural-language project commands into structured actions without calling an external model.</p>
 <h2 id="02-rag-reranker">02 RAG Reranker</h2>
 <p>Command:</p>
 <pre><code>
@@ -90,9 +79,7 @@ python demos/02_rag_reranker/train_eval.py --steps 320
 <li>ranked documents before and after training.</li>
 </ul>
 <p>Why it matters:</p>
-<p>A useful local model does not have to generate text. A reranker can improve local</p>
-<p>search or RAG by scoring query-document pairs and leaving the final answer step</p>
-<p>to another component.</p>
+<p>A useful local model does not have to generate text. A reranker can improve local search or RAG by scoring query-document pairs and leaving the final answer step to another component.</p>
 <h2 id="03-rlvr-arithmetic">03 RLVR Arithmetic</h2>
 <p>Command:</p>
 <pre><code>
@@ -100,18 +87,11 @@ python demos/03_rlvr_arithmetic/train_eval.py --steps 360
 </code></pre>
 <p>What it measures:</p>
 <ul>
-<li>exact-match accuracy over all one-digit addition problems before and after</li>
-</ul>
-<p>training;</p>
-<ul>
+<li>exact-match accuracy over all one-digit addition problems before and after training;</li>
 <li>sample prompts, predicted answers, and verifier rewards.</li>
 </ul>
 <p>Why it matters:</p>
-<p>Verifiable rewards are appropriate when correctness can be checked by a program.</p>
-<p>Training uses rewards computed by a deterministic verifier, not a stored</p>
-<p>completion dataset. By default the verifier selects the best candidate in the</p>
-<p>group for a stable laptop run; pass <code>--objective group-policy --sampled-group</code> to</p>
-<p>inspect the noisier policy-gradient variant.</p>
+<p>Verifiable rewards are appropriate when correctness can be checked by a program. Training uses rewards computed by a deterministic verifier, not a stored completion dataset. By default the verifier selects the best candidate in the group for a stable laptop run; pass <code>--objective group-policy --sampled-group</code> to inspect the noisier policy-gradient variant.</p>
 <h2 id="04-course-resource-ranker">04 Course Resource Ranker</h2>
 <p>Command:</p>
 <pre><code>
@@ -124,10 +104,7 @@ python demos/04_course_resource_ranker/train_eval.py --steps 260
 <li>whether the model can use the real Markdown corpus plus small query labels.</li>
 </ul>
 <p>Why it matters:</p>
-<p>This is the most course-like demo. The corpus is not invented text: it is the</p>
-<p>repository&#x27;s own project brief, rubric, model menu, deployment guide, Studium</p>
-<p>assignment pages, and templates. Students can adapt the pattern to build a local</p>
-<p>course assistant, documentation search layer, or project-resource navigator.</p>
+<p>This is the most course-like demo. The corpus is not invented text: it is the repository&#x27;s own project brief, rubric, model menu, deployment guide, Studium assignment pages, and templates. Students can adapt the pattern to build a local course assistant, documentation search layer, or project-resource navigator.</p>
 <h2 id="05-preference-dpo">05 Preference DPO</h2>
 <p>Command:</p>
 <pre><code>
@@ -137,13 +114,10 @@ python demos/05_preference_dpo/train_eval.py --steps 120
 <ul>
 <li>held-out preference accuracy;</li>
 <li>chosen-vs-rejected log-probability margins before and after DPO;</li>
-<li>whether the policy assigns higher probability to safer, more specific project</li>
+<li>whether the policy assigns higher probability to safer, more specific project writing than to overclaimed alternatives.</li>
 </ul>
-<p>writing than to overclaimed alternatives.</p>
 <p>Why it matters:</p>
-<p>DPO gives students a minimal preference-tuning loop. The demo keeps the data</p>
-<p>small enough to read by hand, while still saving a real checkpoint and showing</p>
-<p>how relative quality can be trained without a separate reward model.</p>
+<p>DPO gives students a minimal preference-tuning loop. The demo keeps the data small enough to read by hand, while still saving a real checkpoint and showing how relative quality can be trained without a separate reward model.</p>
 <h2 id="06-tool-call-sft">06 Tool-Call SFT</h2>
 <p>Command:</p>
 <pre><code>
@@ -156,10 +130,7 @@ python demos/06_tool_call_sft/train_eval.py --steps 220
 <li>JSON validity after deterministic rendering.</li>
 </ul>
 <p>Why it matters:</p>
-<p>Useful local models often sit inside a larger system. This demo trains a small</p>
-<p>schema selector for local-agent commands, then renders valid JSON calls for</p>
-<p>search, training, evaluation, export, and inspection. It is a practical starting</p>
-<p>point for narrow agentic tasks.</p>
+<p>Useful local models often sit inside a larger system. This demo trains a small schema selector for local-agent commands, then renders valid JSON calls for search, training, evaluation, export, and inspection. It is a practical starting point for narrow agentic tasks.</p>
 <h2 id="07-context-needle">07 Context Needle</h2>
 <p>Command:</p>
 <pre><code>
@@ -172,10 +143,7 @@ python demos/07_context_needle/train_eval.py --steps 260
 <li>whether the trained attention reader learns which slot to select.</li>
 </ul>
 <p>Why it matters:</p>
-<p>Long-context claims need tasks where distant evidence matters. This demo parses a</p>
-<p>long key/value record into slot features, then trains a small attention reader to</p>
-<p>select the queried slot. It is intentionally tiny, but it shows the evaluation</p>
-<p>shape students need before claiming context extension helped.</p>
+<p>Long-context claims need tasks where distant evidence matters. This demo parses a long key/value record into slot features, then trains a small attention reader to select the queried slot. It is intentionally tiny, but it shows the evaluation shape students need before claiming context extension helped.</p>
 <h2 id="outputs">Outputs</h2>
 <p>All demos write to:</p>
 <pre><code>
@@ -183,8 +151,7 @@ outputs/demos/&lt;demo-name&gt;/
   checkpoint.pt
   summary.json
 </code></pre>
-<p>Use <code>summary.json</code> as the first artifact to inspect in seminars. It records the</p>
-<p>metric movement and enough examples to discuss whether training actually helped.</p>
+<p>Use <code>summary.json</code> as the first artifact to inspect in seminars. It records the metric movement and enough examples to discuss whether training actually helped.</p>
     </main>
     <script src="resource.js"></script>
   </body>

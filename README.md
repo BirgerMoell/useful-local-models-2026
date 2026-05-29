@@ -45,6 +45,7 @@ Use these files as a teacher-facing pack:
 - `model-menu-and-compute.md`: feasible model and compute guidance.
 - `teacher-start-checklist.md`: setup and approval checklist.
 - `canvas-course-setup.md`: suggested Studium/Canvas module and assignment setup.
+- `canvas-theme-module-useful-local-models.md`: paste-ready Canvas theme module page.
 - `project-tracks.md`: suggested project tracks and difficulty levels.
 - `milestones-and-schedule.md`: how to fit the theme into the existing 5LN714 flow.
 - `rubric.md`: assessment rubric for proposals, papers, presentations, and artifacts.

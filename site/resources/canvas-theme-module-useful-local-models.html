@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Useful Local Models: Can Small Local Models Be Genuinely Useful? - Useful Local Models</title>
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="resource.css">
+  </head>
+  <body>
+    <header>
+      <a href="../index.html">Useful Local Models</a>
+    </header>
+    <main>
+      <h1 id="canvas-module-theme-useful-local-models">Canvas Module: Theme: Useful Local Models</h1>
+<p>Suggested Canvas module name:</p>
+<p><strong>Theme: Useful Local Models (Birger Moell)</strong></p>
+<p>Suggested module items:</p>
+<ul>
+<li>Page: <strong>Useful Local Models: Can Small Local Models Be Genuinely Useful?</strong></li>
+<li>Page or link: <strong>Reading and seminar plan</strong></li>
+<li>Page or link: <strong>Project ideas and directions</strong></li>
+<li>Page or link: <strong>Model menu and compute guidance</strong></li>
+<li>Page or link: <strong>Laptop training demos</strong></li>
+<li>Page or link: <strong>AI assistance and research integrity</strong></li>
+</ul>
+<p>The text below is the main theme page. It is written in Markdown so it can be pasted into a Canvas page and then lightly adjusted in the Canvas editor.</p>
+<p>---</p>
+<h1 id="useful-local-models-can-small-local-models-be-genuinely-useful">Useful Local Models: Can Small Local Models Be Genuinely Useful?</h1>
+<p>Large language models are often evaluated through remote APIs, leaderboards, and general chat examples. In this theme we ask a different question:</p>
+<p><strong>Can we make small local models genuinely useful for concrete language technology tasks?</strong></p>
+<p>The focus is not on building the largest possible model. The focus is on the research craft behind useful model development: choosing a local use case, building or adapting data, training a model or model component, comparing against a meaningful baseline, evaluating on held-out examples, and releasing an artifact that another person can inspect or run locally.</p>
+<p>Projects may use small local language models such as Gemma 4, Qwen3.5, Qwen3, or other open checkpoints that fit the student&#x27;s compute budget. A project does not have to train every stage of a full LLM pipeline. It should make one research question sharp enough that a student can test it carefully within the course.</p>
+<p>Possible methods include instruction tuning, LoRA or QLoRA adaptation, continued pretraining, context-length adaptation, preference tuning, trained classifiers or rerankers, verifiable-reward training, tool-call training, and small agentic workflows. The method should fit the task. A narrow classifier, reranker, or adapter is often a better project than an overambitious chat model.</p>
+<p>AI agents and coding assistants may be used for implementation, debugging, and experiment support. Students must still understand, verify, and disclose how they used these tools. Claims in the final paper must be supported by baselines, held-out evaluation, saved outputs, and human analysis.</p>
+<h2 id="what-counts-as-a-good-project">What Counts As A Good Project?</h2>
+<p>A good project in this theme has:</p>
+<ul>
+<li>a specific language technology task;</li>
+<li>a reason local execution matters;</li>
+<li>a baseline that is hard enough to be meaningful;</li>
+<li>a model or component whose parameters are trained or adapted;</li>
+<li>a held-out evaluation set;</li>
+<li>an error analysis;</li>
+<li>a local runnable or inspectable artifact;</li>
+<li>clear limits on what the result shows.</li>
+</ul>
+<p>The examples in the course repository are starting points, not finished project topics. Each student formulates an individual research question, chooses a dataset or data construction method, and designs an evaluation.</p>
+<h2 id="example-project-directions">Example Project Directions</h2>
+<p>These are directions for project scoping, not ready-made assignments.</p>
+<ul>
+<li>Can a small local model extract useful structured information from Swedish or multilingual text better than a rule-based baseline?</li>
+<li>Does instruction tuning improve a local model on a narrow domain task, or does retrieval plus prompting work just as well?</li>
+<li>Can a local reranker improve search quality for course documents, public reports, legal text, medical information, or cultural heritage material?</li>
+<li>Can a small model learn reliable tool calls for a constrained local workflow?</li>
+<li>Does context extension improve performance on tasks that actually require long-distance evidence?</li>
+<li>Can preference tuning reduce overclaiming or improve answer usefulness in a specific setting?</li>
+<li>Can verifiable rewards improve a model on tasks with objective checks, such as JSON validity, unit tests, arithmetic, or exact extraction?</li>
+<li>What does a model card, dataset card, and artifact manifest need to say for a local model to be scientifically inspectable?</li>
+</ul>
+<h2 id="seminar-1-open-training-pipelines-and-artifacts">Seminar 1: Open Training Pipelines And Artifacts</h2>
+<p>This seminar looks at what makes model training scientifically inspectable. We discuss open models, open datasets, model cards, data documentation, and the difference between a downloadable model and an auditable research artifact.</p>
+<p>Assigned papers:</p>
+<ul>
+<li>Groeneveld et al. 2024. <strong>OLMo: Accelerating the Science of Language Models</strong>. <a href="https://arxiv.org/abs/2402.00838">https://arxiv.org/abs/2402.00838</a> Presenter: TBD</li>
+<li>Soldaini et al. 2024. <strong>Dolma: An Open Corpus of Three Trillion Tokens for Language Model Pretraining Research</strong>. <a href="https://arxiv.org/abs/2402.00159">https://arxiv.org/abs/2402.00159</a> Presenter: TBD</li>
+<li>Mitchell et al. 2019. <strong>Model Cards for Model Reporting</strong>. <a href="https://arxiv.org/abs/1810.03993">https://arxiv.org/abs/1810.03993</a> Presenter: TBD</li>
+</ul>
+<p>Discussion questions:</p>
+<ul>
+<li>Which artifacts are needed to audit a model-training claim?</li>
+<li>What does &quot;open&quot; mean beyond making weights downloadable?</li>
+<li>What kind of data documentation is realistic in a student project?</li>
+<li>How should students check for contamination, leakage, and overclaiming?</li>
+</ul>
+<h2 id="seminar-2-fine-tuning-small-local-models">Seminar 2: Fine-Tuning Small Local Models</h2>
+<p>This seminar focuses on adapting models with limited compute. We discuss supervised fine-tuning, parameter-efficient adaptation, instruction tuning, and what students should compare against before claiming that training helped.</p>
+<p>Assigned papers:</p>
+<ul>
+<li>Hu et al. 2021. <strong>LoRA: Low-Rank Adaptation of Large Language Models</strong>. <a href="https://arxiv.org/abs/2106.09685">https://arxiv.org/abs/2106.09685</a> Presenter: TBD</li>
+<li>Dettmers et al. 2023. <strong>QLoRA: Efficient Finetuning of Quantized LLMs</strong>. <a href="https://arxiv.org/abs/2305.14314">https://arxiv.org/abs/2305.14314</a> Presenter: TBD</li>
+<li>Ouyang et al. 2022. <strong>Training Language Models to Follow Instructions with Human Feedback</strong>. <a href="https://arxiv.org/abs/2203.02155">https://arxiv.org/abs/2203.02155</a> Presenter: TBD</li>
+</ul>
+<p>Discussion questions:</p>
+<ul>
+<li>What is actually trained in LoRA or QLoRA?</li>
+<li>When is instruction tuning the right method?</li>
+<li>When is a classifier, reranker, or retrieval component a better local model?</li>
+<li>What should the baseline be for a small-model adaptation project?</li>
+</ul>
+<h2 id="seminar-3-advanced-techniques-and-agent-assisted-research">Seminar 3: Advanced Techniques And Agent-Assisted Research</h2>
+<p>This seminar looks at methods that are powerful but easy to overclaim: preference tuning, verifiable rewards, context extension, and agent-assisted experimentation. The focus is on when these methods make sense and how to evaluate them responsibly.</p>
+<p>Assigned papers:</p>
+<ul>
+<li>Rafailov et al. 2023. <strong>Direct Preference Optimization: Your Language Model is Secretly a Reward Model</strong>. <a href="https://arxiv.org/abs/2305.18290">https://arxiv.org/abs/2305.18290</a> Presenter: TBD</li>
+<li>Shao et al. 2024. <strong>DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models</strong>. <a href="https://arxiv.org/abs/2402.03300">https://arxiv.org/abs/2402.03300</a> Presenter: TBD</li>
+<li>Peng et al. 2023. <strong>YaRN: Efficient Context Window Extension of Large Language Models</strong>. <a href="https://arxiv.org/abs/2309.00071">https://arxiv.org/abs/2309.00071</a> Presenter: TBD</li>
+</ul>
+<p>Discussion questions:</p>
+<ul>
+<li>What makes a reward verifiable?</li>
+<li>Why should reinforcement-style methods be restricted to tasks with clear automatic checks?</li>
+<li>How can we test whether a model really uses long context?</li>
+<li>What can an AI agent help with, and what must the student verify manually?</li>
+</ul>
+<h2 id="additional-reading">Additional Reading</h2>
+<p>Students should use the additional reading list to find work close to their own task, language, method, or evaluation problem.</p>
+<p>Open training and artifacts:</p>
+<ul>
+<li>Birger Moell. 2026. <strong>The 2026 Fully Open LLM Training Guide</strong>. <a href="https://birgermoell.github.io/openeurollm-open-llm-guide/docs/fully-open-llm-guide-2026.pdf">https://birgermoell.github.io/openeurollm-open-llm-guide/docs/fully-open-llm-guide-2026.pdf</a></li>
+<li>Karpathy. <strong>nanochat</strong>. <a href="https://github.com/karpathy/nanochat">https://github.com/karpathy/nanochat</a></li>
+<li>Karpathy. <strong>autoresearch</strong>. <a href="https://github.com/karpathy/autoresearch">https://github.com/karpathy/autoresearch</a></li>
+<li>Hugging Face. <strong>Model cards</strong>. <a href="https://huggingface.co/docs/hub/model-cards">https://huggingface.co/docs/hub/model-cards</a></li>
+<li>Hugging Face. <strong>Dataset cards</strong>. <a href="https://huggingface.co/docs/datasets/dataset_card">https://huggingface.co/docs/datasets/dataset_card</a></li>
+</ul>
+<p>Fine-tuning and local adaptation:</p>
+<ul>
+<li>Hugging Face. <strong>PEFT documentation</strong>. <a href="https://huggingface.co/docs/peft">https://huggingface.co/docs/peft</a></li>
+<li>Hugging Face. <strong>TRL SFTTrainer</strong>. <a href="https://huggingface.co/docs/trl/sft_trainer">https://huggingface.co/docs/trl/sft_trainer</a></li>
+<li>Hugging Face. <strong>TRL DPOTrainer</strong>. <a href="https://huggingface.co/docs/trl/dpo_trainer">https://huggingface.co/docs/trl/dpo_trainer</a></li>
+<li>Hugging Face. <strong>TRL GRPOTrainer</strong>. <a href="https://huggingface.co/docs/trl/grpo_trainer">https://huggingface.co/docs/trl/grpo_trainer</a></li>
+<li>Wang et al. 2022. <strong>Self-Instruct: Aligning Language Models with Self-Generated Instructions</strong>. <a href="https://arxiv.org/abs/2212.10560">https://arxiv.org/abs/2212.10560</a></li>
+<li>Wei et al. 2021. <strong>Finetuned Language Models Are Zero-Shot Learners</strong>. <a href="https://arxiv.org/abs/2109.01652">https://arxiv.org/abs/2109.01652</a></li>
+</ul>
+<p>Local model families and deployment:</p>
+<ul>
+<li>Qwen model collection. <a href="https://huggingface.co/Qwen">https://huggingface.co/Qwen</a></li>
+<li>Gemma model documentation. <a href="https://ai.google.dev/gemma">https://ai.google.dev/gemma</a></li>
+<li>llama.cpp GGUF documentation. <a href="https://huggingface.co/docs/hub/en/gguf-llamacpp">https://huggingface.co/docs/hub/en/gguf-llamacpp</a></li>
+<li>Ollama Modelfile documentation. <a href="https://docs.ollama.com/modelfile">https://docs.ollama.com/modelfile</a></li>
+<li>MLX-LM. <a href="https://github.com/ml-explore/mlx-lm">https://github.com/ml-explore/mlx-lm</a></li>
+</ul>
+<p>Context and long-context evaluation:</p>
+<ul>
+<li>Chen et al. 2023. <strong>Extending Context Window of Large Language Models via Positional Interpolation</strong>. <a href="https://arxiv.org/abs/2306.15595">https://arxiv.org/abs/2306.15595</a></li>
+<li>Ding et al. 2024. <strong>LongRoPE: Extending LLM Context Window Beyond 2 Million Tokens</strong>. <a href="https://arxiv.org/abs/2402.13753">https://arxiv.org/abs/2402.13753</a></li>
+<li>Hsieh et al. 2024. <strong>RULER: What&#x27;s the Real Context Size of Your Long-Context Language Models?</strong> <a href="https://arxiv.org/abs/2404.06654">https://arxiv.org/abs/2404.06654</a></li>
+</ul>
+<p>Agents, tools, and retrieval:</p>
+<ul>
+<li>Schick et al. 2023. <strong>Toolformer: Language Models Can Teach Themselves to Use Tools</strong>. <a href="https://arxiv.org/abs/2302.04761">https://arxiv.org/abs/2302.04761</a></li>
+<li>Yao et al. 2022. <strong>ReAct: Synergizing Reasoning and Acting in Language Models</strong>. <a href="https://arxiv.org/abs/2210.03629">https://arxiv.org/abs/2210.03629</a></li>
+<li>Khattab and Zaharia. 2020. <strong>ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction</strong>. <a href="https://arxiv.org/abs/2004.12832">https://arxiv.org/abs/2004.12832</a></li>
+<li>Nogueira et al. 2020. <strong>Document Ranking with a Pretrained Sequence-to-Sequence Model</strong>. <a href="https://arxiv.org/abs/2003.06713">https://arxiv.org/abs/2003.06713</a></li>
+<li>Reimers and Gurevych. 2019. <strong>Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks</strong>. <a href="https://arxiv.org/abs/1908.10084">https://arxiv.org/abs/1908.10084</a></li>
+</ul>
+<h2 id="technical-expectations">Technical Expectations</h2>
+<p>Each project should produce a small but inspectable technical package. Depending on the project, this may be a trained adapter, checkpoint, reranker, classifier, GGUF model, MLX model, ONNX export, or reproducible training script.</p>
+<p>The final artifact should include:</p>
+<ul>
+<li>a README with local run instructions;</li>
+<li>training and evaluation configs;</li>
+<li>data documentation;</li>
+<li>saved metrics;</li>
+<li>representative outputs;</li>
+<li>model card or artifact card;</li>
+<li>limitations and known failure cases.</li>
+</ul>
+<p>Students do not need to make the largest possible model run locally. They need to show, with evidence, whether a small local model or trained component became useful for a specific task.</p>
+<h2 id="course-repository">Course Repository</h2>
+<p>The theme resources, tiny training examples, laptop demos, assignment guidance, and templates are collected here:</p>
+<p><a href="https://birgermoell.github.io/useful-local-models-2026/">https://birgermoell.github.io/useful-local-models-2026/</a></p>
+<p>Students may use these materials for orientation and implementation practice. Their submitted project should still have its own research question, dataset, method choice, and evaluation design.</p>
+    </main>
+    <script src="resource.js"></script>
+  </body>
+</html>

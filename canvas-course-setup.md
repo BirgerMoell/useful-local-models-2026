@@ -65,9 +65,14 @@ Create assignments from:
 
 ### Theme Module: Useful Local Models
 
+Suggested module name:
+
+- `Theme: Useful Local Models (Birger Moell)`
+
 Create pages:
 
 - Theme description.
+- Canvas-ready full theme module page.
 - Reading and seminar plan.
 - Project directions.
 - AI assistance and research integrity.
@@ -78,6 +83,7 @@ Create pages:
 Suggested links:
 
 - `resources/studium-theme-description.html`
+- `resources/canvas-theme-module-useful-local-models.html`
 - `resources/reading-and-seminar-plan.html`
 - `resources/project-ideas.html`
 - `resources/ai-assistance-policy.html`

@@ -21,6 +21,7 @@ DOCS = {
     "local-deployment-guide": ROOT / "local-deployment-guide.md",
     "project-tracks": ROOT / "project-tracks.md",
     "canvas-course-setup": ROOT / "canvas-course-setup.md",
+    "canvas-theme-module-useful-local-models": ROOT / "canvas-theme-module-useful-local-models.md",
     "teacher-overview": ROOT / "teacher-overview.md",
     "teacher-start-checklist": ROOT / "teacher-start-checklist.md",
     "milestones-and-schedule": ROOT / "milestones-and-schedule.md",
@@ -245,6 +246,13 @@ def inline(text: str) -> str:
         return f'<a href="{href}">{label}</a>'
 
     text = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", link, text)
+    text = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", text)
+    text = re.sub(r"\*([^*]+)\*", r"<em>\1</em>", text)
+    text = re.sub(
+        r'(?<!href=")(https?://[^\s<]+)',
+        r'<a href="\1">\1</a>',
+        text,
+    )
     return text
 
 
@@ -418,12 +426,24 @@ def render_markdown(markdown: str) -> tuple[str, str]:
     in_list = False
     in_table = False
     table_rows: list[list[str]] = []
+    paragraph_lines: list[str] = []
+    list_items: list[str] = []
+
+    def flush_paragraph() -> None:
+        nonlocal paragraph_lines
+        if paragraph_lines:
+            out.append(f"<p>{inline(' '.join(paragraph_lines))}</p>")
+            paragraph_lines = []
 
     def close_list() -> None:
-        nonlocal in_list
+        nonlocal in_list, list_items
         if in_list:
+            out.append("<ul>")
+            for item in list_items:
+                out.append(f"<li>{inline(item)}</li>")
             out.append("</ul>")
             in_list = False
+            list_items = []
 
     def flush_table() -> None:
         nonlocal in_table, table_rows
@@ -444,6 +464,7 @@ def render_markdown(markdown: str) -> tuple[str, str]:
         stripped = line.strip()
 
         if stripped.startswith("```"):
+            flush_paragraph()
             flush_table()
             close_list()
             if in_code:
@@ -459,11 +480,13 @@ def render_markdown(markdown: str) -> tuple[str, str]:
             continue
 
         if not stripped:
+            flush_paragraph()
             flush_table()
             close_list()
             continue
 
         if stripped.startswith("|") and stripped.endswith("|"):
+            flush_paragraph()
             close_list()
             in_table = True
             table_rows.append([cell for cell in stripped.strip("|").split("|")])
@@ -472,6 +495,7 @@ def render_markdown(markdown: str) -> tuple[str, str]:
 
         heading = re.match(r"^(#{1,4})\s+(.+)$", stripped)
         if heading:
+            flush_paragraph()
             close_list()
             level = len(heading.group(1))
             text = heading.group(2)
@@ -481,15 +505,20 @@ def render_markdown(markdown: str) -> tuple[str, str]:
             continue
 
         if stripped.startswith("- "):
+            flush_paragraph()
             if not in_list:
-                out.append("<ul>")
                 in_list = True
-            out.append(f"<li>{inline(stripped[2:])}</li>")
+            list_items.append(stripped[2:])
+            continue
+
+        if in_list and line.startswith(("  ", "\t")) and list_items:
+            list_items[-1] = f"{list_items[-1]} {stripped}"
             continue
 
         close_list()
-        out.append(f"<p>{inline(stripped)}</p>")
+        paragraph_lines.append(stripped)
 
+    flush_paragraph()
     flush_table()
     close_list()
     if in_code:

@@ -14,12 +14,10 @@
     <main>
       <h1 id="worked-systems-nanochat-and-autoresearch">Worked Systems: Nanochat And Autoresearch</h1>
 <p>The guiding question is:</p>
-<p>**Can we make small local models genuinely useful?**</p>
-<p><code>nanochat</code> and <code>autoresearch</code> give two concrete systems to inspect: a readable</p>
-<p>end-to-end local LLM stack and an agent-assisted experiment loop.</p>
+<p><strong>Can we make small local models genuinely useful?</strong></p>
+<p><code>nanochat</code> and <code>autoresearch</code> give two concrete systems to inspect: a readable end-to-end local LLM stack and an agent-assisted experiment loop.</p>
 <h2 id="what-nanochat-contributes">What Nanochat Contributes</h2>
-<p><code>karpathy/nanochat</code> is useful because it shows an entire LLM lifecycle in one</p>
-<p>hackable codebase:</p>
+<p><code>karpathy/nanochat</code> is useful because it shows an entire LLM lifecycle in one hackable codebase:</p>
 <ul>
 <li>tokenizer training;</li>
 <li>pretraining;</li>
@@ -30,24 +28,18 @@
 <li>chat CLI;</li>
 <li>web UI.</li>
 </ul>
-<p>It is not a required base, but it is a useful reference implementation: compact</p>
-<p>enough to inspect, complete enough to show the real pipeline.</p>
+<p>It is not a required base, but it is a useful reference implementation: compact enough to inspect, complete enough to show the real pipeline.</p>
 <p>Useful roles:</p>
 <ul>
 <li>first-pass map of a full local training stack;</li>
 <li>file-structure reading before the first technical seminar or demo;</li>
 <li>use <code>runs/runcpu.sh</code> or a small depth run as the accessible demo path;</li>
-<li>use <code>runs/speedrun.sh</code> as the ambitious full-stack reference, not as a</li>
-</ul>
-<p>requirement;</p>
-<ul>
+<li>use <code>runs/speedrun.sh</code> as the ambitious full-stack reference, not as a requirement;</li>
 <li>use the <code>tasks/</code> structure as inspiration for evaluation tasks;</li>
-<li>use <code>scripts/chat_sft.py</code>, <code>scripts/chat_eval.py</code>, and <code>scripts/chat_rl.py</code> as</li>
+<li>use <code>scripts/chat_sft.py</code>, <code>scripts/chat_eval.py</code>, and <code>scripts/chat_rl.py</code> as examples of staged post-training.</li>
 </ul>
-<p>examples of staged post-training.</p>
 <h2 id="what-autoresearch-contributes">What Autoresearch Contributes</h2>
-<p><code>karpathy/autoresearch</code> is useful because it makes AI agents part of the research</p>
-<p>workflow instead of a hidden shortcut.</p>
+<p><code>karpathy/autoresearch</code> is useful because it makes AI agents part of the research workflow instead of a hidden shortcut.</p>
 <p>Its core pattern is auditable:</p>
 <pre><code>
 fixed training setup
@@ -67,8 +59,7 @@ fixed training setup
 <li>ask agents for hypotheses, tests, and code review, not only implementation.</li>
 </ul>
 <h2 id="project-adaptation">Project Adaptation</h2>
-<p>The whole LLM pipeline does not have to be completed in order. A good project</p>
-<p>chooses a **research slice** and makes it auditable.</p>
+<p>The whole LLM pipeline does not have to be completed in order. A good project chooses a <strong>research slice</strong> and makes it auditable.</p>
 <p>Possible slices:</p>
 <ul>
 <li>train a small model from scratch using a nanochat-style setup;</li>
@@ -89,13 +80,8 @@ fixed training setup
 <li>a note on failed or rejected agent experiments.</li>
 </ul>
 <h2 id="agent-use-policy">Agent-Use Policy</h2>
-<p>AI agents may be used for coding, debugging, experiment design, and</p>
-<p>documentation scaffolding. The submitted analysis remains the author&#x27;s</p>
-<p>responsibility. Any substantial agent contribution to code, data generation,</p>
-<p>annotation, evaluation, or analysis should be disclosed in the artifact manifest</p>
-<p>and final report.</p>
-<p>Peer-review papers and confidential work must not be uploaded to external AI</p>
-<p>services.</p>
+<p>AI agents may be used for coding, debugging, experiment design, and documentation scaffolding. The submitted analysis remains the author&#x27;s responsibility. Any substantial agent contribution to code, data generation, annotation, evaluation, or analysis should be disclosed in the artifact manifest and final report.</p>
+<p>Peer-review papers and confidential work must not be uploaded to external AI services.</p>
     </main>
     <script src="resource.js"></script>
   </body>

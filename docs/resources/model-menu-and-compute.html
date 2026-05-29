@@ -13,13 +13,9 @@
     </header>
     <main>
       <h1 id="model-menu-and-compute-guidance">Model Menu And Compute Guidance</h1>
-<p>Re-verify model availability, licenses, and tooling shortly before the course</p>
-<p>starts.</p>
+<p>Re-verify model availability, licenses, and tooling shortly before the course starts.</p>
 <h2 id="default-recommendation">Default Recommendation</h2>
-<p>For most generative projects, start with a small open model in the 0.5B-4B range</p>
-<p>and train an adapter rather than a full model. The default named targets for</p>
-<p>HT2026 should be Gemma 4 E2B/E4B and Qwen3.5 0.8B/2B/4B, with Qwen3-0.6B kept</p>
-<p>as the fastest fallback.</p>
+<p>For most generative projects, start with a small open model in the 0.5B-4B range and train an adapter rather than a full model. The default named targets for HT2026 should be Gemma 4 E2B/E4B and Qwen3.5 0.8B/2B/4B, with Qwen3-0.6B kept as the fastest fallback.</p>
 <p>Recommended default pattern:</p>
 <pre><code>
 base model -&gt; baseline prompting -&gt; SFT with LoRA/QLoRA -&gt; evaluation -&gt; local export
@@ -41,17 +37,10 @@ base model -&gt; baseline prompting -&gt; SFT with LoRA/QLoRA -&gt; evaluation -
 </ul>
 <p>Notes:</p>
 <ul>
-<li>Gemma 4 E2B and E4B are the named small-model targets for projects that need a</li>
+<li>Gemma 4 E2B and E4B are the named small-model targets for projects that need a modern Google model family.</li>
+<li>E2B is the standard starting point; E4B is stronger but needs more careful compute planning.</li>
+<li>Gemma access, license terms, gated downloads, and derivative release rules must be checked before public adapter release.</li>
 </ul>
-<p>modern Google model family.</p>
-<ul>
-<li>E2B is the standard starting point; E4B is stronger but needs more careful</li>
-</ul>
-<p>compute planning.</p>
-<ul>
-<li>Gemma access, license terms, gated downloads, and derivative release rules</li>
-</ul>
-<p>must be checked before public adapter release.</p>
 <h3 id="qwen3-5-small-models">Qwen3.5 Small Models</h3>
 <p>Good for:</p>
 <ul>
@@ -69,17 +58,10 @@ base model -&gt; baseline prompting -&gt; SFT with LoRA/QLoRA -&gt; evaluation -
 <p>Notes:</p>
 <ul>
 <li>Qwen3.5-0.8B is the fastest named target for local experiments.</li>
-<li>Qwen3.5-2B is the likely default when quality matters but laptop feasibility</li>
+<li>Qwen3.5-2B is the likely default when quality matters but laptop feasibility still matters.</li>
+<li>Qwen3.5-4B is a strong upper-end course target; training requires a realistic GPU plan.</li>
+<li>Larger Qwen3.5 variants can be used for comparison or distillation, but not as the default training target.</li>
 </ul>
-<p>still matters.</p>
-<ul>
-<li>Qwen3.5-4B is a strong upper-end course target; training requires a realistic</li>
-</ul>
-<p>GPU plan.</p>
-<ul>
-<li>Larger Qwen3.5 variants can be used for comparison or distillation, but not as</li>
-</ul>
-<p>the default training target.</p>
 <h3 id="qwen3-small-models">Qwen3 Small Models</h3>
 <p>Good for:</p>
 <ul>
@@ -97,10 +79,7 @@ base model -&gt; baseline prompting -&gt; SFT with LoRA/QLoRA -&gt; evaluation -
 <p>Notes:</p>
 <ul>
 <li>Qwen3-0.6B remains useful for fast experiments and laptop inference.</li>
-<li>Qwen3-4B is a stronger upper-end option but should be treated as advanced for</li>
-</ul>
-<p>training.</p>
-<ul>
+<li>Qwen3-4B is a stronger upper-end option but should be treated as advanced for training.</li>
 <li>Verify license and exact model variant before assigning.</li>
 </ul>
 <h3 id="smollm3">SmolLM3</h3>
@@ -118,13 +97,9 @@ base model -&gt; baseline prompting -&gt; SFT with LoRA/QLoRA -&gt; evaluation -
 </ul>
 <p>Notes:</p>
 <ul>
-<li>Strong candidate for course use because it is explicitly positioned as a small,</li>
+<li>Strong candidate for course use because it is explicitly positioned as a small, open local model.</li>
+<li>Students should still test whether the language/task coverage fits their project.</li>
 </ul>
-<p>open local model.</p>
-<ul>
-<li>Students should still test whether the language/task coverage fits their</li>
-</ul>
-<p>project.</p>
 <h3 id="gemma-3-small-models">Gemma 3 Small Models</h3>
 <p>Good for:</p>
 <ul>
@@ -140,10 +115,7 @@ base model -&gt; baseline prompting -&gt; SFT with LoRA/QLoRA -&gt; evaluation -
 <ul>
 <li>Gemma 3 is a fallback when Gemma 4 access or tooling is inconvenient.</li>
 <li>Access may require accepting Google&#x27;s terms.</li>
-<li>License and derivative-use restrictions must be checked carefully before a</li>
-</ul>
-<p>release is built around it.</p>
-<ul>
+<li>License and derivative-use restrictions must be checked carefully before a release is built around it.</li>
 <li>Prefer models with simpler open licenses for public adapter releases.</li>
 </ul>
 <h3 id="encoder-models">Encoder Models</h3>
@@ -156,9 +128,7 @@ base model -&gt; baseline prompting -&gt; SFT with LoRA/QLoRA -&gt; evaluation -
 <li>retrieval;</li>
 <li>hallucination detection.</li>
 </ul>
-<p>Students do not need a causal LM if an encoder model is a better research fit.</p>
-<p>Small encoder projects are often stronger scientifically because evaluation is</p>
-<p>cleaner.</p>
+<p>Students do not need a causal LM if an encoder model is a better research fit. Small encoder projects are often stronger scientifically because evaluation is cleaner.</p>
 <h2 id="training-budget-tiers">Training Budget Tiers</h2>
 <h3 id="tier-a-laptop-cpu-friendly">Tier A: Laptop / CPU-Friendly</h3>
 <p>Suitable for:</p>

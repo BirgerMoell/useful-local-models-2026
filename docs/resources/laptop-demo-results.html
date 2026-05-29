@@ -43,38 +43,16 @@ python demos/run_all.py --device mps
 </table>
 <p>Interpretation:</p>
 <ul>
-<li>The language-model run shows that the training loop lowers held-out</li>
-</ul>
-<p>next-token loss, but the generated sample is still low quality because the</p>
-<p>corpus and model are intentionally tiny.</p>
-<ul>
-<li>The tool router learns all held-out routing labels and keeps JSON validity at</li>
-</ul>
-<p>100%.</p>
-<ul>
+<li>The language-model run shows that the training loop lowers held-out next-token loss, but the generated sample is still low quality because the corpus and model are intentionally tiny.</li>
+<li>The tool router learns all held-out routing labels and keeps JSON validity at 100%.</li>
 <li>The reranker moves every held-out query&#x27;s relevant document to rank 1.</li>
-<li>The verifiable-reward arithmetic run moves from mostly wrong answers to exact</li>
+<li>The verifiable-reward arithmetic run moves from mostly wrong answers to exact answers on all one-digit addition pairs.</li>
+<li>The course resource ranker trains on the repo&#x27;s Markdown course materials and learns to route held-out student questions to the right resource page.</li>
+<li>The DPO run changes held-out preference margins so chosen project-writing answers score above rejected overclaims.</li>
+<li>The tool-call SFT run learns the tool schema for local-agent commands and uses deterministic rendering to keep JSON valid.</li>
+<li>The context-needle run shows a tiny attention reader learning to select the right value from a longer key/value record.</li>
 </ul>
-<p>answers on all one-digit addition pairs.</p>
-<ul>
-<li>The course resource ranker trains on the repo&#x27;s Markdown course materials and</li>
-</ul>
-<p>learns to route held-out student questions to the right resource page.</p>
-<ul>
-<li>The DPO run changes held-out preference margins so chosen project-writing</li>
-</ul>
-<p>answers score above rejected overclaims.</p>
-<ul>
-<li>The tool-call SFT run learns the tool schema for local-agent commands and uses</li>
-</ul>
-<p>deterministic rendering to keep JSON valid.</p>
-<ul>
-<li>The context-needle run shows a tiny attention reader learning to select the</li>
-</ul>
-<p>right value from a longer key/value record.</p>
-<p>The numbers are not intended as benchmark scores. They are smoke-test evidence</p>
-<p>that the training code updates parameters, evaluates held-out behavior, and</p>
-<p>writes inspectable artifacts on laptop hardware.</p>
+<p>The numbers are not intended as benchmark scores. They are smoke-test evidence that the training code updates parameters, evaluates held-out behavior, and writes inspectable artifacts on laptop hardware.</p>
     </main>
     <script src="resource.js"></script>
   </body>
