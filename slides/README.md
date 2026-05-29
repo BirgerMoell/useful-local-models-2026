@@ -1,13 +1,13 @@
 # Presentation Plan
 
 If you are the teacher responsible for this project/theme, you probably need
-four prepared presentations and one optional micro-deck.
+four prepared presentations and one short final-workshop opener.
 
 ## Core Decks
 
 1. **Theme Pitch**
    - When: first course meeting / theme selection.
-   - Length: 5-8 minutes.
+   - Length: 10 minutes.
    - Goal: attract students and define the guiding question.
    - Page: `site/slides/theme-pitch.html`
 
@@ -29,7 +29,7 @@ four prepared presentations and one optional micro-deck.
    - Goal: make evaluation, model cards, local deployment, and limitations concrete.
    - Page: `site/slides/evaluation-release.html`
 
-## Optional Deck
+## Short Opener
 
 5. **Final Workshop Framing**
    - When: final workshop opening.
@@ -44,4 +44,3 @@ The pitch is:
 
 **Small local models are worth studying when they solve constrained tasks with
 clear evidence and real deployment advantages.**
-

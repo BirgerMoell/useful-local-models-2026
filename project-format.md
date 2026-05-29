@@ -22,6 +22,10 @@ an evaluation task, a nanochat experiment, a local deployment target, or an
 agent-assisted search loop. By the end, the evidence chain must be complete and
 inspectable.
 
+Teacher demos, example scripts, and project ideas are scaffolds. A student may
+adapt them, but the submitted project still needs an independently formulated
+research question and a student-owned angle.
+
 ## Required Project Shape
 
 Every project must have:
@@ -136,6 +140,10 @@ The teacher can provide shared:
 
 Students still write individual proposals, train their own model or component,
 and submit individual reports.
+
+The supervisor may point students to datasets, shared tasks, papers, and broad
+directions. The supervisor should not provide fully specified projects where the
+research question, data choice, and method are already fixed.
 
 ## Recommended Limits
 

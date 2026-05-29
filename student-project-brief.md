@@ -11,6 +11,10 @@ experimentation. Every project follows the same research discipline: careful
 data, explicit training, reproducible evaluation, and an artifact that another
 person can run.
 
+The examples in this course pack are starting points, not assigned projects.
+Your project proposal should define your own research question, task, data, and
+evaluation angle inside the shared theme.
+
 ## Central Question
 
 Can we make small local models genuinely useful?
@@ -91,6 +95,19 @@ Your final project must include:
 - model card and dataset card;
 - ethical considerations;
 - final paper in the course format.
+
+## Presentations And Seminars
+
+During the course you should expect to:
+
+- present and lead discussion of one literature-seminar paper;
+- present your project proposal, normally around 8 minutes with slides;
+- give short progress updates in the theme seminars;
+- present the final project at the workshop.
+
+Progress seminars are also the main supervision setting. Bring concrete
+questions, blockers, examples, or early results so the group can give useful
+feedback.
 
 ## Strong Projects
 

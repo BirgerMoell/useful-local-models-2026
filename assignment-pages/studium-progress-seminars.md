@@ -1,6 +1,11 @@
 # Studium Page: Progress Seminars
 
-Progress seminars check scientific feasibility and technical auditability.
+Progress seminars check scientific feasibility and technical auditability. They
+are also the main supervision setting for the project. Prepare a short update on
+what has changed since the previous seminar and what you plan to do next.
+
+Slides are not required unless you want to show a figure, result table, example
+output, or error case.
 
 ## Progress Seminar 1: Data And Baseline
 

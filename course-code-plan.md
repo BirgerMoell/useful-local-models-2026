@@ -18,7 +18,7 @@ Purpose:
 
 - show hello-world versions of modern training techniques;
 - provide concrete Python files that can be modified;
-- keep examples small enough for a lab session;
+- keep examples small enough for a seminar demo or self-study run;
 - separate technique examples by folder.
 
 Current examples:

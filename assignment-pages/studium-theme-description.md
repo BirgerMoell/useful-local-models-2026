@@ -24,6 +24,9 @@ adaptation, local RAG components, structured information extraction, small-model
 instruction tuning, context extension, verifiable-reward training, and sandboxed
 agentic tasks.
 
+The examples and demos in the theme material are starting points. Each student
+will formulate their own individual research question and project angle.
+
 The key question for all projects is:
 
 **Can a small local model be made genuinely useful for a specific language

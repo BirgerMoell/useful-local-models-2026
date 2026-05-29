@@ -27,7 +27,7 @@ enough to inspect, complete enough to show the real pipeline.
 Useful roles:
 
 - first-pass map of a full local training stack;
-- file-structure reading before the first technical lab;
+- file-structure reading before the first technical seminar or demo;
 - use `runs/runcpu.sh` or a small depth run as the accessible demo path;
 - use `runs/speedrun.sh` as the ambitious full-stack reference, not as a
   requirement;

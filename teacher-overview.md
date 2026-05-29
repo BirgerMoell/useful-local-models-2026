@@ -12,6 +12,11 @@ The project structure fits the existing 5LN714 rhythm: literature seminars,
 project proposal, progress seminars, first report, peer review, final workshop,
 and final report.
 
+The HT2026 planning documents name Ellinor Lindqvist as course-responsible
+teacher, Sara Stymne as examiner, and Birger Moell, Fredrik Wahlberg, Ellinor
+Lindqvist, and Murathan Kurfali as teaching staff. The announced course period is
+2026-08-31 to 2027-01-17.
+
 ## Official Course Anchor
 
 The public Uppsala University course page lists 5LN714 as a 15-credit master's
@@ -88,6 +93,26 @@ The final local artifact should ideally run on:
 - Apple Silicon with MLX or llama.cpp;
 - a consumer GPU with 8-16 GB VRAM;
 - UPPMAX for training, but not as the only way to inspect the final model.
+
+## Supervisor Format For 2026
+
+The supervisor role is to lead students through a research cycle, not to assign
+fully specified projects. Students should formulate their own research questions
+inside the theme. It is useful to pitch directions, datasets, shared tasks, and
+project types, but the final angle should be the student's own.
+
+Before the course starts, prepare:
+
+- a 10-minute theme introduction for the first lecture;
+- 1-2 paragraphs for the Studium theme page;
+- three literature seminars with three assigned papers each;
+- around 20-25 additional references for project inspiration;
+- broad project directions, not ready-made project specifications.
+
+The 2026 planning notes remove lab sessions from the course. Progress seminars
+are therefore the main supervision venue. Do not schedule regular compulsory
+extra meetings outside the seminar hours; answer questions by email or brief
+meetings when needed.
 
 ## Required Project Artifact Set
 

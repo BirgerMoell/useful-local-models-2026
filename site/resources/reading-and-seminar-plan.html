@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reading And Seminar Plan - Useful Local Models</title>
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="resource.css">
+  </head>
+  <body>
+    <header>
+      <a href="../index.html">Useful Local Models</a>
+    </header>
+    <main>
+      <h1 id="reading-and-seminar-plan">Reading And Seminar Plan</h1>
+<p>The supervisor instructions for 2026 ask each theme to prepare three literature</p>
+<p>seminars with three assigned articles per seminar. Students read all articles</p>
+<p>for the seminar. Each student presents and leads discussion of one article during</p>
+<p>the literature block, with a short presentation of at most 5 minutes.</p>
+<p>If the group has fewer than nine students, the supervisor should cover the</p>
+<p>remaining paper slots. Save around 15 minutes for project ideas in seminars 1</p>
+<p>and 2, and use the extra time in seminar 3 for more concrete project scoping.</p>
+<h2 id="seminar-1-open-training-pipelines-and-artifacts">Seminar 1: Open Training Pipelines And Artifacts</h2>
+<p>Theme:</p>
+<p>How do we make model training auditable?</p>
+<p>Assigned papers:</p>
+<ul>
+<li>Groeneveld et al. 2024. *OLMo: Accelerating the Science of Language Models*. https://arxiv.org/abs/2402.00838</li>
+<li>Soldaini et al. 2024. *Dolma: An Open Corpus of Three Trillion Tokens for Language Model Pretraining Research*. https://arxiv.org/abs/2402.00159</li>
+<li>Mitchell et al. 2019. *Model Cards for Model Reporting*. https://arxiv.org/abs/1810.03993</li>
+</ul>
+<p>Discussion questions:</p>
+<ul>
+<li>Which artifacts are necessary for scientific audit?</li>
+<li>What does &quot;open&quot; mean beyond downloadable weights?</li>
+<li>What data documentation is realistic in a student project?</li>
+<li>How should contamination be checked at course scale?</li>
+</ul>
+<h2 id="seminar-2-fine-tuning-small-local-models">Seminar 2: Fine-Tuning Small Local Models</h2>
+<p>Theme:</p>
+<p>How can small models be adapted with limited compute?</p>
+<p>Assigned papers:</p>
+<ul>
+<li>Hu et al. 2021. *LoRA: Low-Rank Adaptation of Large Language Models*. https://arxiv.org/abs/2106.09685</li>
+<li>Dettmers et al. 2023. *QLoRA: Efficient Finetuning of Quantized LLMs*. https://arxiv.org/abs/2305.14314</li>
+<li>Ouyang et al. 2022. *Training Language Models to Follow Instructions with Human Feedback*. https://arxiv.org/abs/2203.02155</li>
+</ul>
+<p>Discussion questions:</p>
+<ul>
+<li>What is actually trained in LoRA or QLoRA?</li>
+<li>When is SFT appropriate, and when is a classifier or reranker better?</li>
+<li>What should the baseline be?</li>
+<li>What are realistic compute constraints for student projects?</li>
+</ul>
+<h2 id="seminar-3-advanced-techniques-and-agent-assisted-research">Seminar 3: Advanced Techniques And Agent-Assisted Research</h2>
+<p>Theme:</p>
+<p>When do context extension, DPO, GRPO/RLVR, and agent-assisted research make</p>
+<p>sense?</p>
+<p>Assigned papers:</p>
+<ul>
+<li>Rafailov et al. 2023. *Direct Preference Optimization: Your Language Model is Secretly a Reward Model*. https://arxiv.org/abs/2305.18290</li>
+<li>Shao et al. 2024. *DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models*. https://arxiv.org/abs/2402.03300</li>
+<li>Peng et al. 2023. *YaRN: Efficient Context Window Extension of Large Language Models*. https://arxiv.org/abs/2309.00071</li>
+</ul>
+<p>Discussion questions:</p>
+<ul>
+<li>What makes a reward verifiable?</li>
+<li>Why should GRPO/RLVR be restricted to tasks with objective rewards?</li>
+<li>How can a student evaluate actual long-context use rather than context length</li>
+</ul>
+<p>claims?</p>
+<ul>
+<li>What should an agent be allowed to edit, and what must the human review?</li>
+</ul>
+<h2 id="additional-references-for-project-inspiration">Additional References For Project Inspiration</h2>
+<p>Use these as optional reading and project-scoping references. The list is longer</p>
+<p>than the assigned seminar packet so students can find papers close to their own</p>
+<p>task, language, or method.</p>
+<ul>
+<li>Birger Moell. 2026. *The 2026 Fully Open LLM Training Guide*. https://birgermoell.github.io/openeurollm-open-llm-guide/docs/fully-open-llm-guide-2026.pdf</li>
+<li>Karpathy. *nanochat*. https://github.com/karpathy/nanochat</li>
+<li>Karpathy. *autoresearch*. https://github.com/karpathy/autoresearch</li>
+<li>Hugging Face PEFT documentation. https://huggingface.co/docs/peft</li>
+<li>Hugging Face TRL SFTTrainer documentation. https://huggingface.co/docs/trl/sft_trainer</li>
+<li>Hugging Face TRL DPOTrainer documentation. https://huggingface.co/docs/trl/dpo_trainer</li>
+<li>Hugging Face TRL GRPOTrainer documentation. https://huggingface.co/docs/trl/grpo_trainer</li>
+<li>Hugging Face model card documentation. https://huggingface.co/docs/hub/model-cards</li>
+<li>Hugging Face dataset card documentation. https://huggingface.co/docs/datasets/dataset_card</li>
+<li>Qwen model documentation and small local checkpoints. https://huggingface.co/Qwen</li>
+<li>Gemma model documentation and local checkpoints. https://ai.google.dev/gemma</li>
+<li>Chen et al. 2023. *Extending Context Window of Large Language Models via Positional Interpolation*. https://arxiv.org/abs/2306.15595</li>
+<li>Ding et al. 2024. *LongRoPE: Extending LLM Context Window Beyond 2 Million Tokens*. https://arxiv.org/abs/2402.13753</li>
+<li>Hsieh et al. 2024. *RULER: What&#x27;s the Real Context Size of Your Long-Context Language Models?* https://arxiv.org/abs/2404.06654</li>
+<li>Schick et al. 2023. *Toolformer: Language Models Can Teach Themselves to Use Tools*. https://arxiv.org/abs/2302.04761</li>
+<li>Yao et al. 2022. *ReAct: Synergizing Reasoning and Acting in Language Models*.</li>
+</ul>
+<p>https://arxiv.org/abs/2210.03629</p>
+<ul>
+<li>Khattab and Zaharia. 2020. *ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT*. https://arxiv.org/abs/2004.12832</li>
+<li>Nogueira et al. 2020. *Document Ranking with a Pretrained Sequence-to-Sequence Model*. https://arxiv.org/abs/2003.06713</li>
+<li>Reimers and Gurevych. 2019. *Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks*. https://arxiv.org/abs/1908.10084</li>
+<li>Wang et al. 2022. *Self-Instruct: Aligning Language Models with Self-Generated Instructions*. https://arxiv.org/abs/2212.10560</li>
+<li>Wei et al. 2021. *Finetuned Language Models Are Zero-Shot Learners*. https://arxiv.org/abs/2109.01652</li>
+<li>Bai et al. 2022. *Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback*. https://arxiv.org/abs/2204.05862</li>
+<li>Ziegler et al. 2019. *Fine-Tuning Language Models from Human Preferences*. https://arxiv.org/abs/1909.08593</li>
+<li>Cobbe et al. 2021. *Training Verifiers to Solve Math Word Problems*. https://arxiv.org/abs/2110.14168</li>
+<li>Wang et al. 2024. *Agentless: Demystifying LLM-based Software Engineering Agents*. https://arxiv.org/abs/2407.01489</li>
+</ul>
+    </main>
+    <script src="resource.js"></script>
+  </body>
+</html>

@@ -75,7 +75,8 @@ use case -> baseline -> training -> held-out evaluation -> local artifact
 
 ## Relationship To Nanochat And Autoresearch
 
-These runs are smaller than `nanochat` and easier to modify in a lab session.
+These runs are smaller than `nanochat` and easier to modify during a technical
+seminar, progress session, or self-study run.
 `nanochat` remains useful for inspecting a complete local LLM stack.
 `autoresearch` remains useful for studying agent-assisted experimentation.
 

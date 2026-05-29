@@ -1,7 +1,34 @@
 # Milestones And Schedule
 
-The schedule fits the normal 5LN714 rhythm. Replace dates with the final HT2026
-course dates when they are known.
+This schedule is aligned with the HT2026 planning proposal. The announced course
+period is 2026-08-31 to 2027-01-17. Exact hand-in deadlines should still be
+confirmed by the course coordinator before publication in Studium.
+
+The 2026 planning notes remove lab sessions from the course. The theme should
+therefore treat progress seminars as the main supervision setting.
+
+## Schedule Anchors
+
+| Date | Week | Slot | Planned Activity |
+|---|---:|---|---|
+| 2026-09-01 | 36 | Tue 10-12 | First lecture, roll-call registration, theme introductions |
+| 2026-09-03 | 36 | Thu 13-15 | Full-class lecture |
+| 2026-09-08 | 37 | Tue 8-10 | Full-class lecture / debate session |
+| 2026-09-09 | 37 | Wed 10-12 | Literature seminar 1 |
+| 2026-09-16 | 38 | Wed 9-12 | Philosophy/science theory examination slot, large room |
+| 2026-09-22 | 39 | Tue 10-12 | Literature seminar 2 |
+| 2026-09-28 | 40 | Mon 13-15 | Full-class lecture |
+| 2026-09-29 | 40 | Tue 9-12 | Literature seminar 3 and extended project discussion |
+| 2026-10-06 | 41 | Tue 10-12 | Full-class lecture |
+| 2026-10-13 | 42 | Tue 9-12 | Proposal presentations |
+| 2026-10-22 | 43 | Thu 10-12 | Full-class lecture |
+| 2026-10-27 | 44 | Tue 10-12 | Progress seminar: data, baseline, first run |
+| 2026-11-09 | 46 | Mon 10-12 | Full-class lecture |
+| 2026-11-11 | 46 | Wed 10-12 | Progress seminar: training and early results |
+| 2026-11-17 | 47 | Tue 10-12 | Full-class lecture |
+| 2026-11-25 | 48 | Wed 10-12 | Progress seminar: ethics and release |
+| 2026-12-07 | 50 | Mon 10-12 | Progress seminar: final analysis before paper submission |
+| 2027-01-14 | 02 | Thu 9-16 | Final workshop with NLP, rooms 7-0042 and 7-0043 |
 
 ## Before Project Choice
 
@@ -19,7 +46,12 @@ Students submit:
 - hardware access note;
 - preferred task/language/domain.
 
+The teacher examples are starting points. Students should use them to understand
+the shape of a feasible project, then formulate their own research question.
+
 ## Literature Seminar 1: Open Training Pipelines
+
+Suggested date: 2026-09-09.
 
 Focus:
 
@@ -31,11 +63,13 @@ Focus:
 
 Student preparation:
 
-- read assigned paper/section;
-- identify one artifact the paper makes reproducible and one artifact it does
-  not expose clearly.
+- read all three assigned papers;
+- prepare to discuss the artifacts each paper makes reproducible;
+- identify one project idea or dataset direction the paper suggests.
 
 ## Literature Seminar 2: Fine-Tuning and Local Adaptation
+
+Suggested date: 2026-09-22.
 
 Focus:
 
@@ -48,9 +82,12 @@ Focus:
 Student preparation:
 
 - explain what is updated during training;
-- identify likely failure modes for small local models.
+- identify likely failure modes for small local models;
+- bring one possible project direction.
 
 ## Literature Seminar 3: Advanced Local Model Techniques
+
+Suggested date: 2026-09-29. Save extended time for project discussion.
 
 Focus:
 
@@ -62,9 +99,13 @@ Focus:
 
 Student preparation:
 
-- propose one advanced method and explain what evidence would show it worked.
+- propose one advanced method and explain what evidence would show it worked;
+- identify a simpler fallback project if the advanced method becomes infeasible.
 
 ## Proposal Deadline
+
+The written proposal deadline should be set before 2026-10-13 so supervisors can
+read proposals before the presentation seminar.
 
 Proposal must include:
 
@@ -79,6 +120,7 @@ Proposal must include:
 
 Instructor check:
 
+- Is the question formulated by the student?
 - Is there a feasible baseline?
 - Is at least one model parameter updated?
 - Is the final artifact runnable locally?
@@ -86,6 +128,8 @@ Instructor check:
 - Is the advanced method optional or well justified?
 
 ## Proposal Presentation
+
+Suggested date: 2026-10-13.
 
 Students present:
 
@@ -97,10 +141,15 @@ Students present:
 
 Recommended timing:
 
-- 8 minutes presentation;
-- 4 minutes discussion.
+- around 8 minutes presentation;
+- short discussion and feasibility feedback.
+
+For campus seminars, collect slides before the session when possible so students
+can present from the teacher computer.
 
 ## Progress Seminar 1: Data And Baseline
+
+Suggested date: 2026-10-27.
 
 Expected status:
 
@@ -117,6 +166,8 @@ Students bring:
 
 ## Progress Seminar 2: Training Run
 
+Suggested date: 2026-11-11.
+
 Expected status:
 
 - first supervised training run completed or actively running;
@@ -130,6 +181,8 @@ Students bring:
 - known failure examples.
 
 ## Progress Seminar 3: Ethics And Release
+
+Suggested date: 2026-11-25.
 
 Expected status:
 
@@ -147,6 +200,8 @@ Discussion topics:
 - whether the model card overclaims.
 
 ## Progress Seminar 4: Final Analysis
+
+Suggested date: 2026-12-07.
 
 Expected status:
 
@@ -188,6 +243,8 @@ Reviewers should not run unsafe code. They may inspect README files, configs,
 cards, and reported outputs.
 
 ## Final Workshop
+
+Suggested date: 2027-01-14.
 
 Presentation should include:
 

@@ -1,6 +1,9 @@
 # Project Ideas
 
-These are intentionally scoped for one student in a term project.
+These are intentionally scoped for one student in a term project. Treat them as
+directions for project formulation, not as ready-made assignments. Each student
+still needs to choose a concrete dataset, research question, baseline, and
+evaluation design.
 
 ## Swedish And Nordic Language Tasks
 
@@ -62,4 +65,3 @@ These are intentionally scoped for one student in a term project.
 30. Train a small multilingual safety classifier for prompt-risk detection.
 31. Evaluate whether local instruction tuning weakens refusal behavior.
 32. Build a local detector for invalid or unsupported citations.
-

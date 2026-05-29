@@ -11,6 +11,15 @@ Official course anchors checked on 2026-05-26:
 - Syllabus valid from Spring 2026: https://www.uu.se/en/study/syllabus?query=52189
 - Reading list valid from Spring 2026: https://www.uu.se/en/study/reading-list?query=41226
 
+Local planning inputs incorporated on 2026-05-29:
+
+- `kurs_ht_2026_uu/Supervisor-info_2026.pdf`
+- `kurs_ht_2026_uu/RD_schemaförslag.docx`
+
+These add the HT2026 schedule anchors, the 3 x 3 literature-seminar format, the
+10-minute theme pitch requirement, the no-lab 2026 teaching mode, and the
+expectation that students formulate their own project questions.
+
 The theme is:
 
 **Local Runnable Language Models: training small, useful, auditable NLP systems**
@@ -31,9 +40,11 @@ Use these files as a teacher-facing pack:
 - `teacher-overview.md`: high-level course design and teacher guidance.
 - `student-project-brief.md`: student-facing project description.
 - `project-format.md`: the required shape of each student project.
+- `ai-assistance-policy.md`: student-facing rules for responsible AI tool use.
 - `modern-tooling-map.md`: broad 2026 tooling map for training, eval, agents, and local runtime.
 - `model-menu-and-compute.md`: feasible model and compute guidance.
 - `teacher-start-checklist.md`: setup and approval checklist.
+- `canvas-course-setup.md`: suggested Studium/Canvas module and assignment setup.
 - `project-tracks.md`: suggested project tracks and difficulty levels.
 - `milestones-and-schedule.md`: how to fit the theme into the existing 5LN714 flow.
 - `rubric.md`: assessment rubric for proposals, papers, presentations, and artifacts.
@@ -47,7 +58,7 @@ Use these files as a teacher-facing pack:
 - `examples/`: tiny PyTorch hello-world training examples for course techniques.
 - `demos/`: laptop-runnable training demos with train/eval metrics.
 - `slides/` and `site/slides/`: presentation plan and web slide decks.
-- `assignment-pages/`: Studium-ready assignment text.
+- `assignment-pages/`: Studium-ready assignment and course-page text.
 - `templates/`: proposal, model card, dataset card, manifest, experiment log.
 - `starter-repo/`: a lightweight repository skeleton for project setup.
 - `course-code/`: optional utility code for project scaffolds and experiment ledgers.
